@@ -1,0 +1,71 @@
+[
+    {
+        "id": 1,
+        "Apellidos": "García",
+        "Nombres": "María Carla",
+        "Edad": 32,
+        "Fecha de Nacimiento": "12/05/1992",
+        "DNI": 36222151,
+        "Domicilio": "Marco de la Vega 789",
+        "Localidad": "San Miguel de Tucumán",
+        "Teléfono": 3815669988,
+        "Ocupaición": "Empleada de Comercio",
+        "Estado Civil": "Casada",
+        "Licencia": "Psiquiátrica",
+        "Responsable": "Martín García - Esposo",
+        "Obra Social": "Subsidio de Salud",
+        "N° de Afialiado": 21457,
+        "Diagnóstico": "Depresión - Conducta Suicida",
+        "Consulta": [
+                        {
+                            "Fecha": "12/05/2024",
+                            "Descripcion": "Tuvo un ataque depresivo fuerte"
+                        },
+                        {
+                            "Fecha": "05/04/2024",
+                            "Descripcion": "Consulta de rutina"
+                        }
+                    ],
+        "Sintomatología Actual": "Severo trastorno depresivo",
+        "Antecedentes Perspnales": "",
+        "Habitos Toxicos": "",
+        "Antecedentes Quirurgicos": "",
+        "Antecedentes Clinicos": "",
+        "Antecedentes de Internacion": "",
+        "Tratamientos Previos": "",
+        "Medicación Actual": "",
+        "FUM - Ciclos - Otros": [
+            {
+                "FUM": "12/03/2024",
+                "Ciclos": "Regular",
+                "Otros": ""
+            },
+            {
+                "FUM": "01/02/2024",
+                "Ciclos": "Regular",
+                "Otros": ""
+            },
+            {
+                "FUM": "24/02/2024",
+                "Ciclos": "Regular",
+                "Otros": ""
+            }
+        ],
+        "Genograma": "",
+        "Antecedentes de Conducta Suicida": "",
+        "Dinamica Familiar": "",
+        "Antecedentes Familiares": "",
+        "Hobbies": "",
+        "Actividades": "",
+        "Examen Mental": "",
+        "Expectativas del Tratamiento": "",
+        "Conducta Terapeútica": "",
+        "Estudios Complementarios": "",
+        "Evaluación Neurocognitiva": "",
+        "Tipo de Psicoterapia": "",
+        "Tratamiento Farmacológico": "",
+        "Otras Indicaciones": "",
+        "Evaluaciones": ""
+    }
+    
+]

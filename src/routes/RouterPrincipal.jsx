@@ -7,7 +7,7 @@ const RouterPrincipal = () => {
     //Cuando creo esta estructura, es lo mismo que trabajar con un componente, solo que utilizando el router dom
     <BrowserRouter>
         <Routes>
-            <Route path='' element={""}/>
+            <Route path='/paciente' element={""}/>
         </Routes>
     </BrowserRouter>
   )
