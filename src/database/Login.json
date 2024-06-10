@@ -1,6 +1,14 @@
 [
-    {
-        
-        "usuario":
+    { 
+        "usuario": "gerardo",
+        "contraseña": "casa123"
+    },
+    { 
+        "usuario": "leti",
+        "contraseña": "casa123"
+    },
+    { 
+        "usuario": "usuario",
+        "contraseña": "casa456"
     }
 ]
