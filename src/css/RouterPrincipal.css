@@ -1,0 +1,13 @@
+.navPrincipal ul{
+    display: flex;
+    flex-direction: row;
+    gap: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: aliceblue;
+    width: 100%;
+    padding: 10px 20px;
+}
+
+    

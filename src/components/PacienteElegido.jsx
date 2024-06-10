@@ -2,7 +2,7 @@ import React from 'react'
 
 function PacienteElegido() {
   return (
-    <div>PacienteElegido</div>
+    <div>Paciente Elegido</div>
   )
 }
 
