@@ -19,6 +19,7 @@ const RouterPrincipal = () => {
           </ul>
         </nav>
         <Routes>
+            <Route path='/' element=""/>
             <Route path='/pacientes' element={<Pacientes />}/>
             <Route path='/login' element={<Login />}/>
         </Routes>
