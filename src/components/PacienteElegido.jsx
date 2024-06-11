@@ -54,31 +54,42 @@ function PacienteElegido({idPaciente, setIdPaciente}) {
           </div>
       </ul>
       <div className='DatosPsiquiatricos'>
-        <button>Consulta</button>
-        <button>Sitomatología Actual</button>
-        <button>Antecedentes de Conducta Suicida</button>
-        <button>Antecedentes Personales</button>
-        <button>Hábitos Tóxicos</button>
-        <button>Antecedentes Quirúrgicos</button>
-        <button>Antecedentes Clínicos</button>
-        <button>Antecedentes de Internación</button>
-        <button>Tratamientos Previos</button>
-        <button>Medicación Actual</button>
-        <button>FUM - Cíclos - Otros</button>
-        <button>Genograma</button>
-        <button>Dinámica Familiar</button>
-        <button>Antecedentes Familiares</button>
-        <button>Hobbies</button>
-        <button>Actividades</button>
-        <button>Examen Mental</button>
-        <button>Expectativas del Tratamiento</button>
-        <button>Conducta Terapéutica</button>
-        <button>Estudios Complementarios</button>
-        <button>Evaluación Neurocognitiva</button>
-        <button>Tipo de Psicoterapia</button>
-        <button>Tratamiento Farmacológico</button>
-        <button>Otras Indicaciones</button>
-        <button>Evaluaciones</button>
+        <section className='cosulta'>
+          <button>Consulta</button>
+          <button>Sitomatología Actual</button>
+          <button>Antecedentes de Conducta Suicida</button>
+        </section>
+        <section className='antecedentes'>
+          <button>Antecedentes Personales</button>
+          <button>Hábitos Tóxicos</button>
+          <button>Antecedentes Quirúrgicos</button>
+          <button>Antecedentes Clínicos</button>
+          <button>Antecedentes de Internación</button>
+          <button>Tratamientos Previos</button>
+          <button>Medicación Actual</button>
+          <button>FUM - Cíclos - Otros</button>
+        </section>
+        <section className='genograma'>
+          <button>Genograma</button>
+          <button>Dinámica Familiar</button>
+          <button>Antecedentes Familiares</button>
+        </section> 
+        <section className='hobbies'>
+          <button>Hobbies</button>
+          <button>Actividades</button>
+          <button>Examen Mental</button>
+          <button>Expectativas del Tratamiento</button>
+          <button>Conducta Terapéutica</button>
+        </section>
+        <section className='tratamientos'>
+          <button>Estudios Complementarios</button>
+          <button>Evaluación Neurocognitiva</button>
+          <button>Tipo de Psicoterapia</button>
+          <button>Tratamiento Farmacológico</button>
+          <button>Otras Indicaciones</button>
+          <button>Evaluaciones</button>
+        </section>
+        
       </div>
     </div>
 
