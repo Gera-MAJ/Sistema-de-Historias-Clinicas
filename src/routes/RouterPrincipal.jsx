@@ -4,6 +4,7 @@ import PacienteElegido from '../components/PacienteElegido'
 import Login from '../components/Login'
 import '../css/RouterPrincipal.css'
 import Pacientes from '../components/Pacientes'
+import NuevoPaciente from '../components/NuevoPaciente'
 
 const RouterPrincipal = () => {
 
@@ -23,7 +24,7 @@ const RouterPrincipal = () => {
             <Route path='/pacientes' element={<Pacientes />}/>
             <Route path='/login' element={<Login />}/>
             <Route path='/PacienteElegido' element={<PacienteElegido />}/>
-            <Route path='/nuevoPaciente' element={<PacienteElegido />}/>
+            <Route path='/nuevoPaciente' element={<NuevoPaciente />}/>
         </Routes>
     </BrowserRouter>
   )

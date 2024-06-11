@@ -3,26 +3,7 @@ import React, { useEffect, useState } from 'react'
 function PacienteElegido({idPaciente, setIdPaciente}) {
 
   const [dataPaciente, setDataPaciente] = useState([])
-  const [errores, setErrores] = useState("")
   
-
-  // const getDatosPaciente = async() =>{
-  //   try{
-  //     const peticion = await fetch('../../database/pacientes2.json')
-  //     const data = await peticion.json();
-
-  //     setDatos(data)
-  //     setCarga(false)
-
-  //     console.log([datos])
-
-  //   }catch (error){
-  //     console.log(error.message)
-  //     setErrores(error.message)
-      
-  //   }
-  // }
-
   //CUANDO SE LLAMA DIRECTAMENTE A UN JSON, NO TIENE LA PROPIEDAD DATA y ESO DA ERROR EN EL LLAMADO
   const getDatosPaciente = () => {
     fetch('../../database/pacientes.json')
@@ -55,24 +36,50 @@ function PacienteElegido({idPaciente, setIdPaciente}) {
 
     <div className='pacienteElegido'>
       <ul>
-                <div>      
-                  <li><strong>Apellido/s:</strong> </li>
-                  <li><strong>Nombres:</strong> </li>
-                  <li><strong>Edad:</strong></li>
-                  <li><strong>Fecha de Nacimiento:</strong> </li>
-                  <li><strong>DNI:</strong></li>
-                  <li><strong>Domicilio:</strong></li>
-                  <li><strong>Teléfono:</strong></li>
-                  <li><strong>Ocupación:</strong></li>
-                  <li><strong>Estado Civil:</strong></li>
-                  <li><strong>Licencia:</strong></li>
-                  <li><strong>Responsable:</strong></li>
-                  <li><strong>Obra Social:</strong></li>
-                  <li><strong>N° de Afiliado:</strong></li>
-                  <li><strong>Diagnóstico:</strong></li>
-                </div>
-          
+          <div className='DatosPersonales'>      
+              <li><strong>Apellidos:</strong> </li>
+              <li><strong>Nombres:</strong> </li> 
+              <li><strong>Edad:</strong></li>
+              <li><strong>Fecha de Nacimiento:</strong> </li>
+              <li><strong>DNI:</strong></li>
+              <li><strong>Domicilio:</strong></li>
+              <li><strong>Teléfono:</strong></li>
+              <li><strong>Ocupación:</strong></li>
+              <li><strong>Estado Civil:</strong></li>
+              <li><strong>Licencia:</strong></li>
+              <li><strong>Responsable:</strong></li>
+              <li><strong>Obra Social:</strong></li>
+              <li><strong>N° de Afiliado:</strong></li>
+              <li><strong>Diagnóstico:</strong></li>
+          </div>
       </ul>
+      <div className='DatosPsiquiatricos'>
+        <button>Consulta</button>
+        <button>Sitomatología Actual</button>
+        <button>Antecedentes de Conducta Suicida</button>
+        <button>Antecedentes Personales</button>
+        <button>Hábitos Tóxicos</button>
+        <button>Antecedentes Quirúrgicos</button>
+        <button>Antecedentes Clínicos</button>
+        <button>Antecedentes de Internación</button>
+        <button>Tratamientos Previos</button>
+        <button>Medicación Actual</button>
+        <button>FUM - Cíclos - Otros</button>
+        <button>Genograma</button>
+        <button>Dinámica Familiar</button>
+        <button>Antecedentes Familiares</button>
+        <button>Hobbies</button>
+        <button>Actividades</button>
+        <button>Examen Mental</button>
+        <button>Expectativas del Tratamiento</button>
+        <button>Conducta Terapéutica</button>
+        <button>Estudios Complementarios</button>
+        <button>Evaluación Neurocognitiva</button>
+        <button>Tipo de Psicoterapia</button>
+        <button>Tratamiento Farmacológico</button>
+        <button>Otras Indicaciones</button>
+        <button>Evaluaciones</button>
+      </div>
     </div>
 
   )
