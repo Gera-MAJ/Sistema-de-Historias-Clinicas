@@ -5,11 +5,11 @@ import PacienteElegido from './components/PacienteElegido'
 
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [idPaciente, setIdPaciente] = useState(2)
 
   return (
     <>
-      <PacienteElegido />
+      <PacienteElegido idPaciente = {idPaciente} setIdPaciente = {setIdPaciente}/>
       <RouterPrincipal />
     </>
   )

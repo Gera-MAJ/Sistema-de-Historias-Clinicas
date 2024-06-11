@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react'
 
-function PacienteElegido() {
+function PacienteElegido({idPaciente, setIdPaciente}) {
 
-  const [datos, setDatos] = useState("")
+  const [dataPaciente, setDataPaciente] = useState([])
   const [errores, setErrores] = useState("")
-  const [carga, setCarga] = useState(true)
+  
 
   // const getDatosPaciente = async() =>{
   //   try{
@@ -29,13 +29,16 @@ function PacienteElegido() {
     .then(resp => resp.json())
     .then(resultado => {
       console.log(resultado)
-      setDatos(resultado)
+      setDataPaciente(resultado)
 
       // if ("data" in resultado) {
       //   console.log("EXISTE DATA")
       // } else {
       //   console.log("NO EXISTE DATA")
       // }
+      console.log(dataPaciente)
+      console.log(idPaciente)
+
     },
     error => {
       console.error("Error al cargar el archivo", error)
@@ -49,26 +52,29 @@ function PacienteElegido() {
   }, [])
 
   return (
-    <>
+
     <div className='pacienteElegido'>
       <ul>
-        <li>Apellido/s: </li>
-        <li>Nombres: </li>
-        <li>Edad: </li>
-        <li>Fecha de Nacimiento: </li>
-        <li>DNI: </li>
-        <li>Domicilio: </li>
-        <li>Teléfono: </li>
-        <li>Ocupación: </li>
-        <li>Estado Civil: </li>
-        <li>Licencia: </li>
-        <li>Responsable: </li>
-        <li>Obra Social: </li>
-        <li>N° de Afiliado</li>
-        <li>Diagnóstico: </li>
+                <div>      
+                  <li><strong>Apellido/s:</strong> </li>
+                  <li><strong>Nombres:</strong> </li>
+                  <li><strong>Edad:</strong></li>
+                  <li><strong>Fecha de Nacimiento:</strong> </li>
+                  <li><strong>DNI:</strong></li>
+                  <li><strong>Domicilio:</strong></li>
+                  <li><strong>Teléfono:</strong></li>
+                  <li><strong>Ocupación:</strong></li>
+                  <li><strong>Estado Civil:</strong></li>
+                  <li><strong>Licencia:</strong></li>
+                  <li><strong>Responsable:</strong></li>
+                  <li><strong>Obra Social:</strong></li>
+                  <li><strong>N° de Afiliado:</strong></li>
+                  <li><strong>Diagnóstico:</strong></li>
+                </div>
+          
       </ul>
     </div>
-    </>
+
   )
 }
 

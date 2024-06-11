@@ -14,7 +14,7 @@ const RouterPrincipal = () => {
     <BrowserRouter>
         <nav className='navPrincipal'>
           <ul>
-            <li><NavLink to="/pacientes">Pacientes</NavLink></li>
+            <li><NavLink to="nuevoPaciente">Nuevo Paciente</NavLink></li>
             <li><NavLink to='/login'>Cerrar Sesión</NavLink></li>
           </ul>
         </nav>
@@ -22,6 +22,8 @@ const RouterPrincipal = () => {
             <Route path='/' element=""/>
             <Route path='/pacientes' element={<Pacientes />}/>
             <Route path='/login' element={<Login />}/>
+            <Route path='/PacienteElegido' element={<PacienteElegido />}/>
+            <Route path='/nuevoPaciente' element={<PacienteElegido />}/>
         </Routes>
     </BrowserRouter>
   )
