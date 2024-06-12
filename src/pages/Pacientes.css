@@ -1,0 +1,28 @@
+.pacientes-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  .filter-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 30%;
+  }
+  
+  .pacientes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 60%;
+    max-height: 400px;
+    overflow-y: auto;
+  }
+  
+  .paciente-item {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
