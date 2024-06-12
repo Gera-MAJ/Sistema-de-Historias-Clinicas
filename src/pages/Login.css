@@ -1,0 +1,79 @@
+.login-container {
+  
+    text-align:right;
+    display:flex;
+   
+    
+    height: 100vh;
+    
+    background-color: rgb(43, 43, 112);
+    
+    background-image: url(login19.jpg);
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size:contain;
+  
+  background-attachment: fixed;
+  }
+
+  h2 {
+    font-size: 50px;
+    color: white;
+    font-weight: 350;
+    font-style: italic;
+    font-variant:inherit;
+    font-family: sans-serif;
+    
+    
+    
+  }
+
+  .login-form {
+    border: 30px solid  black;
+    width: 200vh;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: right;
+    justify-content: center;
+    
+  }
+  
+  .login-form div {
+    
+    margin-bottom: 120px;
+    margin-top: 120px;
+   
+    
+  }
+  
+  .login-form label {
+    font-size: 25px;
+    display: block;
+    margin-bottom: 5px;
+    color: white;
+
+    
+  }
+  
+  .login-form input {
+    width: 20%;
+    padding: 25px;
+    box-sizing: border-box;
+    border-radius: 20px;
+
+    
+    
+  }
+  
+  .login-form button {
+    font-size: 25px;
+    padding: 10px 20px;
+    background-color: white;
+    color: rgb(216, 120, 136);
+    border-radius: 20px;
+    cursor: pointer;
+  }
+  
+  .login-form button:hover {
+    background-color: rgb(90, 128, 90);
+  }
