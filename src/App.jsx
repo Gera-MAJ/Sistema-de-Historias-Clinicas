@@ -9,7 +9,7 @@ function App() {
 
   return (
     <>
-      <PacienteElegido idPaciente = {idPaciente} setIdPaciente = {setIdPaciente}/>
+      <PacienteElegido idPaciente = {idPaciente}/>
       <RouterPrincipal />
     </>
   )
