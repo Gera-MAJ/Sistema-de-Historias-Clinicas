@@ -13,25 +13,32 @@ const RouterPrincipal = ({idPaciente}) => {
 
     //Cuando creo esta estructura, es lo mismo que trabajar con un componente, solo que utilizando el router dom
     <BrowserRouter>
-     
+
+      <div className="conteinerPrincipal">
+
         <nav className='navPrincipal'>
           <ul>
-            <li><NavLink to="nuevoPaciente">Nuevo Paciente</NavLink></li>
+            <li><NavLink to="/nuevo-paciente">Nuevo Paciente</NavLink></li>
             <li><NavLink to='/login'>Cerrar Sesión</NavLink></li>
           </ul>
         </nav>
-        
-        <Routes>
+
+        <section className="routes">
+          <Routes>
             <Route path='/' element={<Pacientes />}/>
             <Route path='/pacientes' element={<Pacientes />}/>
             <Route path='/login' element={<Login />}/>
-            <Route path='/PacienteElegido' element={<PacienteElegido idPaciente = {idPaciente}/>}/>
-            <Route path='/nuevoPaciente' element={<NuevoPaciente />}/>
-        </Routes>
+            <Route path='/paciente-elegido' element={<PacienteElegido idPaciente = {idPaciente}/>}/>
+            <Route path='/nuevo-paciente' element={<NuevoPaciente />}/>
+          </Routes>
+        </section>
         
         <footer className='footer'>
-          <div>Datos del footer</div>
+            <div>Datos del footer</div>
         </footer>
+      
+      </div>   
+
     </BrowserRouter>
   )
 }

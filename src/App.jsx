@@ -9,7 +9,6 @@ function App() {
 
   return (
     <>
-      
       <RouterPrincipal idPaciente = {idPaciente}/>
     </>
   )

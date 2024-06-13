@@ -1,11 +1,17 @@
+.conteinerPrincipal {
+    display: flex;
+    flex-direction: column;
+}
+
+.navPrincipal{
+    grid-area: nav;
+}
 
 .navPrincipal ul{
     display: flex;
     flex-direction: row;
     gap: 200px;
-    position: fixed;
-    top: 0;
-    left: 0;
+    
     background-color: aliceblue;
     width: 100%;
     padding: 10px 20px;
@@ -17,6 +23,10 @@
             text-decoration: none;
         }
 
+.routes {
+    grid-area: routes;
+}
+
 .footer {
     position: fixed;
     bottom: 0;
@@ -24,6 +34,7 @@
     background-color: aquamarine;
     width: 100%;
     padding: 10px;
+    grid-area: footer;
 }
 
     
