@@ -1,0 +1,5 @@
+.pacienteElegido{
+    display: grid;
+    grid-template-columns: 20% auto;
+    padding: 100px 40px 40px 40px;
+}

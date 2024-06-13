@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-
+import '../css/PacienteElegido.css'
 function PacienteElegido({idPaciente}) {
 
   const [dataPaciente, setDataPaciente] = useState([])
@@ -76,7 +76,8 @@ function PacienteElegido({idPaciente}) {
     </>
     )
   }else if (errores == '' && carga === false && dataPaciente.length > 0){
-    return (<div className='pacienteElegido'>
+    return (
+      <div className='pacienteElegido'>
         <ul>
             <div className='DatosPersonales'>      
                 <li><strong>Apellidos: </strong>{dataPaciente[index].Apellidos}</li>
@@ -130,8 +131,7 @@ function PacienteElegido({idPaciente}) {
             <button>Tratamiento Farmacológico</button>
             <button>Otras Indicaciones</button>
             <button>Evaluaciones</button>
-          </section>
-          
+          </section>     
         </div>
       </div>
   
