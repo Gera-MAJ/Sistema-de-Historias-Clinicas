@@ -78,26 +78,27 @@ function PacienteElegido({idPaciente}) {
   }else if (errores == '' && carga === false && dataPaciente.length > 0){
     return (
       <div className='pacienteElegido'>
-        <ul>
-            <div className='DatosPersonales'>      
-                <li><strong>Apellidos: </strong>{dataPaciente[index].Apellidos}</li>
-                <li><strong>Nombres: </strong>{dataPaciente[index].Nombres}</li> 
-                <li><strong>Edad: </strong>{dataPaciente[index].Edad}</li>
-                <li><strong>Fecha de Nacimiento:</strong> {dataPaciente[index].Fecha_de_Nacimiento}</li>
-                <li><strong>DNI: </strong>{dataPaciente[index].DNI}</li>
-                <li><strong>Domicilio: </strong>{dataPaciente[index].Domicilio}</li>
-                <li><strong>Teléfono: </strong>{dataPaciente[index].Telefono}</li>
-                <li><strong>Ocupación:</strong> {dataPaciente[index].Ocupacion}</li>
-                <li><strong>Estado Civil:</strong> {dataPaciente[index].Estado_Civil}</li>
-                <li><strong>Licencia:</strong> {dataPaciente[index].Licencia}</li>
-                <li><strong>Responsable:</strong> {dataPaciente[index].Responsable}</li>
-                <li><strong>Obra Social:</strong> {dataPaciente[index].Obra_Social}</li>
-                <li><strong>N° de Afiliado:</strong> {dataPaciente[index].Num_de_Afiliado}</li>
-                <li><strong>Diagnóstico:</strong> {dataPaciente[index].Diagnostico}</li>
-            </div>
-        </ul>
-        <div className='DatosPsiquiatricos'>
-          <section className='cosulta'>
+        <div className='datosPersonales'>
+          <h4>Paciente N° {dataPaciente[index].id}</h4> 
+          <ul>  
+              <li><strong>Apellido/s:</strong><p>{dataPaciente[index].Apellidos}</p></li>
+              <li><strong>Nombre/s:</strong><p>{dataPaciente[index].Nombres}</p></li> 
+              <li><strong>Edad:</strong><p>{dataPaciente[index].Edad}</p></li>
+              <li><strong>Fecha de Nacimiento:</strong> <p>{dataPaciente[index].Fecha_de_Nacimiento}</p></li>
+              <li><strong>DNI:</strong><p>{dataPaciente[index].DNI}</p></li>
+              <li><strong>Domicilio:</strong><p>{dataPaciente[index].Domicilio}</p></li>
+              <li><strong>Teléfono:</strong><p>{dataPaciente[index].Telefono}</p></li>
+              <li><strong>Ocupación:</strong> <p>{dataPaciente[index].Ocupacion}</p></li>
+              <li><strong>Estado Civil:</strong> <p>{dataPaciente[index].Estado_Civil}</p></li>
+              <li><strong>Licencia:</strong> <p>{dataPaciente[index].Licencia}</p></li>
+              <li><strong>Responsable:</strong> <p>{dataPaciente[index].Responsable}</p></li>
+              <li><strong>Obra Social:</strong> <p>{dataPaciente[index].Obra_Social}</p></li>
+              <li><strong>N° de Afiliado:</strong> <p>{dataPaciente[index].Num_de_Afiliado}</p></li>
+              <li><strong>Diagnóstico:</strong> <p>{dataPaciente[index].Diagnostico}</p></li>       
+          </ul>
+        </div>
+        <div className='datosPsiquiatricos'>
+          <section className='consulta'>
             <button>Consulta</button>
             <button>Sitomatología Actual</button>
             <button>Antecedentes de Conducta Suicida</button>

@@ -1,19 +1,21 @@
 .conteinerPrincipal {
     display: flex;
     flex-direction: column;
+    background-color: #E9EDC9;
 }
 
 .navPrincipal{
     grid-area: nav;
+    width: 100%;
+    background-color: #707070;
 }
 
 .navPrincipal ul{
     display: flex;
     flex-direction: row;
     gap: 200px;
-    
-    background-color: aliceblue;
-    width: 100%;
+    background-color: #707070;
+    width: auto;
     padding: 10px 20px;
 }
     .navPrincipal ul li {
@@ -21,16 +23,20 @@
     }
         .navPrincipal ul li > a{
             text-decoration: none;
+            color: white;
+            font-weight: bold;
         }
 
 .routes {
     grid-area: routes;
+    box-sizing: border-box;
+    width: 100%;
 }
 
 .footer {
     position: fixed;
     bottom: 0;
-    left: 0;
+    
     background-color: aquamarine;
     width: 100%;
     padding: 10px;
