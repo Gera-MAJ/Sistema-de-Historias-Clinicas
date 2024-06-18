@@ -134,6 +134,11 @@ function PacienteElegido({idPaciente}) {
             <button>Evaluaciones</button>
           </section>     
         </div>
+
+        <div className="elementos">
+          
+        </div>
+
       </div>
   
     )

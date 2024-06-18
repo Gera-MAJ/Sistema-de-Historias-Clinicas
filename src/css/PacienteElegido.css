@@ -1,10 +1,9 @@
 .pacienteElegido{
     display: grid;
-    grid-template-columns: 30% 70%;
-    
+    grid-template-columns: 30% 40% 30%; 
     margin-top: 30px;
-    /* justify-content: center; */
-    
+    margin-bottom: 2.2rem;
+    box-sizing: border-box;
 }
 
 .datosPersonales {
@@ -22,7 +21,7 @@
         border: 2px solid #8AB597;
         border-radius: 5px 5px 0 0;
         background-color: #8AB597;
-        width: 50%;
+        width: 40%;
         padding: 4px 0;
         color: #FCFDFC;
     }
@@ -33,14 +32,15 @@
             padding: 10px 10px 10px 30px;
             background-color: #CCD5AE;
             
+            width: 80%;
         }
             .datosPersonales ul li {
                 list-style: none;
                 color: #4c9360;
-                margin-top: 5px;
+                margin-top: 10px;
                 display: flex;
-                flex-direction: row;
-                gap: 4px;
+                flex-direction: column;
+                gap: 1px;
             }
                 .datosPersonales ul li p {
                     color: black;
@@ -51,10 +51,10 @@
     border-radius: 5px; */
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 20px;
     justify-content: center;
     position: relative;
-    margin-right: 40px;
+    
 }
     .datosPsiquiatricos .consulta {
         display: flex;
