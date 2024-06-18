@@ -18,6 +18,7 @@ const RouterPrincipal = ({idPaciente}) => {
 
         <nav className='navPrincipal'>
           <ul>
+            <li><NavLink to="/pacientes">Pacientes</NavLink></li>
             <li><NavLink to="/nuevo-paciente">Nuevo Paciente</NavLink></li>
             <li><NavLink to='/login'>Cerrar Sesión</NavLink></li>
           </ul>
