@@ -1,17 +1,18 @@
 .conteinerPrincipal {
-    display: grid;
-    grid-template-areas: "nav nav" 
-                        "routes routes"
-                        "footer footer";
-    grid-template-rows: 5% 90% 5%;
+    
     background-color: #E9EDC9;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .navPrincipal{
+    
     width: 100%;
     background-color: #707070;
-    grid-area: nav;
+    flex: 1;
+    
 }
 
 .navPrincipal ul{
@@ -33,16 +34,17 @@
 
 .routes {
     width: 100%;
-    
-    grid-area: routes;
+    box-sizing: border-box;
+    margin: 40px 0;
+    flex: 2;
 } 
 
-.footer {
-     
+.footer { 
     background-color: aquamarine;
     width: 100%; 
-    grid-area: footer;
-   
+    position: fixed;
+    bottom: 0;
+    flex: 3;
 }
 
     

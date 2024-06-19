@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../css/PacienteElegido.css'
+import { NavLink, Outlet } from "react-router-dom"
+
 function PacienteElegido({idPaciente}) {
 
   const [dataPaciente, setDataPaciente] = useState([])
@@ -99,8 +101,8 @@ function PacienteElegido({idPaciente}) {
         </div>
         <div className='datosPsiquiatricos'>
           <section className='consulta'>
-            <button>Consulta</button>
-            <button>Sitomatología Actual</button>
+            <button><NavLink to="consulta">Consulta</NavLink></button>
+            <button><NavLink to="sintomatologia-actual">Sitomatología Actual</NavLink></button>
             <button>Antecedentes de Conducta Suicida</button>
           </section>
           <section className='antecedentes'>
@@ -136,8 +138,11 @@ function PacienteElegido({idPaciente}) {
         </div>
 
         <div className="elementos">
-          
+          {/* Esto se coloca para que la sub ruta salga por acá */}
+          <Outlet />
         </div>
+        
+        
 
       </div>
   
