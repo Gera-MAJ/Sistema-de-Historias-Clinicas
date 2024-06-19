@@ -65,7 +65,7 @@
         gap: 10px;
     }
         .datosPsiquiatricos .consulta button{
-            color: #F37E7E;
+            
             font-size: 1rem;
             background-color: #FCE1E4;
             border: 2px solid #F37E7E;
@@ -74,13 +74,23 @@
             width: 200px;
             height: 50px;
         }
-            .datosPsiquiatricos .consulta button:hover{
-                background-color: #F37E7E;
-                color: white;
-                font-weight: bold;
-                transform: translateY(-5px);
-                cursor: pointer;
-            }
+        .datosPsiquiatricos .consulta button:hover{
+            background-color: #F37E7E;
+            color: white;
+            font-weight: bold;
+            transform: translateY(-5px);
+            cursor: pointer;
+        }
+
+        .datosPsiquiatricos .consulta button a {
+            text-decoration: none;
+            color: #F37E7E;
+            width: 100%;
+        }
+        .datosPsiquiatricos .consulta button a:hover {
+            color: white;
+        }
+           
     
     .datosPsiquiatricos .antecedentes{
         display: flex;

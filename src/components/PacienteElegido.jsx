@@ -104,7 +104,7 @@ function PacienteElegido({idPaciente, dataPaciente, setDataPaciente }) {
           <section className='consulta'>
             <button><NavLink to="consulta">Consulta</NavLink></button>
             <button><NavLink to="sintomatologia-actual">Sitomatología Actual</NavLink></button>
-            <button>Antecedentes de Conducta Suicida</button>
+            <button><NavLink to="conducta-suicida">Antededentes de Conducta Suicida</NavLink></button>
           </section>
           <section className='antecedentes'>
             <button>Antecedentes Personales</button>
