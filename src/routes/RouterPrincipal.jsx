@@ -7,9 +7,12 @@ import Pacientes from '../components/Pacientes'
 import NuevoPaciente from '../components/NuevoPaciente'
 import Consulta from '../components/sub-components/Consulta'
 import Sintomatologia_Actual from '../components/sub-components/Sintomatologia_Actual'
+import { useState } from 'react'
 
 const RouterPrincipal = ({idPaciente}) => {
 
+  const [dataPaciente, setDataPaciente] = useState([])
+  
 
   return (
 
@@ -31,8 +34,8 @@ const RouterPrincipal = ({idPaciente}) => {
             <Route path='/' element={<Pacientes />}/>
             <Route path='/pacientes' element={<Pacientes />}/>
             <Route path='/login' element={<Login />}/>
-            <Route path='/paciente-elegido/*' element={<PacienteElegido idPaciente = {idPaciente}/>}>
-                <Route path='consulta' element={<Consulta />}/>
+            <Route path='/paciente-elegido/*' element={<PacienteElegido idPaciente = {idPaciente} dataPaciente = {dataPaciente} setDataPaciente = {setDataPaciente} />}>
+                <Route path='consulta' element={<Consulta dataPaciente = {dataPaciente} idPaciente = {idPaciente}/>}/>
                 <Route path='sintomatologia-actual' element={<Sintomatologia_Actual/>} />
             </Route>
             <Route path='/nuevo-paciente' element={<NuevoPaciente />}/>

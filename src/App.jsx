@@ -5,7 +5,8 @@ import PacienteElegido from './components/PacienteElegido'
 
 
 function App() {
-  const [idPaciente, setIdPaciente] = useState(6)
+  const [idPaciente, setIdPaciente] = useState(5)
+  
 
   return (
     <>

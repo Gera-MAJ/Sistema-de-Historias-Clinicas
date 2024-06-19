@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react'
 import '../css/PacienteElegido.css'
 import { NavLink, Outlet } from "react-router-dom"
 
-function PacienteElegido({idPaciente}) {
+function PacienteElegido({idPaciente, dataPaciente, setDataPaciente }) {
 
-  const [dataPaciente, setDataPaciente] = useState([])
+  
   const [carga, setCarga] = useState(true)
   const [errores, setErrores] = useState('')
   const [index, setIndex] = useState(0)
+  
   
   //CUANDO SE LLAMA DIRECTAMENTE A UN JSON, NO TIENE LA PROPIEDAD DATA y ESO DA ERROR EN EL LLAMADO
   // const getDatosPaciente = () => {
