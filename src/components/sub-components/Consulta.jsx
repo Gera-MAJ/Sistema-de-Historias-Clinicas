@@ -3,10 +3,19 @@ import EditarConsulta from './EditarConsulta'
 
 const Consulta = ({dataPaciente, setDataPaciente ,idPaciente}) => {
 
-    const [editar, setEditar] = useState()
+    const [editar, setEditar] = useState(false)
+    const [consulta, setConsulta] = useState()
     const [index, setIndex] = useState(0)
     const [paciente, setPaciente] = useState([])
 
+    const editarPaciente = (id) => {
+      console.log(id)
+
+      // let indice = paciente.Consulta.findIndex( data =>(data.id_Consulta === id))
+      // console.log(indice)
+      setConsulta(id)
+      setEditar(true)
+    }
 
 
     useEffect(() => {
@@ -17,7 +26,7 @@ const Consulta = ({dataPaciente, setDataPaciente ,idPaciente}) => {
             setPaciente(dataPaciente)
             
         }
-    }, [dataPaciente, idPaciente])
+    }, [dataPaciente, idPaciente, paciente])
     
     console.log(dataPaciente, idPaciente, index, paciente)
 
@@ -25,9 +34,9 @@ const Consulta = ({dataPaciente, setDataPaciente ,idPaciente}) => {
     <div>
 
         <ul className='consultas'>
-        {dataPaciente[index].Consulta.map(consulta => (<li key={dataPaciente.DNI}>{consulta.Fecha} {consulta.Descripcion} <button>editar</button> <button>borrar</button></li> ))}
+        {dataPaciente[index].Consulta.map(consulta => (<li key={dataPaciente.DNI}>{consulta.Fecha} {consulta.Descripcion} <button onClick={() => editarPaciente(consulta.id_Consulta)}>editar</button> <button>borrar</button></li> ))}
         </ul>
-        <EditarConsulta />
+        {editar && <EditarConsulta dataPacienteElegido = {dataPaciente[index]} idConsulta = {consulta}/>}
     </div>
   )
 }

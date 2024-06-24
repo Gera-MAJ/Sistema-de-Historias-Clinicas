@@ -32,7 +32,7 @@ const RouterPrincipal = ({idPaciente}) => {
 
         <section className="routes">
           <Routes>
-            <Route path='/' element={<Pacientes />}/>
+            <Route path='/' element={<Login />}/>
             <Route path='/pacientes' element={<Pacientes />}/>
             <Route path='/login' element={<Login />}/>
             <Route path='/paciente-elegido/*' element={<PacienteElegido idPaciente = {idPaciente} dataPaciente = {dataPaciente} setDataPaciente = {setDataPaciente} />}>

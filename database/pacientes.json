@@ -280,11 +280,13 @@
         "Diagnostico": "Depresión - Conducta Suicida",
         "Consulta": [
             {
-                "Fecha": "25/06/2024",
+                "id_Consulta": "1",
+                "Fecha": "2024-06-03",
                 "Descripcion": "Presentó síntomas de depresión mas de lo normal, en muchas de las cosas que viene haciendo, realmente preocupante"
             },
             {
-                "Fecha": "15/05/2024",
+                "id_Consulta": "2",
+                "Fecha": "2023-07-22",
                 "Descripcion": "Consulta de rutina"
             }
         ],
