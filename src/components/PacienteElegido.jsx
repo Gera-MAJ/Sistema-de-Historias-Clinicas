@@ -101,11 +101,13 @@ function PacienteElegido({idPaciente, dataPaciente, setDataPaciente }) {
           </ul>
         </div>
         <div className='datosPsiquiatricos'>
+
           <section className='consulta'>
             <button><NavLink to="consulta">Consulta</NavLink></button>
             <button><NavLink to="sintomatologia-actual">Sitomatología Actual</NavLink></button>
             <button><NavLink to="conducta-suicida">Antededentes de Conducta Suicida</NavLink></button>
           </section>
+          
           <section className='antecedentes'>
             <button>Antecedentes Personales</button>
             <button>Hábitos Tóxicos</button>
@@ -139,12 +141,10 @@ function PacienteElegido({idPaciente, dataPaciente, setDataPaciente }) {
         </div>
 
         <div className="elementos">
-          {/* Esto se coloca para que la sub ruta salga por acá */}
-          <Outlet />
-        </div>
+            {/* Esto se coloca para que la sub ruta salga por acá */}
+            <Outlet />
+          </div>
         
-        
-
       </div>
   
     )

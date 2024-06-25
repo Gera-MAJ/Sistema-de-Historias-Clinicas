@@ -14,6 +14,8 @@ const Consulta = ({dataPaciente, setDataPaciente ,idPaciente}) => {
       // let indice = paciente.Consulta.findIndex( data =>(data.id_Consulta === id))
       // console.log(indice)
       setConsulta(id)
+
+      
       setEditar(true)
     }
 
@@ -26,7 +28,7 @@ const Consulta = ({dataPaciente, setDataPaciente ,idPaciente}) => {
             setPaciente(dataPaciente)
             
         }
-    }, [dataPaciente, idPaciente, paciente])
+    }, [dataPaciente, idPaciente])
     
     console.log(dataPaciente, idPaciente, index, paciente)
 
@@ -36,7 +38,7 @@ const Consulta = ({dataPaciente, setDataPaciente ,idPaciente}) => {
         <ul className='consultas'>
         {dataPaciente[index].Consulta.map(consulta => (<li key={dataPaciente.DNI}>{consulta.Fecha} {consulta.Descripcion} <button onClick={() => editarPaciente(consulta.id_Consulta)}>editar</button> <button>borrar</button></li> ))}
         </ul>
-        {editar && <EditarConsulta dataPacienteElegido = {dataPaciente[index]} idConsulta = {consulta}/>}
+        {editar && <EditarConsulta dataPacienteElegido = {paciente[index]} idConsulta = {consulta}/>}
     </div>
   )
 }
