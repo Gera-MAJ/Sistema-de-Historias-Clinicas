@@ -1,0 +1,49 @@
+.nuevo-paciente-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #f0f8ff; 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+  }
+  
+  .nuevo-paciente-container h2 {
+    text-align: center;
+    color: #6fc76f; 
+  }
+  
+  .nuevo-paciente-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .nuevo-paciente-form label {
+    display: flex;
+    flex-direction: column;
+    color: #333;
+    font-size: 14px;
+  }
+  
+  .nuevo-paciente-form input {
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .submit-button {
+    padding: 10px 20px;
+    background-color: #ffb6c1; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: center;
+    font-size: 16px;
+  }
+  
+  .submit-button:hover {
+    background-color: #ff69b4; 
+  }
