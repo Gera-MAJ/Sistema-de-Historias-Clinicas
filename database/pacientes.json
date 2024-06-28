@@ -226,6 +226,16 @@
                 "id_Consulta": 2,
                 "Fecha": "2024-06-20",
                 "Descripcion": "Consulta de rutina"
+            },
+            {
+                "id_Consulta": 3,
+                "Fecha": "2024-06-21",
+                "Descripcion": "Se tenía que realizar las evaluaciones correspondientes a le nueva medicación que se está tomando."
+            },
+            {
+                "id_Consulta": 4,
+                "Fecha": "2024-06-25",
+                "Descripcion": "Nuevo síntoma apareció"
             }
         ],
         "Sintomatologia_Actual": "Síntomas de ansiedad",

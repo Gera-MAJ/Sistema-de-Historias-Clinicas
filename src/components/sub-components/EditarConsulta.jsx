@@ -24,6 +24,8 @@ const EditarConsulta = ({dataPacienteElegido, idConsulta}) => {
     
   }, [idConsulta])
 
+  
+
   return (
     <>
     <form action="submit" onSubmit={editarConsulta}>
