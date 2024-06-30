@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import '../css/Pacientes.css';
-import pacientesData from '/database/pacientes.json'; // Importa tu archivo JSON
+import pacientesData from '/database/pacientes.json'; 
 
 const Pacientes = () => {
   const [apellido, setApellido] = useState('');
   const [pacientes, setPacientes] = useState([]);
 
   useEffect(() => {
-    // Cargar los datos del archivo JSON al estado
+    
     setPacientes(pacientesData);
   }, []);
 
@@ -16,16 +16,13 @@ const Pacientes = () => {
   };
 
   const handleBuscarClick = () => {
-    // Implementar lógica de búsqueda
+    
   };
 
-  const handleEditarClick = (index) => {
-    // Implementar lógica de edición
-    // alert(`Editar paciente: ${pacientes[index].Nombres} ${pacientes[index].Apellidos}`);
-  };
+ 
 
   const handleBorrarClick = (index) => {
-    // Implementar lógica de borrado
+    
     const nuevosPacientes = pacientes.filter((_, i) => i !== index);
     setPacientes(nuevosPacientes);
     alert('¿Estás seguro de que quieres eliminar este paciente?');

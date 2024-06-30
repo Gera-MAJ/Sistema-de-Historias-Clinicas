@@ -31,7 +31,7 @@ const NuevoPaciente = () => {
     e.preventDefault();
     console.log(formData);
     alert('Paciente registrado con éxito!');
-    // Agregar la lógica para enviar los datos a un servidor o almacenarlos de alguna manera
+    // Agregar la lógica para enviar los datos a un servidor o almacenarlos de alguna manera (falta!!!!)
   };
 
   return (
