@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../css/Pacientes.css';
 
 const Pacientes = () => {
@@ -53,6 +53,8 @@ const Pacientes = () => {
     normalizarParaBuscar(paciente).includes(normalizarParaBuscar(apellido))
     
   );
+
+  
 
   return (
     <div className="pacientes-container">

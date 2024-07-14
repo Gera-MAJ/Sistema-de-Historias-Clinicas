@@ -5,7 +5,7 @@ import PacienteElegido from './components/PacienteElegido'
 
 
 function App() {
-  const [idPaciente, setIdPaciente] = useState(4)
+  const [idPaciente, setIdPaciente] = useState("668f6e6a9e990eda643ba93c")
   
 
   return (

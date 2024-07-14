@@ -27,21 +27,27 @@ function PacienteElegido({idPaciente, dataPaciente, setDataPaciente }) {
 
   const cargarDatosPaciente = async() =>{
     try{
-      const url = '../../database/pacientes.json';
+      const url = 'http://localhost:3900/api/pacientes';
       const resp = await fetch(url)
       let datos = await resp.json();
 
-      setDataPaciente(datos)
-      
-      setCarga(false)
+      if(datos.status == "succes"){
+        setDataPaciente(datos.consulta)
 
-      console.log(datos)
+        setCarga(false)
+        console.log(datos)
+      }else{
+        return (
+          <>
+            <h2>No se encontró el paciente</h2>
+          </>
+        )
+      }
 
     }catch (error){
        console.error("El error es: ", error.message)
        setErrores(error)
     }
-
   }
 
   useEffect(() =>{
@@ -55,7 +61,7 @@ function PacienteElegido({idPaciente, dataPaciente, setDataPaciente }) {
 
   useEffect(() => {
     if(dataPaciente.length > 0){
-      const indice = dataPaciente.findIndex(element => element.id === idPaciente)
+      const indice = dataPaciente.findIndex(element => element._id === idPaciente)
       setIndex(indice)
 
       console.log(dataPaciente)
@@ -82,7 +88,7 @@ function PacienteElegido({idPaciente, dataPaciente, setDataPaciente }) {
     return (
       <div className='pacienteElegido'>
         <div className='datosPersonales'>
-          <h4>Paciente N° {dataPaciente[index].id}</h4> 
+          <h4>Paciente N° {dataPaciente[index]._id}</h4> 
           <ul>  
               <li><strong>Apellido/s:</strong><p>{dataPaciente[index].Apellidos}</p></li>
               <li><strong>Nombre/s:</strong><p>{dataPaciente[index].Nombres}</p></li> 
