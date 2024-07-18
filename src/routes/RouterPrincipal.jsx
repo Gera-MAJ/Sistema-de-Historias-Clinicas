@@ -10,9 +10,10 @@ import Sintomatologia_Actual from '../components/sub-components/Sintomatologia_A
 import ConductaSuicida from "../components/sub-components/ConductaSuicida"
 import { useState } from 'react'
 
-const RouterPrincipal = ({idPaciente}) => {
+const RouterPrincipal = () => {
 
   const [dataPaciente, setDataPaciente] = useState([])
+  const [index, setIndex] = useState(0)
   
 
   return (
@@ -35,8 +36,8 @@ const RouterPrincipal = ({idPaciente}) => {
             <Route path='/' element={<Login />}/>
             <Route path='/pacientes' element={<Pacientes />}/>
             <Route path='/login' element={<Login />}/>
-            <Route path='/paciente-elegido/*' element={<PacienteElegido idPaciente = {idPaciente} dataPaciente = {dataPaciente} setDataPaciente = {setDataPaciente} />}>
-                <Route path='consulta' element={<Consulta dataPaciente = {dataPaciente} setDataPaciente = {setDataPaciente} idPaciente = {idPaciente}/>}/>
+            <Route path='/paciente-elegido/*' element={<PacienteElegido dataPaciente = {dataPaciente} setDataPaciente = {setDataPaciente} index = {index} setIndex = {setIndex}/>}>
+                <Route path='consulta' element={<Consulta dataPaciente = {dataPaciente} index = {index}/>}/>
                 <Route path='sintomatologia-actual' element={<Sintomatologia_Actual/>} />
                 <Route path='conducta-suicida' element= {<ConductaSuicida />} />
             </Route>

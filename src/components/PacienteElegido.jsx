@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import '../css/PacienteElegido.css'
 import { NavLink, Outlet } from "react-router-dom"
+import { ProveedorDeContexto } from '../context/ProveedorDeContexto'
 
-function PacienteElegido({idPaciente, dataPaciente, setDataPaciente }) {
+function PacienteElegido({dataPaciente, setDataPaciente, index, setIndex }) {
 
-  
+  const {idPaciente} = useContext(ProveedorDeContexto)
   const [carga, setCarga] = useState(true)
   const [errores, setErrores] = useState('')
-  const [index, setIndex] = useState(0)
+  // const [index, setIndex] = useState(0)
   
+  // console.log(idPaciente)
   
   //CUANDO SE LLAMA DIRECTAMENTE A UN JSON, NO TIENE LA PROPIEDAD DATA y ESO DA ERROR EN EL LLAMADO
   // const getDatosPaciente = () => {
@@ -27,15 +29,15 @@ function PacienteElegido({idPaciente, dataPaciente, setDataPaciente }) {
 
   const cargarDatosPaciente = async() =>{
     try{
-      const url = 'http://localhost:3900/api/pacientes';
+      const url = 'http://localhost:3900/api/pacientes/';
       const resp = await fetch(url)
       let datos = await resp.json();
 
-      if(datos.status == "succes"){
-        setDataPaciente(datos.consulta)
+      if(datos.status == "success"){
+        setDataPaciente(datos.pacientes)
 
         setCarga(false)
-        console.log(datos)
+        // console.log(datos)
       }else{
         return (
           <>
@@ -52,25 +54,25 @@ function PacienteElegido({idPaciente, dataPaciente, setDataPaciente }) {
 
   useEffect(() =>{
 
-    // getDatosPaciente();
     cargarDatosPaciente();
 
   }, [])
 
-  //uso otro useEffect para que se ejecute el index antes de que cargue el return
+  // uso otro useEffect para que se ejecute el index antes de que cargue el return
 
   useEffect(() => {
-    if(dataPaciente.length > 0){
-      const indice = dataPaciente.findIndex(element => element._id === idPaciente)
-      setIndex(indice)
-
-      console.log(dataPaciente)
-      console.log(index)
-    }
-    
+    encontrar_index()
   }, [dataPaciente, idPaciente])
 
-  
+  const encontrar_index = async() =>{
+    if(dataPaciente.length > 0){
+      const indice = await dataPaciente.findIndex(element => element._id === idPaciente)
+      setIndex(indice)
+
+      // console.log(dataPaciente)
+      // console.log(index)
+    }
+  }
 
   if(errores !== ''){
     return(
@@ -88,13 +90,12 @@ function PacienteElegido({idPaciente, dataPaciente, setDataPaciente }) {
     return (
       <div className='pacienteElegido'>
         <div className='datosPersonales'>
-          <h4>Paciente N° {dataPaciente[index]._id}</h4> 
+          <h4>DNI: {dataPaciente[index].DNI}</h4> 
           <ul>  
               <li><strong>Apellido/s:</strong><p>{dataPaciente[index].Apellidos}</p></li>
               <li><strong>Nombre/s:</strong><p>{dataPaciente[index].Nombres}</p></li> 
               <li><strong>Edad:</strong><p>{dataPaciente[index].Edad}</p></li>
               <li><strong>Fecha de Nacimiento:</strong> <p>{dataPaciente[index].Fecha_de_Nacimiento}</p></li>
-              <li><strong>DNI:</strong><p>{dataPaciente[index].DNI}</p></li>
               <li><strong>Domicilio:</strong><p>{dataPaciente[index].Domicilio}</p></li>
               <li><strong>Teléfono:</strong><p>{dataPaciente[index].Telefono}</p></li>
               <li><strong>Ocupación:</strong> <p>{dataPaciente[index].Ocupacion}</p></li>

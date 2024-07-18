@@ -1,46 +1,48 @@
-import React, { useEffect, useState } from 'react'
-import EditarConsulta from './EditarConsulta'
+import React, { useEffect, useState } from "react";
+import EditarConsulta from "./EditarConsulta";
 
-const Consulta = ({dataPaciente, setDataPaciente ,idPaciente}) => {
+const Consulta = ({ dataPaciente, index }) => {
+  const [editar, setEditar] = useState(false);
+  const [idConsulta, setIdConsulta] = useState(null);
+ 
 
-    const [editar, setEditar] = useState(false)
-    const [consulta, setConsulta] = useState()
-    const [index, setIndex] = useState(0)
-    const [paciente, setPaciente] = useState([])
-
-    const editarPaciente = (id) => {
-      console.log(id)
-
-      // let indice = paciente.Consulta.findIndex( data =>(data.id_Consulta === id))
-      // console.log(indice)
-      setConsulta(id)
-
-      
-      setEditar(true)
-    }
-
-
-    useEffect(() => {
-        if(dataPaciente.length > 0){
-            const indice = dataPaciente.findIndex(element => (element.id === idPaciente))
-            setIndex(indice)
-
-            setPaciente(dataPaciente)
-            
-        }
-    }, [dataPaciente, idPaciente])
+  const editarConsulta = (id) => {
+    console.log(id, idConsulta);
     
-    console.log(dataPaciente, idPaciente, index, paciente)
+      setIdConsulta(id)
+      setEditar(true);
+    
+  };
+
+  useEffect(() => {
+  
+  }, []);
+
+  // console.log(dataPaciente, idPaciente, index);
 
   return (
     <div>
-
-        <ul className='consultas'>
-        {dataPaciente[index].Consulta.map(consulta => (<li key={dataPaciente.DNI}>{consulta.Fecha} {consulta.Descripcion} <button onClick={() => editarPaciente(consulta.id_Consulta)}>editar</button> <button>borrar</button></li> ))}
-        </ul>
-        {editar && <EditarConsulta dataPacienteElegido = {paciente[index]} idConsulta = {consulta}/>}
+      <ul className="consultas">
+        {dataPaciente[index].Consulta.map((consulta) => (
+          <li key={consulta._id}>
+            {consulta.fecha} {consulta.descripcion}
+            <button onClick={() => editarConsulta(consulta._id)}>Editar</button>
+            <button>Borrar</button>
+          </li>
+        ))}
+      </ul>
+      <button className="boton_consulta">Agregar Consulta</button>
+      {editar && idConsulta != null ? (
+        <EditarConsulta
+          dataPacienteElegido={dataPaciente[index]}
+          idConsulta={idConsulta}
+        />
+      ):
+      (
+        <h2>No hay datos</h2>
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default Consulta
+export default Consulta;

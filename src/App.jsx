@@ -1,18 +1,21 @@
-import { useState } from 'react'
-import './App.css'
-import RouterPrincipal from './routes/RouterPrincipal'
-import PacienteElegido from './components/PacienteElegido'
-
+import { useState } from "react";
+import "./App.css";
+import RouterPrincipal from "./routes/RouterPrincipal";
+import { ProveedorDeContexto } from "./context/ProveedorDeContexto";
 
 function App() {
-  const [idPaciente, setIdPaciente] = useState("668f6e6a9e990eda643ba93c")
-  
+  const [idPaciente, setIdPaciente] = useState("669460a6da4454f2882b1163");
 
   return (
     <>
-      <RouterPrincipal idPaciente = {idPaciente}/>
+      <ProveedorDeContexto.Provider value = {{
+        idPaciente,
+        setIdPaciente
+      }}>
+        <RouterPrincipal/>
+      </ProveedorDeContexto.Provider>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
