@@ -6,12 +6,26 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
   
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
       e.preventDefault();
-      if (username === 'admin' && password === '1234') {
-        alert('Ingresaste exitosamente!');
-      } else {
-        setErrorMessage('Usuario y/o Contraseña inválidos');
+      try {
+        const response = await fetch('http://localhost:3900/api/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ usuario: username, contraseña: password }),
+        });
+  
+        const data = await response.json();
+  
+        if (response.ok) {
+          alert('Ingresaste exitosamente!');
+          // Aquí se puede redirigir al usuario o hacer otra acción en caso de éxito
+        } else {
+          setErrorMessage(data.message);
+        }
+      } catch (error) {
+        console.error('Error logging in:', error);
+        setErrorMessage('Error al intentar iniciar sesión');
       }
     };
   
