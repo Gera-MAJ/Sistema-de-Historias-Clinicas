@@ -3,9 +3,9 @@ import '../css/PacienteElegido.css'
 import { NavLink, Outlet } from "react-router-dom"
 import { ProveedorDeContexto } from '../context/ProveedorDeContexto'
 
-function PacienteElegido({dataPaciente, setDataPaciente, index, setIndex }) {
+function PacienteElegido() {
 
-  const {idPaciente} = useContext(ProveedorDeContexto)
+  const {idPaciente, dataPaciente, setDataPaciente, index, setIndex} = useContext(ProveedorDeContexto)
   const [carga, setCarga] = useState(true)
   const [errores, setErrores] = useState('')
   // const [index, setIndex] = useState(0)

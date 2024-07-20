@@ -1,27 +1,41 @@
-import React, { useEffect, useState } from "react";
-import { json } from "react-router-dom";
+import React, { useContext, useEffect, useState } from "react";
+import { ProveedorDeContexto } from "../../context/ProveedorDeContexto";
 
-const EditarConsulta = ({ dataPacienteElegido, idConsulta }) => {
-  // console.log(dataPacienteElegido, idConsulta)
-
-  const [indexConsulta, setIndexConsulta] = useState(0);
-
+const EditarConsulta = ({ idConsulta, setEditar }) => {
+  const [indexConsulta, setIndexConsulta] = useState(null);
   const [fecha, setFecha] = useState("");
   const [descripcion, setDescripcion] = useState("");
+  const { dataPaciente, index } = useContext(ProveedorDeContexto);
+  let dataPacienteElegido = dataPaciente[index];
 
-  useEffect(()=> {
-    if(idConsulta != null && dataPacienteElegido.Consulta.length > 0){
-      buscarIndexConsulta(idConsulta)
+  useEffect(() => {
+
+    
+    if (idConsulta != null && dataPacienteElegido.Consulta.length >= 0) {
+      buscarIndexConsulta(idConsulta);
+
+      console.log(idConsulta, dataPacienteElegido);
     }
-  },[])
+  }, [idConsulta]);
+
+  useEffect(() => {
+    // buscarIndexConsulta(idConsulta);
+    //Importante esto para poder actulizar los datos sin que se borren, se debe actulizar con el use effect la descripcion del hook
+    if (indexConsulta != null) {
+      setDescripcion(dataPacienteElegido.Consulta[indexConsulta].descripcion);
+      setFecha(dataPacienteElegido.Consulta[indexConsulta].fecha);
+
+      console.log("no pasa la condicion");
+    }
+  }, [idConsulta, dataPaciente.Consulta]);
 
   const editarConsulta = async (e) => {
     e.preventDefault();
 
     const nuevosDatos = {
       fecha: e.target.fecha.value,
-      descripcion: e.target.descripcion.value
-    }
+      descripcion: e.target.descripcion.value,
+    };
 
     try {
       const url =
@@ -30,34 +44,22 @@ const EditarConsulta = ({ dataPacienteElegido, idConsulta }) => {
         "/consulta/" +
         idConsulta;
 
-      const resp = await fetch(
-        url,
-        {
-          method: "PUT",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(nuevosDatos)
-        });
+      const resp = await fetch(url, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(nuevosDatos),
+      });
 
-        const datos = await resp.json()
+      const datos = await resp.json();
 
-      if(datos.status == "success"){
-        console.log("Datos Actualizados correctamente")
+      if (datos.status == "success") {
+        console.log("Datos Actualizados correctamente");
+        setEditar(false)
       }
     } catch (error) {
       console.log("Se ha encontrado un el error " + error);
     }
   };
-
-  useEffect(() => {
-
-    // buscarIndexConsulta(idConsulta);
-    //Importante esto para poder actulizar los datos sin que se borren, se debe actulizar con el use effect la descripcion del hook
-    if(dataPacienteElegido.Consulta.length > 0 && idConsulta != null){
-      setDescripcion(dataPacienteElegido.Consulta[indexConsulta].descripcion);
-      setFecha(dataPacienteElegido.Consulta[indexConsulta].fecha);
-    }
-    
-  }, [idConsulta, dataPacienteElegido]);
 
   //Coloco un await para que espero a que se cargue el dato antes en el useEffect
   const buscarIndexConsulta = async (id) => {
@@ -68,6 +70,8 @@ const EditarConsulta = ({ dataPacienteElegido, idConsulta }) => {
       );
       console.log(index);
       setIndexConsulta(index);
+
+      setDescripcion(dataPacienteElegido.Consulta[indexConsulta].descripcion)
     } else {
       console.log("no se encontraron valores");
     }
@@ -85,6 +89,7 @@ const EditarConsulta = ({ dataPacienteElegido, idConsulta }) => {
 
   return (
     <>
+      <h3>Editar Consulta</h3>
       <form action="submit" onSubmit={editarConsulta}>
         <input
           type="date"

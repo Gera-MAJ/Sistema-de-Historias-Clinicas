@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Routes, NavLink, BrowserRouter, Route } from 'react-router-dom'
 import PacienteElegido from '../components/PacienteElegido'
 import Login from '../components/Login'
@@ -8,13 +8,9 @@ import NuevoPaciente from '../components/NuevoPaciente'
 import Consulta from '../components/sub-components/Consulta'
 import Sintomatologia_Actual from '../components/sub-components/Sintomatologia_Actual'
 import ConductaSuicida from "../components/sub-components/ConductaSuicida"
-import { useState } from 'react'
+import { ProveedorDeContexto } from '../context/ProveedorDeContexto'
 
 const RouterPrincipal = () => {
-
-  const [dataPaciente, setDataPaciente] = useState([])
-  const [index, setIndex] = useState(0)
-  
 
   return (
 
@@ -33,11 +29,11 @@ const RouterPrincipal = () => {
 
         <section className="routes">
           <Routes>
-            <Route path='/' element={<Login />}/>
+            <Route path='/' element={<Pacientes />}/>
             <Route path='/pacientes' element={<Pacientes />}/>
             <Route path='/login' element={<Login />}/>
-            <Route path='/paciente-elegido/*' element={<PacienteElegido dataPaciente = {dataPaciente} setDataPaciente = {setDataPaciente} index = {index} setIndex = {setIndex}/>}>
-                <Route path='consulta' element={<Consulta dataPaciente = {dataPaciente} index = {index}/>}/>
+            <Route path='/paciente-elegido/*' element={<PacienteElegido/>}>
+                <Route path='consulta' element={<Consulta/>}/>
                 <Route path='sintomatologia-actual' element={<Sintomatologia_Actual/>} />
                 <Route path='conducta-suicida' element= {<ConductaSuicida />} />
             </Route>
