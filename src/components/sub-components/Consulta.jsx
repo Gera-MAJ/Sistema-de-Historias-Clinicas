@@ -6,18 +6,18 @@ import { CrearConsulta } from "./CrearConsulta";
 const Consulta = () => {
   const {dataPaciente, index} = useContext(ProveedorDeContexto)
   const [editar, setEditar] = useState(false);
-  const [idConsulta, setIdConsulta] = useState(null)
+  const [idConsulta, setIdConsulta] = useState("")
   const [crearConsulta, setCrearConsulta] = useState(false)
- 
+
   const editarConsulta = (id) => {
-    console.log(id);
+    // console.log(id);
       if (id != null){
         setIdConsulta(id)
         setEditar(true);
+        // console.log("ingresa en editar consulta")
       } 
   };
-
-  const borrarConsulta = async(consultaId, ) =>{
+  const borrarConsulta = async(consultaId) =>{
 
       try {
         const url =
@@ -47,11 +47,11 @@ const Consulta = () => {
   return (
     <div>
       <ul className="consultas">
-        {dataPaciente[index].Consulta.map((consulta) => (
-          <li key={consulta._id}>
-            {consulta.fecha} {consulta.descripcion} 
-            <button onClick={() => editarConsulta(consulta._id, setCrearConsulta(false))}>Editar</button>
-            <button onClick={() => borrarConsulta(consulta._id)}>Borrar</button>
+        {dataPaciente[index].Consulta.map((consul) => (
+          <li key={consul._id}>
+            {consul.fecha} {consul.descripcion} 
+            <button onClick={() => editarConsulta(consul._id, setCrearConsulta(false))}>Editar</button>
+            <button onClick={() => borrarConsulta(consul._id)}>Borrar</button>
           </li>
         ))}
       </ul>
@@ -59,11 +59,11 @@ const Consulta = () => {
       {editar === true && idConsulta != null 
       ? 
       (
-        <EditarConsulta idConsulta = {idConsulta} setEditar ={setEditar}/>
+        <EditarConsulta idConsulta = {idConsulta} setEditar ={setEditar} index = {index} />
       ):
       ("")}
       {crearConsulta ?
-      (<CrearConsulta dataPaciente = {dataPaciente} index = {index} setCrearConsulta = {setCrearConsulta}/>)
+      (<CrearConsulta dataPaciente={dataPaciente} index={index} setCrearConsulta = {setCrearConsulta}/>)
     :""}
     </div>
   );

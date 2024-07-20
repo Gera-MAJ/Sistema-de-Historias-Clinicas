@@ -1,38 +1,62 @@
 import React, { useState, useEffect } from 'react';
 import '../css/Pacientes.css';
-import pacientesData from '/database/pacientes.json'; 
+
 
 const Pacientes = () => {
   const [apellido, setApellido] = useState('');
   const [pacientes, setPacientes] = useState([]);
 
   useEffect(() => {
-    
-    setPacientes(pacientesData);
+    fetchPacientes();
   }, []);
+
+  const fetchPacientes = async() => {
+    try {
+      const response = await fetch("http://localhost:3900/api/obtener-pacientes");
+      if (response.status === "error") {
+        throw new Error('Error al obtener los pacientes');
+      }
+      const data = await response.json();
+      setPacientes(data.pacientes);
+    } catch (error) {
+      console.error('Error fetching pacientes:', error.message);
+    }
+  };
 
   const handleFilterChange = (e) => {
     setApellido(e.target.value);
   };
 
   const handleBuscarClick = () => {
-    
+    // No se necesita lógica aquí si el filtrado es en tiempo real
   };
 
- 
-
-  const handleBorrarClick = (index) => {
-    
-    const nuevosPacientes = pacientes.filter((_, i) => i !== index);
-    setPacientes(nuevosPacientes);
-    alert('¿Estás seguro de que quieres eliminar este paciente?');
+  const handleBorrarClick = async (dni) => {
+    const confirmacion = window.confirm('¿Estás seguro de que quieres eliminar este paciente?');
+    if (confirmacion) {
+      try {
+        const response = await fetch("http://localhost:3900/api/eliminar-paciente/"+dni, { method: 'DELETE' }); 
+        if (response.status === "error") {
+          throw new Error('Error al eliminar el paciente');
+        }
+        fetchPacientes(); // Recargar la lista de pacientes
+      } catch (error) {
+        console.error('Error deleting paciente:', error.message);
+      }
+    }
   };
+
+  // Verifica el estado de pacientes
+  console.log("Pacientes:", pacientes);
 
   const normalizarParaBuscar = str => str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+  console.log(pacientes)
 
   const filteredPacientes = pacientes.filter(paciente =>
     normalizarParaBuscar(`${paciente.Apellidos} ${paciente.Nombres}`).includes(normalizarParaBuscar(apellido))
   );
+
 
   return (
     <div className="pacientes-container">
@@ -49,8 +73,8 @@ const Pacientes = () => {
       <div className="pacientes-list">
         {filteredPacientes.map((paciente, index) => (
           <div key={index} className="paciente-item">
-            <span>{`${paciente.Apellidos} ${paciente.Nombres}`}</span>
-            <button onClick={() => handleBorrarClick(index)} className="delete-button">Borrar</button>
+            <span>{paciente.Apellidos} {paciente.Nombres}</span>
+            <button onClick={() => handleBorrarClick(paciente.DNI)} className="delete-button">Borrar</button> 
           </div>
         ))}
       </div>

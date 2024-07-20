@@ -26,6 +26,7 @@ export const CrearConsulta = ({dataPaciente, index, setCrearConsulta}) => {
             if (datos.status == "success") {
               alert("Se agregó correctamente la consulta");
               setCrearConsulta(false)
+              location.reload()
             }
           } catch (error) {
             console.log("Se ha encontrado un el error " + error);

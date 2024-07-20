@@ -1,33 +1,72 @@
 import React, { useContext, useEffect, useState } from "react";
 import { ProveedorDeContexto } from "../../context/ProveedorDeContexto";
 
-const EditarConsulta = ({ idConsulta, setEditar }) => {
+const EditarConsulta = ({ idConsulta, setEditar, index }) => {
   const [indexConsulta, setIndexConsulta] = useState(null);
   const [fecha, setFecha] = useState("");
   const [descripcion, setDescripcion] = useState("");
-  const { dataPaciente, index } = useContext(ProveedorDeContexto);
-  let dataPacienteElegido = dataPaciente[index];
+  const [pacientes, setPacientes] = useState([]);
+  const [pacienteElegido, setPacienteElegido] = useState([]);
+  const [errores, setErrores] = useState("");
 
+  //Primero listo los pacientes
   useEffect(() => {
+    //Traer los datos de todos los pacientes de nuevo
+    listarPacientes();
+  }, []);
 
-    
-    if (idConsulta != null && dataPacienteElegido.Consulta.length >= 0) {
-      buscarIndexConsulta(idConsulta);
+  const listarPacientes = async () => {
+    try {
+      const url = "http://localhost:3900/api/obtener-pacientes/";
+      const resp = await fetch(url);
+      let datos = await resp.json();
 
-      console.log(idConsulta, dataPacienteElegido);
+      if (datos.status == "success") {
+        setPacientes(datos.pacientes);
+        console.log(datos.pacientes);
+      } else {
+        return (
+          <>
+            <h2>No se encontró el paciente</h2>
+          </>
+        );
+      }
+    } catch (error) {
+      console.error("El error es: ", error.message);
+      setErrores(error);
     }
-  }, [idConsulta]);
+  };
+
+  //Los siguientes useEffect, van en orden para asegurarse que se carguen los datos antes de poder usarlo en el siguiente useEffect, es un tema de orden
+  useEffect(() => {
+    if (idConsulta && pacientes.length > 0) {
+      setPacienteElegido(pacientes[index]);
+
+      console.log(idConsulta, pacientes);
+    }
+  }, [idConsulta, pacientes]);
 
   useEffect(() => {
-    // buscarIndexConsulta(idConsulta);
-    //Importante esto para poder actulizar los datos sin que se borren, se debe actulizar con el use effect la descripcion del hook
-    if (indexConsulta != null) {
-      setDescripcion(dataPacienteElegido.Consulta[indexConsulta].descripcion);
-      setFecha(dataPacienteElegido.Consulta[indexConsulta].fecha);
+    if (pacienteElegido) {
+      buscarIndexConsulta(idConsulta);
+    }
+  }, [idConsulta, pacienteElegido]);
 
+  useEffect(() => {
+    //Importante esto para poder actulizar los datos sin que se borren, se debe actulizar con el use effect la descripcion del hook
+    cargarCampos();
+  }, [indexConsulta]);
+
+  const cargarCampos = () => {
+    if (indexConsulta != null) {
+      setDescripcion(pacienteElegido.Consulta[indexConsulta].descripcion);
+      setFecha(pacienteElegido.Consulta[indexConsulta].fecha);
+
+      console.log("pasa la condicion");
+    } else {
       console.log("no pasa la condicion");
     }
-  }, [idConsulta, dataPaciente.Consulta]);
+  };
 
   const editarConsulta = async (e) => {
     e.preventDefault();
@@ -40,7 +79,7 @@ const EditarConsulta = ({ idConsulta, setEditar }) => {
     try {
       const url =
         "http://localhost:3900/api/paciente/editar-consulta/" +
-        dataPacienteElegido._id +
+        pacienteElegido._id +
         "/consulta/" +
         idConsulta;
 
@@ -54,7 +93,8 @@ const EditarConsulta = ({ idConsulta, setEditar }) => {
 
       if (datos.status == "success") {
         console.log("Datos Actualizados correctamente");
-        setEditar(false)
+        setEditar(false);
+        location.reload()
       }
     } catch (error) {
       console.log("Se ha encontrado un el error " + error);
@@ -63,15 +103,15 @@ const EditarConsulta = ({ idConsulta, setEditar }) => {
 
   //Coloco un await para que espero a que se cargue el dato antes en el useEffect
   const buscarIndexConsulta = async (id) => {
-    if (dataPacienteElegido.Consulta.length > 0) {
+    if (pacienteElegido.Consulta.length > 0) {
       console.log("si pasa la condicion");
-      const index = await dataPacienteElegido.Consulta.findIndex(
+      const index = await pacienteElegido.Consulta.findIndex(
         (element) => element._id === id
       );
       console.log(index);
       setIndexConsulta(index);
 
-      setDescripcion(dataPacienteElegido.Consulta[indexConsulta].descripcion)
+      setDescripcion(pacienteElegido.Consulta[indexConsulta].descripcion);
     } else {
       console.log("no se encontraron valores");
     }

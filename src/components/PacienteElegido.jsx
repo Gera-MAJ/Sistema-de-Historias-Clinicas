@@ -29,7 +29,7 @@ function PacienteElegido() {
 
   const cargarDatosPaciente = async() =>{
     try{
-      const url = 'http://localhost:3900/api/pacientes/';
+      const url = 'http://localhost:3900/api/obtener-pacientes/';
       const resp = await fetch(url)
       let datos = await resp.json();
 
