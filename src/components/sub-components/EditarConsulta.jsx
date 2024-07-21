@@ -57,10 +57,19 @@ const EditarConsulta = ({ idConsulta, setEditar, index }) => {
     cargarCampos();
   }, [indexConsulta]);
 
+  //Para poder devolver las fecha por el input, tengo que hacer una conversión de las mismas al formato correspondiente
   const cargarCampos = () => {
+    const formatFechas = (fechaDB) => {
+      const date = new Date(fechaDB);
+      const anio = date.getFullYear();
+      const mes = String(date.getMonth() + 1).padStart(2, "0");
+      const dia = String(date.getDate()).padStart(2, "0");
+      return `${anio}-${mes}-${dia}`;
+    };
+
     if (indexConsulta != null) {
       setDescripcion(pacienteElegido.Consulta[indexConsulta].descripcion);
-      setFecha(pacienteElegido.Consulta[indexConsulta].fecha);
+      setFecha(formatFechas(pacienteElegido.Consulta[indexConsulta].fecha));
 
       console.log("pasa la condicion");
     } else {
@@ -94,7 +103,7 @@ const EditarConsulta = ({ idConsulta, setEditar, index }) => {
       if (datos.status == "success") {
         console.log("Datos Actualizados correctamente");
         setEditar(false);
-        location.reload()
+        location.reload();
       }
     } catch (error) {
       console.log("Se ha encontrado un el error " + error);

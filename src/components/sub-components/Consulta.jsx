@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import EditarConsulta from "./EditarConsulta";
 import { ProveedorDeContexto } from "../../context/ProveedorDeContexto";
 import { CrearConsulta } from "./CrearConsulta";
@@ -41,6 +41,11 @@ const Consulta = () => {
       }
 
   }
+  //Esta es la forma de convertir la fecha que viene con la hora desde la base de datos
+  const formatFecha = (fechaDB) => {
+    const fecha = new Date(fechaDB)
+    return fecha.toLocaleDateString();
+  }
 
   // console.log(dataPaciente, idPaciente, index);
 
@@ -49,7 +54,7 @@ const Consulta = () => {
       <ul className="consultas">
         {dataPaciente[index].Consulta.map((consul) => (
           <li key={consul._id}>
-            {consul.fecha} {consul.descripcion} 
+            {formatFecha(consul.fecha)} {consul.descripcion} 
             <button onClick={() => editarConsulta(consul._id, setCrearConsulta(false))}>Editar</button>
             <button onClick={() => borrarConsulta(consul._id)}>Borrar</button>
           </li>
