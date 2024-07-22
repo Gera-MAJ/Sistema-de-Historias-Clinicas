@@ -44,16 +44,12 @@ const Consulta = () => {
     } catch (error) {
       console.log("Se ha encontrado un el error " + error);
     }
-
-    location.reload();
+    
+    actualizarPaciente()
+    
   };
   //Esta es la forma de convertir la fecha que viene con la hora desde la base de datos
   const formatFecha = (fechaDB) => {
-    // console.log(fechaDB)
-    // const fecha = new Date(fechaDB)
-    // console.log(fecha)
-    // return fecha.toLocaleDateString();
-
     const fecha = new Date(fechaDB);
 
     const anio = fecha.getUTCFullYear();
@@ -114,6 +110,7 @@ const Consulta = () => {
           idConsulta={idConsulta}
           setEditar={setEditar}
           index={index}
+          actualizarPaciente = {actualizarPaciente()}
         />
       ) : (
         ""
