@@ -55,18 +55,27 @@ const EditarConsulta = ({ idConsulta, setEditar, index }) => {
   useEffect(() => {
     //Importante esto para poder actulizar los datos sin que se borren, se debe actulizar con el use effect la descripcion del hook
     cargarCampos();
-  }, [indexConsulta]);
+  }, [indexConsulta, pacienteElegido]);
 
-  //Para poder devolver las fecha por el input, tengo que hacer una conversión de las mismas al formato correspondiente
+  //Para poder devolver las fecha sin la hora por el input, tengo que hacer una conversión de las mismas al formato correspondiente
+  const formatFechas = (fechaDB) => {
+    console.log(fechaDB)
+    const date = new Date(fechaDB);
+    const anio = date.getUTCFullYear();
+    const mes = String(date.getUTCMonth() + 1).padStart(2, "0"); //Mas 1 porque los meses en UTC van de 0 a 11
+    const dia = String(date.getUTCDate()).padStart(2, "0"); //padStart es funcion de javascript para que llene con 0 hasta llegar a los dos digitos
+    console.log(date, anio, mes, dia)
+    return `${anio}-${mes}-${dia}`;
+  };
+  //Acá se supone que se crea el campo para mandar la fecha correctamte a mongo db
+  const formatFechasInput = (inputFecha) =>{
+    console.log(inputFecha)
+    const [anio, mes, dia] = inputFecha.split('-')//split separa en un array por el -
+    return new Date(Date.UTC(anio, mes - 1, dia))//se resta el año, porque los meses en UTC van de 0 a 11
+  }
+
   const cargarCampos = () => {
-    const formatFechas = (fechaDB) => {
-      const date = new Date(fechaDB);
-      const anio = date.getFullYear();
-      const mes = String(date.getMonth() + 1).padStart(2, "0");
-      const dia = String(date.getDate()).padStart(2, "0");
-      return `${anio}-${mes}-${dia}`;
-    };
-
+    
     if (indexConsulta != null) {
       setDescripcion(pacienteElegido.Consulta[indexConsulta].descripcion);
       setFecha(formatFechas(pacienteElegido.Consulta[indexConsulta].fecha));
@@ -81,7 +90,7 @@ const EditarConsulta = ({ idConsulta, setEditar, index }) => {
     e.preventDefault();
 
     const nuevosDatos = {
-      fecha: e.target.fecha.value,
+      fecha: formatFechasInput(e.target.fecha.value),
       descripcion: e.target.descripcion.value,
     };
 
@@ -103,6 +112,8 @@ const EditarConsulta = ({ idConsulta, setEditar, index }) => {
       if (datos.status == "success") {
         console.log("Datos Actualizados correctamente");
         setEditar(false);
+        listarPacientes();
+        cargarCampos();
         location.reload();
       }
     } catch (error) {
@@ -128,13 +139,15 @@ const EditarConsulta = ({ idConsulta, setEditar, index }) => {
 
   const handleChangeDescripcion = (e) => {
     setDescripcion(e.target.value);
+    console.log(descripcion);
   };
 
   const handleChangeFecha = (e) => {
     setFecha(e.target.value);
+    console.log(fecha);
   };
 
-  console.log(descripcion);
+  
 
   return (
     <>

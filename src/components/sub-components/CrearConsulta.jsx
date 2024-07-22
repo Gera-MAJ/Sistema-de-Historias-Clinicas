@@ -33,6 +33,8 @@ export const CrearConsulta = ({dataPaciente, index, setCrearConsulta}) => {
           }
     }
 
+
+
   return (
     <>
         <h3>Crear Nueva Consulta</h3>

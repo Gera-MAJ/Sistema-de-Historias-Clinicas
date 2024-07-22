@@ -1,14 +1,25 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import EditarConsulta from "./EditarConsulta";
 import { ProveedorDeContexto } from "../../context/ProveedorDeContexto";
 import { CrearConsulta } from "./CrearConsulta";
+import { format ,formatInTimeZone } from "date-fns-tz"
+import { es } from 'date-fns/locale/es'
+import { da } from "date-fns/locale";
+
 
 const Consulta = () => {
   const {dataPaciente, index} = useContext(ProveedorDeContexto)
   const [editar, setEditar] = useState(false);
   const [idConsulta, setIdConsulta] = useState("")
   const [crearConsulta, setCrearConsulta] = useState(false)
+  const [paciente, setPaciente] = useState({})
 
+  useEffect(() =>{
+    actualizarPaciente()
+    console.log(paciente)
+  },[dataPaciente, index])
+
+  
   const editarConsulta = (id) => {
     // console.log(id);
       if (id != null){
@@ -40,19 +51,49 @@ const Consulta = () => {
         console.log("Se ha encontrado un el error " + error);
       }
 
+      location.reload()
+
   }
   //Esta es la forma de convertir la fecha que viene con la hora desde la base de datos
   const formatFecha = (fechaDB) => {
+    // console.log(fechaDB)
+    // const fecha = new Date(fechaDB)
+    // console.log(fecha)
+    // return fecha.toLocaleDateString();
+
     const fecha = new Date(fechaDB)
-    return fecha.toLocaleDateString();
+
+    const anio = fecha.getUTCFullYear();
+    const mes = fecha.getUTCMonth() + 1
+    const dia = fecha.getUTCDate()
+
+    return `${dia}-${mes}-${anio}`
   }
 
+  const actualizarPaciente = async() =>{
+    try {
+      const url =
+        "http://localhost:3900/api/encontrar-paciente/" + dataPaciente[index].DNI
+
+      const resp = await fetch(url);
+
+       const datos = await resp.json();
+
+      if (datos.status == "success") {
+        console.log("Se ha traido el paciente");
+        setPaciente(datos.consulta)
+        console.log(paciente)
+      }
+    } catch (error) {
+      console.log("Se ha encontrado un el error " + error);
+    }
+  }
   // console.log(dataPaciente, idPaciente, index);
 
   return (
     <div>
       <ul className="consultas">
-        {dataPaciente[index].Consulta.map((consul) => (
+        {paciente.Consulta && paciente.Consulta.map((consul) => (
           <li key={consul._id}>
             {formatFecha(consul.fecha)} {consul.descripcion} 
             <button onClick={() => editarConsulta(consul._id, setCrearConsulta(false))}>Editar</button>
