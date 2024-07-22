@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { ProveedorDeContexto } from "../../context/ProveedorDeContexto";
 
-const EditarConsulta = ({ idConsulta, setEditar, index, actualizarPaciente }) => {
+const EditarConsulta = ({ idConsulta, setEditar, index, setActualizar }) => {
   const [indexConsulta, setIndexConsulta] = useState(null);
   const [fecha, setFecha] = useState("");
   const [descripcion, setDescripcion] = useState("");
@@ -112,10 +112,10 @@ const EditarConsulta = ({ idConsulta, setEditar, index, actualizarPaciente }) =>
       if (datos.status == "success") {
         console.log("Datos Actualizados correctamente");
         alert("Se editó correctamente el paciente")
-        actualizarPaciente()
         setEditar(false);
         // listarPacientes();
         cargarCampos();
+        setActualizar(true)
         ;
         
         // location.reload();

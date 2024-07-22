@@ -9,17 +9,19 @@ const Consulta = () => {
   const [idConsulta, setIdConsulta] = useState("");
   const [crearConsulta, setCrearConsulta] = useState(false);
   const [paciente, setPaciente] = useState([]);
+  const [actualizar, setActualizar] = useState()
 
   useEffect(() => {
     actualizarPaciente();
     console.log(paciente);
-  }, [dataPaciente, index, crearConsulta]);
+  }, [dataPaciente, index, crearConsulta, actualizar]);
 
   const editarConsulta = (id) => {
     // console.log(id);
     if (id != null) {
       setIdConsulta(id);
       setEditar(true);
+      setActualizar(false)
       // console.log("ingresa en editar consulta")
     }
   };
@@ -110,7 +112,7 @@ const Consulta = () => {
           idConsulta={idConsulta}
           setEditar={setEditar}
           index={index}
-          actualizarPaciente = {actualizarPaciente()}
+          setActualizar = {setActualizar}
         />
       ) : (
         ""
