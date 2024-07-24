@@ -2,13 +2,13 @@ import React, { useState, useContext } from 'react';
 import { ProveedorDeContexto } from '../../context/ProveedorDeContexto';
 
 
-const ConductaSuicida = () => {
+const OtrasIndicaciones = () => {
   const { dataPaciente, index, setDataPaciente } = useContext(ProveedorDeContexto);
-  const [sectionData, setSectionData] = useState(dataPaciente[index].ConductaSuicida || '');
+  const [sectionData, setSectionData] = useState(dataPaciente[index].OtrasIndicaciones || '');
 
   const handleSave = () => {
     const updatedData = [...dataPaciente];
-    updatedData[index].ConductaSuicida = sectionData;
+    updatedData[index].OtrasIndicaciones = sectionData;
     setDataPaciente(updatedData);
   };
 
@@ -18,7 +18,7 @@ const ConductaSuicida = () => {
 
   return (
     <div className="section-editor">
-      <h2>ConductaSuicida</h2>
+      <h2>Otras Indicaciones</h2>
       <textarea
         value={sectionData}
         onChange={(e) => setSectionData(e.target.value)}
@@ -34,4 +34,4 @@ const ConductaSuicida = () => {
   );
 };
 
-export default ConductaSuicida;
+export default OtrasIndicaciones;

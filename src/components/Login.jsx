@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import '../css/Login.css';
 import { useNavigate } from 'react-router-dom';
+import { ProveedorDeContexto } from '../context/ProveedorDeContexto';
 
 const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate();
+    const {idPaciente, setIdPaciente} = useContext(ProveedorDeContexto)
+    console.log(idPaciente)
   
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -26,6 +29,16 @@ const Login = () => {
             console.error('Error fetching user data:', error);
             setErrorMessage('Error al intentar iniciar sesión. Intente nuevamente.');
         }
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      if (username === 'admin' && password === '1234') {
+        navigate("/pacientes")
+        alert('Ingresaste exitosamente!');
+        setIdPaciente("2")
+      } else {
+        setErrorMessage('Usuario y/o Contraseña inválidos');
+        setIdPaciente("3")
+      }
     };
   
     return (

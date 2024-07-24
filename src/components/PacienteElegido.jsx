@@ -1,70 +1,63 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import '../css/PacienteElegido.css'
 import { NavLink, Outlet } from "react-router-dom"
+import { ProveedorDeContexto } from '../context/ProveedorDeContexto'
 
-function PacienteElegido({idPaciente, dataPaciente, setDataPaciente }) {
+function PacienteElegido() {
 
-  
+  const {idPaciente, dataPaciente, setDataPaciente, index, setIndex} = useContext(ProveedorDeContexto)
   const [carga, setCarga] = useState(true)
   const [errores, setErrores] = useState('')
-  const [index, setIndex] = useState(0)
   
-  
-  //CUANDO SE LLAMA DIRECTAMENTE A UN JSON, NO TIENE LA PROPIEDAD DATA y ESO DA ERROR EN EL LLAMADO
-  // const getDatosPaciente = () => {
-  //   fetch('../../database/pacientes.json')
-  //   .then(resp => resp.json())
-  //   .then(resultado => {
-
-  //     console.log(resultado)
-  //     setDataPaciente(resultado)  
-      
-  //   },
-  //   error => {
-  //     console.error("Error al cargar el archivo", error)
-  //   })
-  // }
-
+// console.log(idPaciente.id)
   const cargarDatosPaciente = async() =>{
     try{
-      const url = '../../database/pacientes.json';
+      const url = 'http://localhost:3900/api/obtener-pacientes/';
       const resp = await fetch(url)
       let datos = await resp.json();
 
-      setDataPaciente(datos)
-      
-      setCarga(false)
+      if(datos.status == "success"){
+        setDataPaciente(datos.pacientes)
 
-      console.log(datos)
+        setCarga(false)
+        // console.log(datos)
+      }else{
+        return (
+          <>
+            <h2>No se encontró el paciente</h2>
+          </>
+        )
+      }
 
     }catch (error){
        console.error("El error es: ", error.message)
        setErrores(error)
     }
-
   }
 
   useEffect(() =>{
+    if (idPaciente != null || idPaciente != ""){
+      cargarDatosPaciente()
+    } 
+  },[])
 
-    // getDatosPaciente();
+  useEffect(() =>{
     cargarDatosPaciente();
 
-  }, [])
+  }, [idPaciente])
 
-  //uso otro useEffect para que se ejecute el index antes de que cargue el return
+  // uso otro useEffect para que se ejecute el index antes de que cargue el return
 
   useEffect(() => {
-    if(dataPaciente.length > 0){
-      const indice = dataPaciente.findIndex(element => element.id === idPaciente)
-      setIndex(indice)
-
-      console.log(dataPaciente)
-      console.log(index)
-    }
-    
+    encontrar_index()
   }, [dataPaciente, idPaciente])
 
-  
+  const encontrar_index = async() =>{
+    if(dataPaciente.length > 0){
+      const indice = await dataPaciente.findIndex(element => element._id === idPaciente)
+      setIndex(indice)
+    }
+  }
 
   if(errores !== ''){
     return(
@@ -79,16 +72,15 @@ function PacienteElegido({idPaciente, dataPaciente, setDataPaciente }) {
     </>
     )
   }else if (errores == '' && carga === false && dataPaciente.length > 0){
-    return (
+    return(
       <div className='pacienteElegido'>
         <div className='datosPersonales'>
-          <h4>Paciente N° {dataPaciente[index].id}</h4> 
+          <h4>DNI: {dataPaciente[index].DNI}</h4> 
           <ul>  
               <li><strong>Apellido/s:</strong><p>{dataPaciente[index].Apellidos}</p></li>
               <li><strong>Nombre/s:</strong><p>{dataPaciente[index].Nombres}</p></li> 
               <li><strong>Edad:</strong><p>{dataPaciente[index].Edad}</p></li>
               <li><strong>Fecha de Nacimiento:</strong> <p>{dataPaciente[index].Fecha_de_Nacimiento}</p></li>
-              <li><strong>DNI:</strong><p>{dataPaciente[index].DNI}</p></li>
               <li><strong>Domicilio:</strong><p>{dataPaciente[index].Domicilio}</p></li>
               <li><strong>Teléfono:</strong><p>{dataPaciente[index].Telefono}</p></li>
               <li><strong>Ocupación:</strong> <p>{dataPaciente[index].Ocupacion}</p></li>
@@ -101,53 +93,55 @@ function PacienteElegido({idPaciente, dataPaciente, setDataPaciente }) {
           </ul>
         </div>
         <div className='datosPsiquiatricos'>
+
           <section className='consulta'>
             <button><NavLink to="consulta">Consulta</NavLink></button>
             <button><NavLink to="sintomatologia-actual">Sitomatología Actual</NavLink></button>
             <button><NavLink to="conducta-suicida">Antededentes de Conducta Suicida</NavLink></button>
           </section>
+          
           <section className='antecedentes'>
-            <button>Antecedentes Personales</button>
-            <button>Hábitos Tóxicos</button>
-            <button>Antecedentes Quirúrgicos</button>
-            <button>Antecedentes Clínicos</button>
-            <button>Antecedentes de Internación</button>
-            <button>Tratamientos Previos</button>
-            <button>Medicación Actual</button>
-            <button>FUM - Cíclos - Otros</button>
+            <button><NavLink to="antecedentes-personales">Antecedentes Personales</NavLink></button>
+            <button><NavLink to="habitos-toxicos">Hábitos Tóxicos</NavLink></button>
+            <button><NavLink to="antecedentes-quirurgicos">Antecedentes Quirúrgicos</NavLink></button>
+            <button><NavLink to="antecedentes-clinicos">Antecedentes Clínicos</NavLink></button>
+            <button><NavLink to="antecedentes-internacion">Antecedentes de Internación</NavLink></button>
+            <button><NavLink to="tratamientos-previos">Tratamientos Previos</NavLink></button>
+            <button><NavLink to="medicacion-actual">Medicación Actual</NavLink></button>
+            <button><NavLink to= "fum-ciclos-otros">FUM - Cíclos - Otros</NavLink></button>
           </section>
           <section className='genograma'>
-            <button>Genograma</button>
-            <button>Dinámica Familiar</button>
-            <button>Antecedentes Familiares</button>
+            <button><NavLink to="genograma">Genograma</NavLink></button>
+            <button><NavLink to="dinamica-familiar">Dinámica Familiar</NavLink></button>
+            <button><NavLink to="antecedentes-familiares">Antecedentes Familiares</NavLink></button>
           </section> 
           <section className='hobbies'>
-            <button>Hobbies</button>
-            <button>Actividades</button>
-            <button>Examen Mental</button>
-            <button>Expectativas del Tratamiento</button>
-            <button>Conducta Terapéutica</button>
+            <button><NavLink to="hobbies">Hobbies</NavLink></button>
+            <button><NavLink to="actividades">Actividades</NavLink></button>
+            <button><NavLink to="examen-mental">Exámen Mental</NavLink></button>
+            <button><NavLink to="expectativas-tratamiento">Expectativas del Tratamiento</NavLink></button>
+            <button><NavLink to="conducta-terapeutica">Conducta Terapéutica</NavLink></button>
           </section>
           <section className='tratamientos'>
-            <button>Estudios Complementarios</button>
-            <button>Evaluación Neurocognitiva</button>
-            <button>Tipo de Psicoterapia</button>
-            <button>Tratamiento Farmacológico</button>
-            <button>Otras Indicaciones</button>
-            <button>Evaluaciones</button>
+            <button><NavLink to="estudios-complementarios">Estudios Complementarios</NavLink></button>
+            <button><NavLink to="evaluacion-neurocognitiva">Evaluación Neurocognitiva</NavLink></button>
+            <button><NavLink to="tipo-psicoterapia">Tipo de Psicoterapia</NavLink></button>
+            <button><NavLink to="tratamiento-farmacologico">Tratamiento Farmacológico</NavLink></button>
+            <button><NavLink to="otras-indicaciones">Otras Indicaciones</NavLink></button>
+            <button><NavLink to="evaluaciones">Evaluaciones</NavLink></button>
           </section>     
         </div>
 
         <div className="elementos">
-          {/* Esto se coloca para que la sub ruta salga por acá */}
-          <Outlet />
-        </div>
+            {/* Esto se coloca para que la sub ruta salga por acá */}
+            <Outlet />
+          </div>
         
-        
-
       </div>
   
     )
+  }else{
+    return <h3>No es encotró el paciente</h3>
   }
   
 }
