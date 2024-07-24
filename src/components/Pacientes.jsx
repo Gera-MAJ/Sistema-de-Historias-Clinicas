@@ -33,7 +33,7 @@ const Pacientes = () => {
 
   const handleBuscarClick = () => {
     // No se necesita lógica aquí si el filtrado es en tiempo real
-    setIdPaciente({id:"66848a5484ed18607467f3c8"})
+    setIdPaciente("66848a5484ed18607467f3c8")
     console.log("ingresa la funcion", idPaciente)
   };
 

@@ -9,7 +9,7 @@ function PacienteElegido() {
   const [carga, setCarga] = useState(true)
   const [errores, setErrores] = useState('')
   
-console.log(idPaciente.id)
+// console.log(idPaciente.id)
   const cargarDatosPaciente = async() =>{
     try{
       const url = 'http://localhost:3900/api/obtener-pacientes/';
