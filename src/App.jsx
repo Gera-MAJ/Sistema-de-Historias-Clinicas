@@ -13,7 +13,6 @@ function App() {
   return (
       <ProveedorDeContexto.Provider value = {{
         idPaciente,
-        setIdPaciente,
         dataPaciente,
         setDataPaciente,
         index,

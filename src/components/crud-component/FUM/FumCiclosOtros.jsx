@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { ProveedorDeContexto } from "../../../context/ProveedorDeContexto";
 import EditFum from "./EditFum";
 import FormatearFechasLocal from "../../../Helpers/FormatearFechaLocal";
+import CrearFum from "./CrearFum";
 
 export const FumCiclosOtros = () => {
   const [fums, setFums] = useState([]);
@@ -12,6 +13,7 @@ export const FumCiclosOtros = () => {
   const [fechaFum, setFechaFum] = useState("");
   const [actualizar, setActualizar] = useState();
   const [idFum, setIdFum] = useState("")
+  const [nuevoFum, setNuevaFum] = useState(false)
 
   //Cargo las fums al inicio
   useEffect(() => {
@@ -21,7 +23,7 @@ export const FumCiclosOtros = () => {
 
   useEffect(() => {
     listarFums();
-  }, [actualizar]);
+  }, [actualizar, nuevoFum]);
 
   //Cargar los datos de la base de datos de las fums
   const listarFums = async () => {
@@ -46,11 +48,11 @@ export const FumCiclosOtros = () => {
       const url = "http://localhost:3900/api/get_paciente/" + idPaciente;
       const datos = await fetch(url);
       const resp = await datos.json();
-      console.log(resp);
+      // console.log(resp);
       if (resp.status === "success") {
         setCiclos(resp.paciente.Ciclos);
         setOtros(resp.paciente.Otros);
-        console.log("Paciente encontrado", ciclos, otros, resp);
+        // console.log("Paciente encontrado", ciclos, otros, resp);
       } else {
         console.log("No se encontró el paciente");
       }
@@ -123,11 +125,18 @@ export const FumCiclosOtros = () => {
     setEditar(true);
     setFechaFum(fecha);
     setIdFum(id)
+    setNuevaFum(false)
   };
+
+  const crearFum = () => {
+    setNuevaFum(true)
+    setEditar(false)
+  }
   return (
     <>
       <div>FumCiclosOtros</div>
-      <button>Agregar FUM</button>
+      <button onClick={crearFum}>Agregar FUM</button>
+      {nuevoFum && <CrearFum idPaciente={idPaciente} setActualizar={setActualizar} setNuevaFum={setNuevaFum}/>}
       {fums &&
         fums.map((fum) => (
           <ul key={fum._id}>
