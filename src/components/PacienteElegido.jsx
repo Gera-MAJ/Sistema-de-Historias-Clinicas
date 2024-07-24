@@ -111,7 +111,7 @@ function PacienteElegido() {
             <button><NavLink to= "fum-ciclos-otros">FUM - Cíclos - Otros</NavLink></button>
           </section>
           <section className='genograma'>
-            <button>Genograma</button>
+            <button><NavLink to="genograma">Genograma</NavLink></button>
             <button>Dinámica Familiar</button>
             <button>Antecedentes Familiares</button>
           </section> 

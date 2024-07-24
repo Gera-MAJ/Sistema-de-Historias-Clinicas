@@ -10,6 +10,7 @@ import Sintomatologia_Actual from '../components/sub-components/Sintomatologia_A
 import ConductaSuicida from "../components/sub-components/ConductaSuicida"
 import { FumCiclosOtros } from '../components/crud-component/FUM/FumCiclosOtros'
 import AntecedentesPersonales from '../components/sub-components/AntecedentesPersonales'
+import Genograma from '../components/crud-component/genograma/Genograma'
 
 const RouterPrincipal = () => {
 
@@ -39,6 +40,7 @@ const RouterPrincipal = () => {
                 <Route path='conducta-suicida' element= {<ConductaSuicida />} />
                 <Route path='fum-ciclos-otros' element= {<FumCiclosOtros />} />
                 <Route path='antecedentes-personales' element= {<AntecedentesPersonales />} />
+                <Route path='genograma' element= {<Genograma />} />
             </Route>
             <Route path='/nuevo-paciente' element={<NuevoPaciente />}/>
           </Routes>
