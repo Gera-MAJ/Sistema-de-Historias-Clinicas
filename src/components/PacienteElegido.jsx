@@ -101,7 +101,7 @@ console.log(idPaciente.id)
           </section>
           
           <section className='antecedentes'>
-            <button>Antecedentes Personales</button>
+            <button><NavLink to="antecedentes-personales">Antecedentes Personales</NavLink></button>
             <button>Hábitos Tóxicos</button>
             <button>Antecedentes Quirúrgicos</button>
             <button>Antecedentes Clínicos</button>

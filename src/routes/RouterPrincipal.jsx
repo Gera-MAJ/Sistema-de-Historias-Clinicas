@@ -9,6 +9,7 @@ import Consulta from '../components/crud-component/Consulta/Consulta'
 import Sintomatologia_Actual from '../components/sub-components/Sintomatologia_Actual'
 import ConductaSuicida from "../components/sub-components/ConductaSuicida"
 import { FumCiclosOtros } from '../components/crud-component/FUM/FumCiclosOtros'
+import AntecedentesPersonales from '../components/sub-components/AntecedentesPersonales'
 
 const RouterPrincipal = () => {
 
@@ -37,6 +38,7 @@ const RouterPrincipal = () => {
                 <Route path='sintomatologia-actual' element={<Sintomatologia_Actual/>} />
                 <Route path='conducta-suicida' element= {<ConductaSuicida />} />
                 <Route path='fum-ciclos-otros' element= {<FumCiclosOtros />} />
+                <Route path='antecedentes-personales' element= {<AntecedentesPersonales />} />
             </Route>
             <Route path='/nuevo-paciente' element={<NuevoPaciente />}/>
           </Routes>
