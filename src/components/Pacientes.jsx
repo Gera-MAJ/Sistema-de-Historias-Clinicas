@@ -1,6 +1,3 @@
-import React, { useState, useEffect } from 'react';
-import '../css/Pacientes.css';
-import pacientesData from '/database/pacientes.json'; 
 import React, { useState, useEffect, useContext } from 'react';
 import '../css/Pacientes.css';
 import { ProveedorDeContexto } from '../context/ProveedorDeContexto';
@@ -17,14 +14,6 @@ const Pacientes = () => {
     fetchPacientes();
   }, []);
 
-  const fetchPacientes = async () => {
-    try {
-      const response = await fetch("http://localhost:3900/api/obtener-pacientes");
-      if (!response.ok) {
-        throw new Error('Error al obtener los pacientes');
-      }
-      const data = await response.json();
-      setPacientes(data);
   const fetchPacientes = async() => {
     try {
       const response = await fetch("http://localhost:3900/api/obtener-pacientes");
@@ -52,8 +41,6 @@ const Pacientes = () => {
     const confirmacion = window.confirm('¿Estás seguro de que quieres eliminar este paciente?');
     if (confirmacion) {
       try {
-        const response = await fetch(`http://localhost:3900/api/eliminar-paciente/${dni}`, { method: 'DELETE' });
-        if (!response.ok) {
         const response = await fetch("http://localhost:3900/api/eliminar-paciente/"+dni, { method: 'DELETE' }); 
         if (response.status === "error") {
           throw new Error('Error al eliminar el paciente');
@@ -77,10 +64,6 @@ const Pacientes = () => {
   );
 
 
-
-
- 
-
   return (
     <div className="pacientes-container">
       <div className="filter-section">
@@ -96,7 +79,6 @@ const Pacientes = () => {
       <div className="pacientes-list">
         {filteredPacientes.map((paciente, index) => (
           <div key={index} className="paciente-item">
-            <span>{`${paciente.Apellidos} ${paciente.Nombres}`}</span>
             <span>{paciente.Apellidos} {paciente.Nombres}</span>
             <button onClick={() => handleBorrarClick(paciente.DNI)} className="delete-button">Borrar</button> 
           </div>
