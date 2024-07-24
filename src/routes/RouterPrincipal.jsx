@@ -10,6 +10,25 @@ import Sintomatologia_Actual from '../components/sub-components/Sintomatologia_A
 import ConductaSuicida from "../components/sub-components/ConductaSuicida"
 import { FumCiclosOtros } from '../components/crud-component/FUM/FumCiclosOtros'
 import AntecedentesPersonales from '../components/sub-components/AntecedentesPersonales'
+import Actividades from '../components/sub-components/Actividades'
+import AntecedentesClinicos from '../components/sub-components/AntecedentesClinicos'
+import AntecedentesInternacion from '../components/sub-components/AntecedentesInternacion'
+import AntecedentesFamiliares from '../components/sub-components/AntecedentesFamiliares'
+import AntecedentesQuirurgicos from '../components/sub-components/AntecedentesQuirurgicos'
+import ConductaTerapeutica from '../components/sub-components/ConductaTerapeutica'
+import DinamicaFamiliar from '../components/sub-components/DinamicaFamiliar'
+import ExamenMental from '../components/sub-components/ExamenMental'
+import ExpectativasTratamiento from '../components/sub-components/ExpectativasTratamiento'
+import HabitosToxicos from '../components/sub-components/HabitosToxicos'
+import Hobbies from '../components/sub-components/Hobbies'
+import MedicacionActual from '../components/sub-components/MedicacionActual'
+import TratamientosPrevios from '../components/sub-components/TratamientosPrevios'
+import EstudiosComplementarios from '../components/sub-components/EstudiosComplementarios'
+import EvaluacionNeurocognitiva from '../components/sub-components/EvaluacionNeurocognitiva'
+import TipoPsicoterapia from '../components/sub-components/TipoPsicoterapia'
+import TratamientoFarmacologico from '../components/sub-components/TratamientoFarmacologico'
+import OtrasIndicaciones from '../components/sub-components/OtrasIndicaciones'
+import Evaluaciones from '../components/sub-components/Evaluaciones'
 
 const RouterPrincipal = () => {
 
@@ -39,6 +58,27 @@ const RouterPrincipal = () => {
                 <Route path='conducta-suicida' element= {<ConductaSuicida />} />
                 <Route path='fum-ciclos-otros' element= {<FumCiclosOtros />} />
                 <Route path='antecedentes-personales' element= {<AntecedentesPersonales />} />
+                <Route path='antecedentes-clinicos' element= {<AntecedentesClinicos />} />
+                <Route path='antecedentes-internacion' element= {<AntecedentesInternacion />} />
+                <Route path='antecedentes-familiares' element= {<AntecedentesFamiliares />} />
+                <Route path='antecedentes-quirurgicos' element= {<AntecedentesQuirurgicos />} />
+                <Route path='conducta-terapeutica' element= {<ConductaTerapeutica />} />
+                <Route path='dinamica-familiar' element= {<DinamicaFamiliar />} />
+                <Route path='examen-mental' element= {<ExamenMental />} />
+                <Route path='expectativas-tratamiento' element= {<ExpectativasTratamiento />} />
+                <Route path='habitos-toxicos' element= {<HabitosToxicos />} />
+                <Route path='hobbies' element= {<Hobbies />} />
+                <Route path='medicacion-actual' element= {<MedicacionActual />} />
+                <Route path='tratamientos-previos' element= {<TratamientosPrevios />} />
+                <Route path='actividades' element={<Actividades/>}/>
+                <Route path='estudios-complementarios' element={<EstudiosComplementarios/>}/>
+                <Route path='evaluacion-neurocognitiva' element={<EvaluacionNeurocognitiva/>}/>
+                <Route path='tipo-psicoterapia' element={<TipoPsicoterapia/>}/>
+                <Route path='tratamiento-farmacologico' element={<TratamientoFarmacologico/>}/>
+                <Route path='otras-indicaciones' element={<OtrasIndicaciones/>}/>
+                <Route path='evaluaciones' element={<Evaluaciones/>}/>
+                
+
             </Route>
             <Route path='/nuevo-paciente' element={<NuevoPaciente />}/>
           </Routes>
