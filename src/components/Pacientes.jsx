@@ -1,10 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import '../css/Pacientes.css';
+import { ProveedorDeContexto } from '../context/ProveedorDeContexto';
 
 
 const Pacientes = () => {
   const [apellido, setApellido] = useState('');
   const [pacientes, setPacientes] = useState([]);
+  const {setIdPaciente, idPaciente } = useContext(ProveedorDeContexto)
+
+  console.log(idPaciente)
 
   useEffect(() => {
     fetchPacientes();
@@ -29,6 +33,8 @@ const Pacientes = () => {
 
   const handleBuscarClick = () => {
     // No se necesita lógica aquí si el filtrado es en tiempo real
+    setIdPaciente({id:"66848a5484ed18607467f3c8"})
+    console.log("ingresa la funcion", idPaciente)
   };
 
   const handleBorrarClick = async (dni) => {

@@ -4,13 +4,13 @@ import RouterPrincipal from "./routes/RouterPrincipal";
 import { ProveedorDeContexto } from "./context/ProveedorDeContexto";
 
 function App() {
-  const [idPaciente, setIdPaciente] = useState("66848a5484ed18607467f3c7");
+  
+  const [idPaciente, setIdPaciente] = useState("66848a5484ed18607467f3c8");
   const [dataPaciente, setDataPaciente] = useState([])
   const [index, setIndex] = useState(0)
   const [idConsulta, setIdConsulta] = useState()
 
   return (
-    <>
       <ProveedorDeContexto.Provider value = {{
         idPaciente,
         setIdPaciente,
@@ -22,8 +22,8 @@ function App() {
         setIdConsulta
       }}>
         <RouterPrincipal/>
+
       </ProveedorDeContexto.Provider>
-    </>
   );
 }
 

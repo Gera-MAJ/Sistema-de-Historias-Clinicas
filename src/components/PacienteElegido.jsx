@@ -8,25 +8,8 @@ function PacienteElegido() {
   const {idPaciente, dataPaciente, setDataPaciente, index, setIndex} = useContext(ProveedorDeContexto)
   const [carga, setCarga] = useState(true)
   const [errores, setErrores] = useState('')
-  // const [index, setIndex] = useState(0)
   
-  // console.log(idPaciente)
-  
-  //CUANDO SE LLAMA DIRECTAMENTE A UN JSON, NO TIENE LA PROPIEDAD DATA y ESO DA ERROR EN EL LLAMADO
-  // const getDatosPaciente = () => {
-  //   fetch('../../database/pacientes.json')
-  //   .then(resp => resp.json())
-  //   .then(resultado => {
-
-  //     console.log(resultado)
-  //     setDataPaciente(resultado)  
-      
-  //   },
-  //   error => {
-  //     console.error("Error al cargar el archivo", error)
-  //   })
-  // }
-
+console.log(idPaciente.id)
   const cargarDatosPaciente = async() =>{
     try{
       const url = 'http://localhost:3900/api/obtener-pacientes/';
@@ -53,10 +36,15 @@ function PacienteElegido() {
   }
 
   useEffect(() =>{
+    if (idPaciente != null || idPaciente != ""){
+      cargarDatosPaciente()
+    } 
+  },[])
 
+  useEffect(() =>{
     cargarDatosPaciente();
 
-  }, [])
+  }, [idPaciente])
 
   // uso otro useEffect para que se ejecute el index antes de que cargue el return
 
@@ -68,9 +56,6 @@ function PacienteElegido() {
     if(dataPaciente.length > 0){
       const indice = await dataPaciente.findIndex(element => element._id === idPaciente)
       setIndex(indice)
-
-      // console.log(dataPaciente)
-      // console.log(index)
     }
   }
 
@@ -87,7 +72,7 @@ function PacienteElegido() {
     </>
     )
   }else if (errores == '' && carga === false && dataPaciente.length > 0){
-    return (
+    return(
       <div className='pacienteElegido'>
         <div className='datosPersonales'>
           <h4>DNI: {dataPaciente[index].DNI}</h4> 
@@ -123,7 +108,7 @@ function PacienteElegido() {
             <button>Antecedentes de Internación</button>
             <button>Tratamientos Previos</button>
             <button>Medicación Actual</button>
-            <button>FUM - Cíclos - Otros</button>
+            <button><NavLink to= "fum-ciclos-otros">FUM - Cíclos - Otros</NavLink></button>
           </section>
           <section className='genograma'>
             <button>Genograma</button>
@@ -155,6 +140,8 @@ function PacienteElegido() {
       </div>
   
     )
+  }else{
+    return <h3>No es encotró el paciente</h3>
   }
   
 }

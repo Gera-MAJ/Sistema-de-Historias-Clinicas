@@ -1,5 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
-import { ProveedorDeContexto } from "../../context/ProveedorDeContexto";
+import React, { useEffect, useState } from "react";
 
 const EditarConsulta = ({ idConsulta, setEditar, index, setActualizar }) => {
   const [indexConsulta, setIndexConsulta] = useState(null);
@@ -113,12 +112,8 @@ const EditarConsulta = ({ idConsulta, setEditar, index, setActualizar }) => {
         console.log("Datos Actualizados correctamente");
         alert("Se editó correctamente el paciente")
         setEditar(false);
-        // listarPacientes();
         cargarCampos();
-        setActualizar(true)
-        ;
-        
-        // location.reload();
+        setActualizar(true);
       }
     } catch (error) {
       console.log("Se ha encontrado un el error " + error);

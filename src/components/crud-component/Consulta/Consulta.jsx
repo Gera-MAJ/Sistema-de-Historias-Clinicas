@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import EditarConsulta from "./EditarConsulta";
-import { ProveedorDeContexto } from "../../context/ProveedorDeContexto";
-import { CrearConsulta } from "./CrearConsulta";
+import { ProveedorDeContexto } from "../../../context/ProveedorDeContexto";
+import { CrearConsulta } from "../Consulta/CrearConsulta";
 
 const Consulta = () => {
   const { dataPaciente, index } = useContext(ProveedorDeContexto);
@@ -10,6 +10,7 @@ const Consulta = () => {
   const [crearConsulta, setCrearConsulta] = useState(false);
   const [paciente, setPaciente] = useState([]);
   const [actualizar, setActualizar] = useState()
+
 
   useEffect(() => {
     actualizarPaciente();
@@ -50,15 +51,15 @@ const Consulta = () => {
     actualizarPaciente()
     
   };
-  //Esta es la forma de convertir la fecha que viene con la hora desde la base de datos
+  //Esta es la forma de convertir la fecha que viene con la hora desde la base de datos, la base de datos de mongo DB da la fecha en modo UTC
   const formatFecha = (fechaDB) => {
     const fecha = new Date(fechaDB);
 
     const anio = fecha.getUTCFullYear();
-    const mes = fecha.getUTCMonth() + 1;
-    const dia = fecha.getUTCDate();
+    const mes = String(fecha.getUTCMonth() + 1).padStart(2, "0");//Los meses se toman de 0 a 11, por eso se les suma 1
+    const dia = String(fecha.getUTCDate()).padStart(2, "0");
 
-    return `${dia}-${mes}-${anio}`;
+    return `${dia}-${mes}-${anio}`;//Se retorna en el orden correcto las fechas
   };
 
   const actualizarPaciente = async () => {
