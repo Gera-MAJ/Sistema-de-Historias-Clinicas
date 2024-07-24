@@ -132,6 +132,30 @@ export const FumCiclosOtros = () => {
     setNuevaFum(true)
     setEditar(false)
   }
+
+  const borrarFum = async(id) => {
+    try {
+
+      const url = "http://localhost:3900/api/paciente/borrar-fum/"+idPaciente+"/fum/"+id
+
+      const datos = await fetch(url, { method: "DELETE" });
+
+      const resp = await datos.json()
+
+      console.log(resp.status)
+
+      if(resp.status == "success"){
+        
+        console.log("Se borró correctamente la FUM")
+        window.confirm("Está seguro que desea borrar la fecha???")
+        listarFums()
+      }
+      
+    } catch (error) {
+      console.log("Se produjo el siguiente error: "+ error)
+    }
+  }
+
   return (
     <>
       <div>FumCiclosOtros</div>
@@ -149,7 +173,7 @@ export const FumCiclosOtros = () => {
               >
                 Editar
               </button>{" "}
-              <button className="boton-borrar">Borrar</button>
+              <button className="boton-borrar" onClick={() => {borrarFum(fum._id)}}>Borrar</button>
             </li>
           </ul>
         ))}
