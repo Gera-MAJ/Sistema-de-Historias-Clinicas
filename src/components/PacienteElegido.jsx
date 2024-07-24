@@ -102,33 +102,33 @@ function PacienteElegido() {
           
           <section className='antecedentes'>
             <button><NavLink to="antecedentes-personales">Antecedentes Personales</NavLink></button>
-            <button>Hábitos Tóxicos</button>
-            <button>Antecedentes Quirúrgicos</button>
-            <button>Antecedentes Clínicos</button>
-            <button>Antecedentes de Internación</button>
-            <button>Tratamientos Previos</button>
-            <button>Medicación Actual</button>
+            <button><NavLink to="habitos-toxicos">Hábitos Tóxicos</NavLink></button>
+            <button><NavLink to="antecedentes-quirurgicos">Antecedentes Quirúrgicos</NavLink></button>
+            <button><NavLink to="antecedentes-clinicos">Antecedentes Clínicos</NavLink></button>
+            <button><NavLink to="antecedentes-internacion">Antecedentes de Internación</NavLink></button>
+            <button><NavLink to="tratamientos-previos">Tratamientos Previos</NavLink></button>
+            <button><NavLink to="medicacion-actual">Medicación Actual</NavLink></button>
             <button><NavLink to= "fum-ciclos-otros">FUM - Cíclos - Otros</NavLink></button>
           </section>
           <section className='genograma'>
             <button><NavLink to="genograma">Genograma</NavLink></button>
-            <button>Dinámica Familiar</button>
-            <button>Antecedentes Familiares</button>
+            <button><NavLink to="dinamica-familiar">Dinámica Familiar</NavLink></button>
+            <button><NavLink to="antecedentes-familiares">Antecedentes Familiares</NavLink></button>
           </section> 
           <section className='hobbies'>
-            <button>Hobbies</button>
-            <button>Actividades</button>
-            <button>Examen Mental</button>
-            <button>Expectativas del Tratamiento</button>
-            <button>Conducta Terapéutica</button>
+            <button><NavLink to="hobbies">Hobbies</NavLink></button>
+            <button><NavLink to="actividades">Actividades</NavLink></button>
+            <button><NavLink to="examen-mental">Exámen Mental</NavLink></button>
+            <button><NavLink to="expectativas-tratamiento">Expectativas del Tratamiento</NavLink></button>
+            <button><NavLink to="conducta-terapeutica">Conducta Terapéutica</NavLink></button>
           </section>
           <section className='tratamientos'>
-            <button>Estudios Complementarios</button>
-            <button>Evaluación Neurocognitiva</button>
-            <button>Tipo de Psicoterapia</button>
-            <button>Tratamiento Farmacológico</button>
-            <button>Otras Indicaciones</button>
-            <button>Evaluaciones</button>
+            <button><NavLink to="estudios-complementarios">Estudios Complementarios</NavLink></button>
+            <button><NavLink to="evaluacion-neurocognitiva">Evaluación Neurocognitiva</NavLink></button>
+            <button><NavLink to="tipo-psicoterapia">Tipo de Psicoterapia</NavLink></button>
+            <button><NavLink to="tratamiento-farmacologico">Tratamiento Farmacológico</NavLink></button>
+            <button><NavLink to="otras-indicaciones">Otras Indicaciones</NavLink></button>
+            <button><NavLink to="evaluaciones">Evaluaciones</NavLink></button>
           </section>     
         </div>
 
