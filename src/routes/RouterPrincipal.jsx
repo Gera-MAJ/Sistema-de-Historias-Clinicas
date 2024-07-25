@@ -35,6 +35,7 @@ import { ProveedorDeContexto } from '../context/ProveedorDeContexto'
 const RouterPrincipal = () => {
 
   const {login} = useContext(ProveedorDeContexto)
+  const {setLogin } = useContext(ProveedorDeContexto)
 
   
 
@@ -49,7 +50,7 @@ const RouterPrincipal = () => {
           <ul>
             <li><NavLink to="/pacientes">Pacientes</NavLink></li>
             <li><NavLink to="/nuevo-paciente">Nuevo Paciente</NavLink></li>
-            <li><NavLink to='/login'>Cerrar Sesión</NavLink></li>
+            <li><NavLink to='/login' onClick={() => {setLogin(false)}}>Cerrar Sesión</NavLink></li>
           </ul>
         </nav>
 

@@ -12,10 +12,6 @@ const Login = () => {
     const {setLogin} = useContext(ProveedorDeContexto)
     
     // console.log(idPaciente)
-
-    useEffect(()=>{
-      
-    },[])
   
     const handleSubmit = (e) => {
       e.preventDefault();
