@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import { Routes, NavLink, BrowserRouter, Route } from 'react-router-dom'
 import PacienteElegido from '../components/PacienteElegido'
 import Login from '../components/Login'

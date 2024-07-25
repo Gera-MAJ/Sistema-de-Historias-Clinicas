@@ -6,7 +6,7 @@ import FormatearFechaLocal from '../Helpers/FormatearFechaLocal'
 
 function PacienteElegido() {
 
-  const {idPaciente, dataPaciente, setDataPaciente, index, setIndex} = useContext(ProveedorDeContexto)
+  const {idPaciente, setIdPaciente, dataPaciente, setDataPaciente, index, setIndex} = useContext(ProveedorDeContexto)
   const [carga, setCarga] = useState(true)
   const [errores, setErrores] = useState('')
   
@@ -37,9 +37,9 @@ function PacienteElegido() {
   }
 
   useEffect(() =>{
-    if (idPaciente != null || idPaciente != ""){
+      
       cargarDatosPaciente()
-    } 
+    
   },[])
 
   useEffect(() =>{
@@ -93,6 +93,12 @@ function PacienteElegido() {
               <li><strong>Diagnóstico:</strong> <p>{dataPaciente[index].Diagnostico}</p></li>       
           </ul>
         </div>
+
+        <div className="elementos">
+            {/* Esto se coloca para que la sub ruta salga por acá */}
+            <Outlet />
+          </div>
+
         <div className='datosPsiquiatricos'>
 
           <section className='consulta'>
@@ -133,10 +139,7 @@ function PacienteElegido() {
           </section>     
         </div>
 
-        <div className="elementos">
-            {/* Esto se coloca para que la sub ruta salga por acá */}
-            <Outlet />
-          </div>
+        
         
       </div>
   

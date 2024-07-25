@@ -5,7 +5,7 @@ import { ProveedorDeContexto } from "./context/ProveedorDeContexto";
 
 function App() {
   
-  const [idPaciente, setIdPaciente] = useState("66848a5484ed18607467f3c5");
+  const [idPaciente, setIdPaciente] = useState('66848a5484ed18607467f3c6');
   const [dataPaciente, setDataPaciente] = useState([])
   const [index, setIndex] = useState(0)
   const [idConsulta, setIdConsulta] = useState()
@@ -13,6 +13,7 @@ function App() {
   return (
       <ProveedorDeContexto.Provider value = {{
         idPaciente,
+        setIdPaciente,
         dataPaciente,
         setDataPaciente,
         index,

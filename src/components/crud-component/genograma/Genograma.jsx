@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { ProveedorDeContexto } from "../../../context/ProveedorDeContexto";
+import "../genograma/genograma.css"
 
 const Genograma = () => {
   const [imagen, setImagen] = useState("Esta es la imagen");

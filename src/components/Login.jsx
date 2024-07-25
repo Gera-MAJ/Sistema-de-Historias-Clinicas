@@ -1,25 +1,25 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import '../css/Login.css';
 import { useNavigate } from 'react-router-dom';
-import { ProveedorDeContexto } from '../context/ProveedorDeContexto';
+
 
 const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate();
-    const {idPaciente, setIdPaciente} = useContext(ProveedorDeContexto)
-    console.log(idPaciente)
+    
+    // console.log(idPaciente)
   
     const handleSubmit = (e) => {
       e.preventDefault();
       if (username === 'admin' && password === '1234') {
         navigate("/pacientes")
         alert('Ingresaste exitosamente!');
-        setIdPaciente("2")
+        // setIdPaciente("2")
       } else {
         setErrorMessage('Usuario y/o Contraseña inválidos');
-        setIdPaciente("3")
+        // setIdPaciente("3")
       }
     };
   
@@ -54,4 +54,4 @@ const Login = () => {
     );
   };
   
-  export default Login;
+  export default Login;

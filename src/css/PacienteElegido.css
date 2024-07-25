@@ -1,6 +1,6 @@
 .pacienteElegido{
     display: grid;
-    grid-template-columns: 30% 30% 40%; 
+    grid-template-columns: 30% 40% 30%; 
     /* margin-top: 30px;
     margin-bottom: 2.2rem; */
     box-sizing: border-box;
@@ -51,6 +51,7 @@
 .datosPsiquiatricos {
     /* border: 2px solid blue;
     border-radius: 5px; */
+    margin: 0 0 0 20px;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -191,5 +192,5 @@
         }
 
 .elementos {
-    background-color: #5D8DB1;
+    background-color: #CCD5AE;
 }

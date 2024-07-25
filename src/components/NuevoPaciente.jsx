@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import '../css/NuevoPaciente.css';
 
+
 const NuevoPaciente = () => {
+
   const [formData, setFormData] = useState({
     Apellidos: '',
     Nombres: '',
