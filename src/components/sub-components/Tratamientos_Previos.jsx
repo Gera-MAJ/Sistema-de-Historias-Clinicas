@@ -2,13 +2,13 @@ import React, { useState, useContext } from 'react';
 import { ProveedorDeContexto } from '../../context/ProveedorDeContexto';
 
 
-const HabitosToxicos = () => {
+const Tratamientos_Previos = () => {
   const { dataPaciente, index, setDataPaciente } = useContext(ProveedorDeContexto);
-  const [sectionData, setSectionData] = useState(dataPaciente[index].HabitosToxicos || '');
+  const [sectionData, setSectionData] = useState(dataPaciente[index].Tratamientos_Previos || '');
 
   const handleSave = () => {
     const updatedData = [...dataPaciente];
-    updatedData[index].HabitosToxicos = sectionData;
+    updatedData[index].Tratamientos_Previos = sectionData;
     setDataPaciente(updatedData);
   };
 
@@ -18,7 +18,7 @@ const HabitosToxicos = () => {
 
   return (
     <div className="section-editor">
-      <h2>Hábitos Tóxicos</h2>
+      <h2>Tratamientos Previos</h2>
       <textarea
         value={sectionData}
         onChange={(e) => setSectionData(e.target.value)}
@@ -34,4 +34,4 @@ const HabitosToxicos = () => {
   );
 };
 
-export default HabitosToxicos;
+export default Tratamientos_Previos;

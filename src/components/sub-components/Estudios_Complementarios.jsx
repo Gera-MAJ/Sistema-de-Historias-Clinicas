@@ -2,13 +2,13 @@ import React, { useState, useContext } from 'react';
 import { ProveedorDeContexto } from '../../context/ProveedorDeContexto';
 
 
-const OtrasIndicaciones = () => {
+const Estudios_Complementarios = () => {
   const { dataPaciente, index, setDataPaciente } = useContext(ProveedorDeContexto);
-  const [sectionData, setSectionData] = useState(dataPaciente[index].OtrasIndicaciones || '');
+  const [sectionData, setSectionData] = useState(dataPaciente[index].Estudios_Complementarios || '');
 
   const handleSave = () => {
     const updatedData = [...dataPaciente];
-    updatedData[index].OtrasIndicaciones = sectionData;
+    updatedData[index].Estudios_Complementarios = sectionData;
     setDataPaciente(updatedData);
   };
 
@@ -18,7 +18,7 @@ const OtrasIndicaciones = () => {
 
   return (
     <div className="section-editor">
-      <h2>Otras Indicaciones</h2>
+      <h2>Estudios Complementarios</h2>
       <textarea
         value={sectionData}
         onChange={(e) => setSectionData(e.target.value)}
@@ -34,4 +34,4 @@ const OtrasIndicaciones = () => {
   );
 };
 
-export default OtrasIndicaciones;
+export default Estudios_Complementarios;

@@ -2,13 +2,13 @@ import React, { useState, useContext } from 'react';
 import { ProveedorDeContexto } from '../../context/ProveedorDeContexto';
 
 
-const DinamicaFamiliar = () => {
+const Antecedentes_Clinicos = () => {
   const { dataPaciente, index, setDataPaciente } = useContext(ProveedorDeContexto);
-  const [sectionData, setSectionData] = useState(dataPaciente[index].DinamicaFamiliar || '');
+  const [sectionData, setSectionData] = useState(dataPaciente[index].Antecedentes_Clinicos || '');
 
   const handleSave = () => {
     const updatedData = [...dataPaciente];
-    updatedData[index].DinamicaFamiliar = sectionData;
+    updatedData[index].Antecedentes_Clinicos = sectionData;
     setDataPaciente(updatedData);
   };
 
@@ -18,7 +18,7 @@ const DinamicaFamiliar = () => {
 
   return (
     <div className="section-editor">
-      <h2>Dinámica Familiar</h2>
+      <h2>Antecedentes Clínicos</h2>
       <textarea
         value={sectionData}
         onChange={(e) => setSectionData(e.target.value)}
@@ -34,4 +34,4 @@ const DinamicaFamiliar = () => {
   );
 };
 
-export default DinamicaFamiliar;
+export default Antecedentes_Clinicos;

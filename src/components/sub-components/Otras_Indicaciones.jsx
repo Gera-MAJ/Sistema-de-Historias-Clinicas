@@ -2,13 +2,13 @@ import React, { useState, useContext } from 'react';
 import { ProveedorDeContexto } from '../../context/ProveedorDeContexto';
 
 
-const MedicacionActual = () => {
+const Otras_Indicaciones = () => {
   const { dataPaciente, index, setDataPaciente } = useContext(ProveedorDeContexto);
-  const [sectionData, setSectionData] = useState(dataPaciente[index].MedicacionActual || '');
+  const [sectionData, setSectionData] = useState(dataPaciente[index].Otras_Indicaciones || '');
 
   const handleSave = () => {
     const updatedData = [...dataPaciente];
-    updatedData[index].MedicacionActual = sectionData;
+    updatedData[index].Otras_Indicaciones = sectionData;
     setDataPaciente(updatedData);
   };
 
@@ -18,7 +18,7 @@ const MedicacionActual = () => {
 
   return (
     <div className="section-editor">
-      <h2>Medicación Actual</h2>
+      <h2>Otras Indicaciones</h2>
       <textarea
         value={sectionData}
         onChange={(e) => setSectionData(e.target.value)}
@@ -34,4 +34,4 @@ const MedicacionActual = () => {
   );
 };
 
-export default MedicacionActual;
+export default Otras_Indicaciones;

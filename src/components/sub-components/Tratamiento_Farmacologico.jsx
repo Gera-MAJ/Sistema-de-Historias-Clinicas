@@ -2,13 +2,13 @@ import React, { useState, useContext } from 'react';
 import { ProveedorDeContexto } from '../../context/ProveedorDeContexto';
 
 
-const TipoPsicoterapia = () => {
+const Tratamiento_Farmacologico = () => {
   const { dataPaciente, index, setDataPaciente } = useContext(ProveedorDeContexto);
-  const [sectionData, setSectionData] = useState(dataPaciente[index].TipoPsicoterapia || '');
+  const [sectionData, setSectionData] = useState(dataPaciente[index].Tratamiento_Farmacologico || '');
 
   const handleSave = () => {
     const updatedData = [...dataPaciente];
-    updatedData[index].TipoPsicoterapia = sectionData;
+    updatedData[index].Tratamiento_Farmacologico = sectionData;
     setDataPaciente(updatedData);
   };
 
@@ -18,7 +18,7 @@ const TipoPsicoterapia = () => {
 
   return (
     <div className="section-editor">
-      <h2>Tipo de Psicoterapia</h2>
+      <h2>Tratamiento Farmacológico</h2>
       <textarea
         value={sectionData}
         onChange={(e) => setSectionData(e.target.value)}
@@ -34,4 +34,4 @@ const TipoPsicoterapia = () => {
   );
 };
 
-export default TipoPsicoterapia;
+export default Tratamiento_Farmacologico;

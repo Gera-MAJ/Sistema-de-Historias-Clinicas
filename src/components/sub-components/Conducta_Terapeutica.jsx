@@ -2,13 +2,13 @@ import React, { useState, useContext } from 'react';
 import { ProveedorDeContexto } from '../../context/ProveedorDeContexto';
 
 
-const AntecedentesInternacion = () => {
+const Conducta_Terapeutica = () => {
   const { dataPaciente, index, setDataPaciente } = useContext(ProveedorDeContexto);
-  const [sectionData, setSectionData] = useState(dataPaciente[index].AntecedentesInternacion || '');
+  const [sectionData, setSectionData] = useState(dataPaciente[index].Conducta_Terapeutica || '');
 
   const handleSave = () => {
     const updatedData = [...dataPaciente];
-    updatedData[index].AntecedentesInternacion = sectionData;
+    updatedData[index].Conducta_Terapeutica = sectionData;
     setDataPaciente(updatedData);
   };
 
@@ -18,7 +18,7 @@ const AntecedentesInternacion = () => {
 
   return (
     <div className="section-editor">
-      <h2>Antecedentes de Internación</h2>
+      <h2>Conducta Terapéutica</h2>
       <textarea
         value={sectionData}
         onChange={(e) => setSectionData(e.target.value)}
@@ -34,4 +34,4 @@ const AntecedentesInternacion = () => {
   );
 };
 
-export default AntecedentesInternacion;
+export default Conducta_Terapeutica;

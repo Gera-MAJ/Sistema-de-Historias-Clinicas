@@ -2,13 +2,13 @@ import React, { useState, useContext } from 'react';
 import { ProveedorDeContexto } from '../../context/ProveedorDeContexto';
 
 
-const AntecedentesFamiliares = () => {
+const Examen_Mental = () => {
   const { dataPaciente, index, setDataPaciente } = useContext(ProveedorDeContexto);
-  const [sectionData, setSectionData] = useState(dataPaciente[index].AntecedentesFamiliares || '');
+  const [sectionData, setSectionData] = useState(dataPaciente[index].Examen_Mental || '');
 
   const handleSave = () => {
     const updatedData = [...dataPaciente];
-    updatedData[index].AntecedentesFamiliares = sectionData;
+    updatedData[index].Examen_Mental = sectionData;
     setDataPaciente(updatedData);
   };
 
@@ -18,7 +18,7 @@ const AntecedentesFamiliares = () => {
 
   return (
     <div className="section-editor">
-      <h2>Antecedentes Familiares</h2>
+      <h2>Exámen Mental</h2>
       <textarea
         value={sectionData}
         onChange={(e) => setSectionData(e.target.value)}
@@ -34,4 +34,4 @@ const AntecedentesFamiliares = () => {
   );
 };
 
-export default AntecedentesFamiliares;
+export default Examen_Mental;
