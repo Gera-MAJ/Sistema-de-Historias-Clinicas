@@ -14,7 +14,7 @@ const Consulta = () => {
 
   useEffect(() => {
     actualizarPaciente();
-    console.log(paciente);
+    // console.log(paciente);
   }, [dataPaciente, index, crearConsulta, actualizar]);
 
   const editarConsulta = (id) => {
@@ -75,7 +75,7 @@ const Consulta = () => {
       if (datos.status == "success") {
         console.log("Se ha traido el paciente");
         setPaciente(datos.consultas);
-        console.log(paciente);
+        // console.log(paciente);
       }
     } catch (error) {
       console.log("Se ha encontrado un el error " + error);

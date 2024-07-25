@@ -10,9 +10,6 @@ import Sintomatologia_Actual from '../components/sub-components/Sintomatologia_A
 import ConductaSuicida from "../components/sub-components/ConductaSuicida"
 import { FumCiclosOtros } from '../components/crud-component/FUM/FumCiclosOtros'
 import AntecedentesPersonales from '../components/sub-components/AntecedentesPersonales'
-<<<<<<< HEAD
-import Genograma from '../components/crud-component/genograma/Genograma'
-=======
 import Actividades from '../components/sub-components/Actividades'
 import AntecedentesClinicos from '../components/sub-components/AntecedentesClinicos'
 import AntecedentesInternacion from '../components/sub-components/AntecedentesInternacion'
@@ -32,7 +29,7 @@ import TipoPsicoterapia from '../components/sub-components/TipoPsicoterapia'
 import TratamientoFarmacologico from '../components/sub-components/TratamientoFarmacologico'
 import OtrasIndicaciones from '../components/sub-components/OtrasIndicaciones'
 import Evaluaciones from '../components/sub-components/Evaluaciones'
->>>>>>> 8cfd880c9c1676720090b65a8a1d473f31bfe665
+import Genograma from '../components/crud-component/genograma/Genograma'
 
 const RouterPrincipal = () => {
 
@@ -62,9 +59,6 @@ const RouterPrincipal = () => {
                 <Route path='conducta-suicida' element= {<ConductaSuicida />} />
                 <Route path='fum-ciclos-otros' element= {<FumCiclosOtros />} />
                 <Route path='antecedentes-personales' element= {<AntecedentesPersonales />} />
-<<<<<<< HEAD
-                <Route path='genograma' element= {<Genograma />} />
-=======
                 <Route path='antecedentes-clinicos' element= {<AntecedentesClinicos />} />
                 <Route path='antecedentes-internacion' element= {<AntecedentesInternacion />} />
                 <Route path='antecedentes-familiares' element= {<AntecedentesFamiliares />} />
@@ -84,9 +78,8 @@ const RouterPrincipal = () => {
                 <Route path='tratamiento-farmacologico' element={<TratamientoFarmacologico/>}/>
                 <Route path='otras-indicaciones' element={<OtrasIndicaciones/>}/>
                 <Route path='evaluaciones' element={<Evaluaciones/>}/>
-                
+                <Route path='genograma' element={<Genograma/>}/>
 
->>>>>>> 8cfd880c9c1676720090b65a8a1d473f31bfe665
             </Route>
             <Route path='/nuevo-paciente' element={<NuevoPaciente />}/>
           </Routes>

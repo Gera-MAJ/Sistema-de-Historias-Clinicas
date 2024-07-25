@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import '../css/PacienteElegido.css'
 import { NavLink, Outlet } from "react-router-dom"
 import { ProveedorDeContexto } from '../context/ProveedorDeContexto'
+import FormatearFechaLocal from '../Helpers/FormatearFechaLocal'
 
 function PacienteElegido() {
 
@@ -80,7 +81,7 @@ function PacienteElegido() {
               <li><strong>Apellido/s:</strong><p>{dataPaciente[index].Apellidos}</p></li>
               <li><strong>Nombre/s:</strong><p>{dataPaciente[index].Nombres}</p></li> 
               <li><strong>Edad:</strong><p>{dataPaciente[index].Edad}</p></li>
-              <li><strong>Fecha de Nacimiento:</strong> <p>{dataPaciente[index].Fecha_de_Nacimiento}</p></li>
+              <li><strong>Fecha de Nacimiento:</strong> <p>{FormatearFechaLocal(dataPaciente[index].Fecha_de_Nacimiento)}</p></li>
               <li><strong>Domicilio:</strong><p>{dataPaciente[index].Domicilio}</p></li>
               <li><strong>Teléfono:</strong><p>{dataPaciente[index].Telefono}</p></li>
               <li><strong>Ocupación:</strong> <p>{dataPaciente[index].Ocupacion}</p></li>
