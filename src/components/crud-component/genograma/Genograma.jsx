@@ -10,6 +10,8 @@ const Genograma = () => {
 
   useEffect(() => {
     cargarPaciente();
+    
+
   }, []);
 
   // useEffect(() => {
@@ -29,21 +31,6 @@ const Genograma = () => {
       if (resp.status === "success") {
         setPaciente(resp.paciente);
         console.log(paciente);
-      }
-    } catch (error) {
-      console.log("El error es: " + error);
-    }
-  };
-
-  //llamamos a la imagen del genograma
-  const pedirImagen = async () => {
-    try {
-      const url = "http://localhost:3900/api/imagen/" + paciente.Genograma;
-      const req = await fetch(url);
-      const resp = await req.json();
-
-      if (resp) {
-        setImagen(resp);
       }
     } catch (error) {
       console.log("El error es: " + error);
@@ -79,12 +66,12 @@ const Genograma = () => {
     }
   };
 
-  console.log(paciente);
+  console.log(imagen);
   return (
     <>
       <h3>Genograma</h3>
-      {paciente ? <h4>{paciente.Genograma}</h4> : <h3>No hay imagen subida</h3>}
-      {imagen}
+      { paciente.Genograma == "default.png" && <img src="https://i.pinimg.com/originals/d9/b5/2a/d9b52aaa2526e54403b063f6de4bf2f4.jpg"/>}
+      { paciente.Genograma != "default.png" && <img src={"http://localhost:3900/api/imagen/" + paciente.Genograma}/>}
       <input type="file" name="genograma" id="file" />
       <button onClick={() => subirImagen()}>Subir Imagen</button>
     </>
