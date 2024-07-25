@@ -7,10 +7,9 @@ import { useNavigate } from 'react-router-dom';
 const Pacientes = () => {
   const [apellido, setApellido] = useState('');
   const [pacientes, setPacientes] = useState([]);
-  const { idPaciente, setIdPaciente } = useContext(ProveedorDeContexto)
+  const { setIdPaciente } = useContext(ProveedorDeContexto)
   const navigate = useNavigate()
 
-  console.log(idPaciente)
 
   useEffect(() => {
     fetchPacientes();
@@ -61,6 +60,11 @@ const Pacientes = () => {
     normalizarParaBuscar(`${paciente.Apellidos} ${paciente.Nombres}`).includes(normalizarParaBuscar(apellido))
   );
 
+  const elegirPaciente = (id) => {
+    navigate("/paciente-elegido");
+    setIdPaciente(id)
+  }
+
 
   return (
     <div className="pacientes-container">
@@ -77,8 +81,8 @@ const Pacientes = () => {
       <div className="pacientes-list">
         {filteredPacientes.map((paciente, index) => (
           <div key={index} className="paciente-item">
-            <button onClick={() => navigate("/paciente-elegido") }>{paciente.Apellidos} {paciente.Nombres}</button>
-            <button onClick={() => handleBorrarClick(paciente.DNI)} className="delete-button">Borrar</button> 
+            <a href='#' onClick={() =>  elegirPaciente(paciente._id)}>{paciente.Apellidos} {paciente.Nombres}</a>
+            <button onClick={() => handleBorrarClick(paciente.DNI)} className="delete-button" >Borrar</button> 
           </div>
         ))}
       </div>

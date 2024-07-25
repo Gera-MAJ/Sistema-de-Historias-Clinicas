@@ -4,11 +4,11 @@ import { ProveedorDeContexto } from '../../context/ProveedorDeContexto';
 
 const OtrasIndicaciones = () => {
   const { dataPaciente, index, setDataPaciente } = useContext(ProveedorDeContexto);
-  const [sectionData, setSectionData] = useState(dataPaciente[index].OtrasIndicaciones || '');
+  const [sectionData, setSectionData] = useState(dataPaciente[index].Otras_Indicaciones || '');
 
   const handleSave = () => {
     const updatedData = [...dataPaciente];
-    updatedData[index].OtrasIndicaciones = sectionData;
+    updatedData[index].Otras_Indicaciones = sectionData;
     setDataPaciente(updatedData);
   };
 

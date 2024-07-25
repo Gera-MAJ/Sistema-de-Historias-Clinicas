@@ -44,10 +44,21 @@ body {
   font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s;
+  display: none;
 }
 
 .button:hover {
   background-color: #ff69b4; 
+}
+
+.delete-button {
+  margin-left: 20px;
+  background-color: rgb(223, 79, 79);
+  border-radius: 10px;
+  padding: 10px;
+  color: #dcdcdc;
+  border: 2px solid #dcdcdc;
+  cursor: pointer;
 }
 
 .pacientes-list {
@@ -60,6 +71,11 @@ body {
   border-radius: 30px;
   background: #add8e6;
 }
+
+  .pacientes-list a {
+    text-decoration: none;
+    color: black;
+  }
 
 
 .paciente-item {

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { Routes, NavLink, BrowserRouter, Route } from 'react-router-dom'
 import PacienteElegido from '../components/PacienteElegido'
 import Login from '../components/Login'
@@ -6,7 +6,7 @@ import '../css/RouterPrincipal.css'
 import Pacientes from '../components/Pacientes'
 import NuevoPaciente from '../components/NuevoPaciente'
 import Consulta from '../components/crud-component/Consulta/Consulta'
-import Sintomatologia_Actual from '../components/sub-components/Sintomatologia_Actual'
+import Sintomatologia_Actual from '../components/sub-components/SintomatologiaActual'
 import ConductaSuicida from "../components/sub-components/ConductaSuicida"
 import { FumCiclosOtros } from '../components/crud-component/FUM/FumCiclosOtros'
 import AntecedentesPersonales from '../components/sub-components/AntecedentesPersonales'
@@ -30,8 +30,13 @@ import TratamientoFarmacologico from '../components/sub-components/TratamientoFa
 import OtrasIndicaciones from '../components/sub-components/OtrasIndicaciones'
 import Evaluaciones from '../components/sub-components/Evaluaciones'
 import Genograma from '../components/crud-component/genograma/Genograma'
+import { ProveedorDeContexto } from '../context/ProveedorDeContexto'
 
 const RouterPrincipal = () => {
+
+  const {login} = useContext(ProveedorDeContexto)
+
+  
 
   return (
 
@@ -40,7 +45,7 @@ const RouterPrincipal = () => {
 
       <div className="conteinerPrincipal">
 
-        <nav className='navPrincipal'>
+        <nav className={login ? 'navPrincipal' : 'navApagado'}>
           <ul>
             <li><NavLink to="/pacientes">Pacientes</NavLink></li>
             <li><NavLink to="/nuevo-paciente">Nuevo Paciente</NavLink></li>
@@ -86,7 +91,8 @@ const RouterPrincipal = () => {
         </section>
         
         <footer className='footer'>
-            <div>Datos del footer</div>
+            <div>Aplicación Historias Clínicas</div>
+            <div>Jatip Gerardo - Araoz Leticia</div>
         </footer>
       
       </div>   

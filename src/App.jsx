@@ -9,6 +9,7 @@ function App() {
   const [dataPaciente, setDataPaciente] = useState([])
   const [index, setIndex] = useState(0)
   const [idConsulta, setIdConsulta] = useState()
+  const [login, setLogin] = useState(false)
 
   return (
       <ProveedorDeContexto.Provider value = {{
@@ -19,7 +20,9 @@ function App() {
         index,
         setIndex,
         idConsulta,
-        setIdConsulta
+        setIdConsulta,
+        login,
+        setLogin
       }}>
         <RouterPrincipal/>
 

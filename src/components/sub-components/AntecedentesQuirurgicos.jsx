@@ -4,11 +4,11 @@ import { ProveedorDeContexto } from '../../context/ProveedorDeContexto';
 
 const AntecedentesQuirurgicos = () => {
   const { dataPaciente, index, setDataPaciente } = useContext(ProveedorDeContexto);
-  const [sectionData, setSectionData] = useState(dataPaciente[index].AntecedentesQuirurgicos || '');
+  const [sectionData, setSectionData] = useState(dataPaciente[index].Antecedentes_Quirurgicos || '');
 
   const handleSave = () => {
     const updatedData = [...dataPaciente];
-    updatedData[index].AntecedentesQuirurgicos = sectionData;
+    updatedData[index].Antecedentes_Quirurgicos = sectionData;
     setDataPaciente(updatedData);
   };
 

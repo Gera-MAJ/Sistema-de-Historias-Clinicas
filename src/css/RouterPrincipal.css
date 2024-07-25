@@ -15,6 +15,10 @@
     
 }
 
+.navApagado {
+    display: none;
+}
+
 .navPrincipal ul{
     display: flex;
     flex-direction: row;
@@ -40,7 +44,8 @@
 } 
 
 .footer { 
-    background-color: aquamarine;
+    background-color: rgb(147, 163, 158);
+    color: #ddd;
     width: 100%; 
     position: fixed;
     bottom: 0;

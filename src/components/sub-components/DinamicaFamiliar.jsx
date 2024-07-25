@@ -4,11 +4,11 @@ import { ProveedorDeContexto } from '../../context/ProveedorDeContexto';
 
 const DinamicaFamiliar = () => {
   const { dataPaciente, index, setDataPaciente } = useContext(ProveedorDeContexto);
-  const [sectionData, setSectionData] = useState(dataPaciente[index].DinamicaFamiliar || '');
+  const [sectionData, setSectionData] = useState(dataPaciente[index].Dinamica_Familiar || '');
 
   const handleSave = () => {
     const updatedData = [...dataPaciente];
-    updatedData[index].DinamicaFamiliar = sectionData;
+    updatedData[index].Dinamica_Familiar = sectionData;
     setDataPaciente(updatedData);
   };
 

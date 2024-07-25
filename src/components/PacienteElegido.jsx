@@ -6,7 +6,7 @@ import FormatearFechaLocal from '../Helpers/FormatearFechaLocal'
 
 function PacienteElegido() {
 
-  const {idPaciente, setIdPaciente, dataPaciente, setDataPaciente, index, setIndex} = useContext(ProveedorDeContexto)
+  const {idPaciente, dataPaciente, setDataPaciente, index, setIndex} = useContext(ProveedorDeContexto)
   const [carga, setCarga] = useState(true)
   const [errores, setErrores] = useState('')
   
