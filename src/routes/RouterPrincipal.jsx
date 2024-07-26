@@ -35,7 +35,7 @@ import { ProveedorDeContexto } from '../context/ProveedorDeContexto'
 const RouterPrincipal = () => {
 
   const {login} = useContext(ProveedorDeContexto)
-  const {setLogin } = useContext(ProveedorDeContexto)
+  
 
   
 
@@ -56,7 +56,7 @@ const RouterPrincipal = () => {
 
         <section className="routes">
           <Routes>
-            <Route path='/' element={<Pacientes />}/>
+            <Route path='/' element={<Login />}/>
             <Route path='/pacientes' element={<Pacientes />}/>
             <Route path='/login' element={<Login />}/>
             <Route path='/paciente-elegido/*' element={<PacienteElegido/>}>

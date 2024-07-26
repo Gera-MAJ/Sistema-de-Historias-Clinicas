@@ -4,11 +4,11 @@ import { ProveedorDeContexto } from '../../context/ProveedorDeContexto';
 
 const TipoPsicoterapia = () => {
   const { dataPaciente, index, setDataPaciente } = useContext(ProveedorDeContexto);
-  const [sectionData, setSectionData] = useState(dataPaciente[index].Tipo_Psicoterapia || '');
+  const [sectionData, setSectionData] = useState(dataPaciente[index].Tipo_de_Psicoterapia || '');
 
   const handleSave = () => {
     const updatedData = [...dataPaciente];
-    updatedData[index].Tipo_Psicoterapia = sectionData;
+    updatedData[index].Tipo_de_Psicoterapia = sectionData;
     setDataPaciente(updatedData);
   };
 

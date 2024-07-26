@@ -4,11 +4,13 @@ import { ProveedorDeContexto } from '../../context/ProveedorDeContexto';
 
 const ConductaSuicida = () => {
   const { dataPaciente, index, setDataPaciente } = useContext(ProveedorDeContexto);
-  const [sectionData, setSectionData] = useState(dataPaciente[index].Conducta_Suicida || '');
+  const [sectionData, setSectionData] = useState(dataPaciente[index].
+    Antecedentes_de_Conducta_Suicida || '');
 
   const handleSave = () => {
     const updatedData = [...dataPaciente];
-    updatedData[index].Conducta_Suicida = sectionData;
+    updatedData[index].
+    Antecedentes_de_Conducta_Suicida = sectionData;
     setDataPaciente(updatedData);
   };
 
