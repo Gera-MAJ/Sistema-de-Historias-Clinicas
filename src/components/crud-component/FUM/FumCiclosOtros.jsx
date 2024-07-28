@@ -193,9 +193,10 @@ export const FumCiclosOtros = () => {
         <textarea
           type="text"
           name="ciclos"
-          value={ciclos ? ciclos : "No hay datos"}
+          value={ciclos ? ciclos : ""}
+          placeholder={ciclos ? "" : "No hay datos"}
           onChange={handleChangeCiclos}
-        />
+        />{" "}
         <button className="boton-editar" onClick={editarCiclos}>
           Editar
         </button>
@@ -205,9 +206,10 @@ export const FumCiclosOtros = () => {
         <textarea
           type="text"
           name="otros"
-          value={otros ? otros : "No hay datos"}
+          value={otros ? otros : ""}
+          placeholder={otros ? "" : "No hay datos"}
           onChange={handleChangeOtros}
-        />
+        />{" "}
         <button className="boton-editar" onClick={editarOtros}>
           Editar
         </button>

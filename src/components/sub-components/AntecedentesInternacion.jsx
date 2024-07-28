@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { ProveedorDeContexto } from '../../context/ProveedorDeContexto';
 
 
-const Antecedentes_de_Internacion = () => {
+const AntecedentesInternacion = () => {
   const { dataPaciente, index, setDataPaciente } = useContext(ProveedorDeContexto);
   const [sectionData, setSectionData] = useState(dataPaciente[index].Antecedentes_de_Internacion || '');
 
@@ -34,4 +34,4 @@ const Antecedentes_de_Internacion = () => {
   );
 };
 
-export default Antecedentes_de_Internacion;
+export default AntecedentesInternacion;

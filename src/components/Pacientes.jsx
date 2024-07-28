@@ -1,14 +1,15 @@
 import React, { useState, useEffect, useContext } from 'react';
 import '../css/Pacientes.css';
 import { ProveedorDeContexto } from '../context/ProveedorDeContexto';
+import { useNavigate } from 'react-router-dom';
 
 
 const Pacientes = () => {
   const [apellido, setApellido] = useState('');
   const [pacientes, setPacientes] = useState([]);
-  const {setIdPaciente, idPaciente } = useContext(ProveedorDeContexto)
+  const { setIdPaciente } = useContext(ProveedorDeContexto)
+  const navigate = useNavigate()
 
-  console.log(idPaciente)
 
   useEffect(() => {
     fetchPacientes();
@@ -33,8 +34,6 @@ const Pacientes = () => {
 
   const handleBuscarClick = () => {
     // No se necesita lógica aquí si el filtrado es en tiempo real
-    setIdPaciente("66848a5484ed18607467f3c8")
-    console.log("ingresa la funcion", idPaciente)
   };
 
   const handleBorrarClick = async (dni) => {
@@ -57,11 +56,14 @@ const Pacientes = () => {
 
   const normalizarParaBuscar = str => str.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
 
-  console.log(pacientes)
-
   const filteredPacientes = pacientes.filter(paciente =>
     normalizarParaBuscar(`${paciente.Apellidos} ${paciente.Nombres}`).includes(normalizarParaBuscar(apellido))
   );
+
+  const elegirPaciente = (id) => {
+    navigate("/paciente-elegido");
+    setIdPaciente(id)
+  }
 
 
   return (
@@ -79,8 +81,8 @@ const Pacientes = () => {
       <div className="pacientes-list">
         {filteredPacientes.map((paciente, index) => (
           <div key={index} className="paciente-item">
-            <span>{paciente.Apellidos} {paciente.Nombres}</span>
-            <button onClick={() => handleBorrarClick(paciente.DNI)} className="delete-button">Borrar</button> 
+            <a href='#' onClick={() =>  elegirPaciente(paciente._id)}>{paciente.Apellidos} {paciente.Nombres}</a>
+            <button onClick={() => handleBorrarClick(paciente.DNI)} className="delete-button" >Borrar</button> 
           </div>
         ))}
       </div>

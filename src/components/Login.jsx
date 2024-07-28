@@ -1,25 +1,28 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import '../css/Login.css';
 import { useNavigate } from 'react-router-dom';
 import { ProveedorDeContexto } from '../context/ProveedorDeContexto';
+
 
 const Login = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate();
-    const {idPaciente, setIdPaciente} = useContext(ProveedorDeContexto)
-    console.log(idPaciente)
+    const {setLogin} = useContext(ProveedorDeContexto)
+    
+    // console.log(idPaciente)
   
     const handleSubmit = (e) => {
       e.preventDefault();
       if (username === 'admin' && password === '1234') {
         navigate("/pacientes")
         alert('Ingresaste exitosamente!');
-        setIdPaciente("2")
+        // setIdPaciente("2")
+        setLogin(true)
       } else {
         setErrorMessage('Usuario y/o Contraseña inválidos');
-        setIdPaciente("3")
+        // setIdPaciente("3")
       }
     };
   
@@ -54,4 +57,8 @@ const Login = () => {
     );
   };
   
+<<<<<<< HEAD
   export default Login;
+=======
+  export default Login;
+>>>>>>> 734467a4b4dea862edcb78d5fcc1c3302453cd14

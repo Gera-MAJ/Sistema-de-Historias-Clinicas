@@ -2,23 +2,13 @@ import React, { useState, useContext } from 'react';
 import { ProveedorDeContexto } from '../../context/ProveedorDeContexto';
 
 
-const Antecedentes_de_Conducta_Suicida = () => {
+const AntecedentesClinicos = () => {
   const { dataPaciente, index, setDataPaciente } = useContext(ProveedorDeContexto);
-<<<<<<< HEAD:src/components/sub-components/Antecedentes_de_Conducta_Suicida.jsx
-  const [sectionData, setSectionData] = useState(dataPaciente[index].Antecedentes_de_Conducta_Suicida || '');
+  const [sectionData, setSectionData] = useState(dataPaciente[index].Antecedentes_Clinicos || '');
 
   const handleSave = () => {
     const updatedData = [...dataPaciente];
-    updatedData[index].Antecedentes_de_Conducta_Suicida = sectionData;
-=======
-  const [sectionData, setSectionData] = useState(dataPaciente[index].
-    Antecedentes_de_Conducta_Suicida || '');
-
-  const handleSave = () => {
-    const updatedData = [...dataPaciente];
-    updatedData[index].
-    Antecedentes_de_Conducta_Suicida = sectionData;
->>>>>>> 734467a4b4dea862edcb78d5fcc1c3302453cd14:src/components/sub-components/ConductaSuicida.jsx
+    updatedData[index].Antecedentes_Clinicos = sectionData;
     setDataPaciente(updatedData);
   };
 
@@ -28,7 +18,7 @@ const Antecedentes_de_Conducta_Suicida = () => {
 
   return (
     <div className="section-editor">
-      <h2>ConductaSuicida</h2>
+      <h2>Antecedentes Clínicos</h2>
       <textarea
         value={sectionData}
         onChange={(e) => setSectionData(e.target.value)}
@@ -44,4 +34,4 @@ const Antecedentes_de_Conducta_Suicida = () => {
   );
 };
 
-export default Antecedentes_de_Conducta_Suicida;
+export default AntecedentesClinicos;

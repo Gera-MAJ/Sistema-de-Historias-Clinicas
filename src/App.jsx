@@ -5,20 +5,24 @@ import { ProveedorDeContexto } from "./context/ProveedorDeContexto";
 
 function App() {
   
-  const [idPaciente, setIdPaciente] = useState("6698176809dfc5bf02a24a7e");
+  const [idPaciente, setIdPaciente] = useState('');
   const [dataPaciente, setDataPaciente] = useState([])
   const [index, setIndex] = useState(0)
   const [idConsulta, setIdConsulta] = useState()
+  const [login, setLogin] = useState(false)
 
   return (
       <ProveedorDeContexto.Provider value = {{
         idPaciente,
+        setIdPaciente,
         dataPaciente,
         setDataPaciente,
         index,
         setIndex,
         idConsulta,
-        setIdConsulta
+        setIdConsulta,
+        login,
+        setLogin
       }}>
         <RouterPrincipal/>
 
