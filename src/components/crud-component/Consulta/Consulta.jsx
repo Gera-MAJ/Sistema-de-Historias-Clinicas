@@ -85,7 +85,7 @@ const Consulta = () => {
   return (
     <div>
       <ul className="consultas">
-        {paciente &&
+        {paciente && paciente.length != 0 ? (
           paciente.map((consul) => (
             <li key={consul._id}>
               {formatFecha(consul.fecha)} {consul.descripcion}
@@ -98,7 +98,10 @@ const Consulta = () => {
               </button>
               <button onClick={() => borrarConsulta(consul._id)}>Borrar</button>
             </li>
-          ))}
+          ))
+        ):
+        "No hay consultas"
+        }
       </ul>
       <button
         className="boton_consulta"

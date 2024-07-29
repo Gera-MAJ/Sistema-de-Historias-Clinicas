@@ -155,18 +155,19 @@ export const FumCiclosOtros = () => {
       console.log("Se produjo el siguiente error: "+ error)
     }
   }
-
+  console.log(fums)
   return (
     <>
       <div>FumCiclosOtros</div>
       <button onClick={crearFum}>Agregar FUM</button>
       {nuevoFum && <CrearFum idPaciente={idPaciente} setActualizar={setActualizar} setNuevaFum={setNuevaFum}/>}
-      {fums &&
+      {fums && fums.length != 0 ? (
         fums.map((fum) => (
           <ul key={fum._id}>
             <li>
               <strong>FUM: </strong>
-              {FormatearFechasLocal(fum.fecha)}{" "}
+              {fums && fums.length != 0 ?  FormatearFechasLocal(fum.fecha): 'No hay datos'}{" "}
+              
               <button
                 className="boton-editar"
                 onClick={() => editarFum(fum.fecha, fum._id)}
@@ -176,7 +177,13 @@ export const FumCiclosOtros = () => {
               <button className="boton-borrar" onClick={() => {borrarFum(fum._id)}}>Borrar</button>
             </li>
           </ul>
-        ))}
+        ))
+      )
+      :
+      <p>No hay datos</p>
+      }
+
+        
       {editar == true ? (
         <EditFum
           fechaFum={fechaFum}
