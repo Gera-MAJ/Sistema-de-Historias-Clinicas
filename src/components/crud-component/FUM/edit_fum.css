@@ -1,0 +1,67 @@
+
+.edit-fum {
+    position: relative;
+    width: 100%;
+}
+
+    .edit-fum form{
+        width: 60%;
+        margin: 2em auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+        .edit-fum h3 {
+            left: 50%;
+            transform: translate(-50%, 0);
+            position: absolute;
+            text-align: center;
+            color: #2b2626;
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+            .edit-fum form input[type="date"],
+            .edit-fum form input[type="submit"]{
+                margin-top: 10px;
+                padding: 5px;
+                border-radius: 5px;
+                border: #C4AF76 solid 2px;
+            }
+          
+                .botones {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 20rem;
+                }
+
+    .edit-fum input[type="submit"]{
+        margin-left: 10px;
+        background-color: #FAEDCD;
+        border-radius: 10px;
+        padding: 10px;
+        color: #C4AF76;
+        font-weight: bold;
+        border: 2px solid #C4AF76;
+        cursor: pointer;
+    }
+        .edit-fum input[type="submit"]:hover {
+            background-color: #C4AF76;
+            color: white;
+        }
+
+        .editar-consulta button {
+            background-color: #FCE1E4;
+            border-radius: 10px;
+            padding: 10px;
+            color: #F37E7E;
+            font-weight: bold;
+            border: 2px solid #F37E7E;
+            cursor: pointer;
+            transition: all 200ms;
+        }
+            .editar-consulta button:hover{
+                background-color: #F37E7E;
+                color: #dddddd;
+            }    

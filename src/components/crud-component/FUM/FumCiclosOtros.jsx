@@ -3,6 +3,7 @@ import { ProveedorDeContexto } from "../../../context/ProveedorDeContexto";
 import EditFum from "./EditFum";
 import FormatearFechasLocal from "../../../Helpers/FormatearFechaLocal";
 import CrearFum from "./CrearFum";
+import '../FUM/fums.css'
 
 export const FumCiclosOtros = () => {
   const [fums, setFums] = useState([]);
@@ -157,13 +158,13 @@ export const FumCiclosOtros = () => {
   }
   console.log(fums)
   return (
-    <>
-      <div>FumCiclosOtros</div>
-      <button onClick={crearFum}>Agregar FUM</button>
+    <div className="conteiner-fums">
+      {/* <h3>Fum - Ciclos - Otros</h3> */}
+      <button onClick={crearFum} className="boton-agregar">Agregar FUM</button>
       {nuevoFum && <CrearFum idPaciente={idPaciente} setActualizar={setActualizar} setNuevaFum={setNuevaFum}/>}
       {fums && fums.length != 0 ? (
         fums.map((fum) => (
-          <ul key={fum._id}>
+          <ul className="fums" key={fum._id}>
             <li>
               <strong>FUM: </strong>
               {fums && fums.length != 0 ?  FormatearFechasLocal(fum.fecha): 'No hay datos'}{" "}
@@ -183,7 +184,6 @@ export const FumCiclosOtros = () => {
       <p>No hay datos</p>
       }
 
-        
       {editar == true ? (
         <EditFum
           fechaFum={fechaFum}
@@ -195,7 +195,7 @@ export const FumCiclosOtros = () => {
       ) : (
         ""
       )}
-      <li>
+      <li className="ciclos">
         <h4>Ciclos</h4>{" "}
         <textarea
           type="text"
@@ -208,7 +208,7 @@ export const FumCiclosOtros = () => {
           Editar
         </button>
       </li>
-      <li>
+      <li className="otros">
         <h4>Otros</h4>{" "}
         <textarea
           type="text"
@@ -221,6 +221,6 @@ export const FumCiclosOtros = () => {
           Editar
         </button>
       </li>
-    </>
+    </div>
   );
 };

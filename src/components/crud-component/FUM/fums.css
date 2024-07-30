@@ -1,0 +1,98 @@
+.conteiner-fums {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #FAEDCD;
+  border-radius: 10px;
+  overflow-y: scroll;
+  border: 1px solid #C4AF76;
+  border-right: none;
+}
+
+.fums {
+  width: 90%;
+  max-height: 1080px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.fums li {
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  list-style: none;
+  padding: 0.5rem;
+  border: 2px solid #C4AF76;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.boton-editar {
+  margin-left: 10rem;
+  margin-top: 0.8rem;
+  background-color: #FAEDCD;
+  border-radius: 10px;
+  padding: 10px;
+  color: #C4AF76;
+  font-weight: bold;
+  border: 2px solid #C4AF76;
+  cursor: pointer;
+  transition: all 200ms;
+}
+.boton-editar:hover {
+  background-color: #C4AF76;
+  color: white;
+}
+
+.boton-borrar {
+  margin-left: 10px;
+  background-color: #fce1e4;
+  border-radius: 10px;
+  padding: 10px;
+  color: #f37e7e;
+  font-weight: bold;
+  border: 2px solid #f37e7e;
+  cursor: pointer;
+  transition: all 200ms;
+}
+.boton-borrar:hover {
+  background-color: #f37e7e;
+  color: white;
+}
+
+.boton-agregar {
+  margin-top: 1rem;
+  margin-left: 10px;
+  background-color: #FAEDCD;
+  border-radius: 10px;
+  padding: 10px;
+  color: #C4AF76;
+  font-weight: bold;
+  border: 2px solid #C4AF76;
+  cursor: pointer;
+  transition: all 200ms;
+}
+.boton-agregar:hover {
+  background-color: #C4AF76;
+  color: white;
+}
+
+.ciclos,
+.otros {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0;
+    width: 80%;
+}
+
+.ciclos textarea,
+.otros textarea {
+  width: 100%;
+  height: 6rem;
+  border-radius: 10px;
+  padding: 10px;
+  border: #C4AF76 solid 2px;
+}
