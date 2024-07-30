@@ -164,7 +164,10 @@ const EditarConsulta = ({ idConsulta, setEditar, index, setActualizar }) => {
           value={descripcion}
           onChange={handleChangeDescripcion}
         ></textarea>
-        <input type="submit" name="enviar" value="Enviar" />
+        <section className="botones">
+          <input type="submit" name="enviar" value="Editar" />
+          <button onClick={() => setEditar(false)}>Cerrar</button>
+        </section>
       </form>
     </div>
   );

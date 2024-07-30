@@ -1,10 +1,18 @@
 .editar-consulta {
-    width: 90%;
-    margin-top: 20px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: #f0b3b3;
+    /* Con esto hago el desenfoque del fondo */
+    backdrop-filter: blur(10px);
 }
 
     .editar-consulta form {
-        width: 100%;
+        width: 60%;
+        margin: 10rem auto 0 auto;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -12,9 +20,14 @@
         gap: 10px;
     }
         .editar-consulta h3 {
+            top: 80px;
+            left: 50%;
+            transform: translate(-50%, 0);
+            position: absolute;
             text-align: center;
-            color: #F37E7E;
+            color: #2b2626;
             font-weight: bold;
+            font-size: 1.8em;
         }
             .editar-consulta input[type="date"]{
                 margin-top: 10px;
@@ -28,6 +41,12 @@
                     border-radius: 10px;
                     padding: 10px;
                     border: #F37E7E solid 2px;
+                }
+
+                .botones {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 20rem;
                 }
 
     .editar-consulta input[type="submit"]{
@@ -44,3 +63,18 @@
             background-color: #F37E7E;
             color: #dddddd;
         }
+
+        .editar-consulta button {
+            background-color: #FCE1E4;
+            border-radius: 10px;
+            padding: 10px;
+            color: #F37E7E;
+            font-weight: bold;
+            border: 2px solid #F37E7E;
+            cursor: pointer;
+            transition: all 200ms;
+        }
+            .editar-consulta button:hover{
+                background-color: #F37E7E;
+                color: #dddddd;
+            }    

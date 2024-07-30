@@ -28,29 +28,32 @@ const Consulta = () => {
     }
   };
   const borrarConsulta = async (consultaId) => {
-    try {
-      const url =
-        "http://localhost:3900/api/paciente/borrar-consulta/" +
-        dataPaciente[index]._id +
-        "/consulta/" +
-        consultaId;
+    const confirmacion = window.confirm('¿Estás seguro/a que quieres borrar la consulta?');
 
-      const resp = await fetch(url, {
-        method: "DELETE",
-      });
-
-      const datos = await resp.json();
-
-      if (datos.status == "success") {
-        console.log("Se ha borrado correctamente la consulta");
-        setEditar(false);
+    if (confirmacion) {
+      try {
+        const url =
+          "http://localhost:3900/api/paciente/borrar-consulta/" +
+          dataPaciente[index]._id +
+          "/consulta/" +
+          consultaId;
+  
+        const resp = await fetch(url, {
+          method: "DELETE",
+        });
+  
+        const datos = await resp.json();
+  
+        if (datos.status == "success") {
+          
+          setEditar(false);
+        }
+      } catch (error) {
+        console.log("Se ha encontrado un el error " + error);
       }
-    } catch (error) {
-      console.log("Se ha encontrado un el error " + error);
+      
+      actualizarPaciente()
     }
-    
-    actualizarPaciente()
-    
   };
   //Esta es la forma de convertir la fecha que viene con la hora desde la base de datos, la base de datos de mongo DB da la fecha en modo UTC
   const formatFecha = (fechaDB) => {
