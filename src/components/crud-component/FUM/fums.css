@@ -29,7 +29,9 @@
   text-align: center;
 }
 
-.boton-editar {
+.fums .boton-editar,
+.conteiner-fums .ciclos .boton-editar,
+.conteiner-fums .otros .boton-editar {
   margin-left: 10rem;
   margin-top: 0.8rem;
   background-color: #FAEDCD;
@@ -41,28 +43,31 @@
   cursor: pointer;
   transition: all 200ms;
 }
-.boton-editar:hover {
+.fums .boton-editar:hover,
+.conteiner-fums .ciclos .boton-editar:hover,
+.conteiner-fums .otros .boton-editar:hover {
   background-color: #C4AF76;
+  border: 2px solid #FAEDCD;
   color: white;
 }
 
-.boton-borrar {
+.fums .boton-borrar {
   margin-left: 10px;
-  background-color: #fce1e4;
+  background-color: #C4AF76;
   border-radius: 10px;
   padding: 10px;
-  color: #f37e7e;
+  color: #FAEDCD;
   font-weight: bold;
-  border: 2px solid #f37e7e;
+  border: 2px solid #FAEDCD;
   cursor: pointer;
   transition: all 200ms;
 }
-.boton-borrar:hover {
-  background-color: #f37e7e;
-  color: white;
+.fums .boton-borrar:hover {
+  background-color: #FAEDCD;
+  color: #C4AF76;
 }
 
-.boton-agregar {
+.conteiner-fums .boton-agregar {
   margin-top: 1rem;
   margin-left: 10px;
   background-color: #FAEDCD;
@@ -74,7 +79,7 @@
   cursor: pointer;
   transition: all 200ms;
 }
-.boton-agregar:hover {
+.conteiner-fums .boton-agregar:hover {
   background-color: #C4AF76;
   color: white;
 }
