@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import EditarConsulta from "./EditarConsulta";
 import { ProveedorDeContexto } from "../../../context/ProveedorDeContexto";
 import { CrearConsulta } from "../Consulta/CrearConsulta";
+import '../Consulta/consulta.css'
 
 const Consulta = () => {
   const { dataPaciente, index } = useContext(ProveedorDeContexto);
@@ -83,33 +84,14 @@ const Consulta = () => {
   };
 
   return (
-    <div>
-      <ul className="consultas">
-        {paciente && paciente.length != 0 ? (
-          paciente.map((consul) => (
-            <li key={consul._id}>
-              {formatFecha(consul.fecha)} {consul.descripcion}
-              <button
-                onClick={() =>
-                  editarConsulta(consul._id, setCrearConsulta(false))
-                }
-              >
-                Editar
-              </button>
-              <button onClick={() => borrarConsulta(consul._id)}>Borrar</button>
-            </li>
-          ))
-        ):
-        "No hay consultas"
-        }
-      </ul>
+    <div className="conteiner-consultas">
       <button
-        className="boton_consulta"
+        className="boton-agregar"
         onClick={() => {
           setCrearConsulta(true), setEditar(false);
         }}
       >
-        Agregar Consulta
+        Nueva Consulta
       </button>
       {editar === true && idConsulta != null ? (
         <EditarConsulta
@@ -121,15 +103,41 @@ const Consulta = () => {
       ) : (
         ""
       )}
+
       {crearConsulta ? (
-        <CrearConsulta
-          dataPaciente={dataPaciente}
-          index={index}
-          setCrearConsulta={setCrearConsulta}
-        />
-      ) : (
-        ""
-      )}
+              <CrearConsulta
+                dataPaciente={dataPaciente}
+                index={index}
+                setCrearConsulta={setCrearConsulta}
+              />
+            ) : (
+              ""
+            )}
+            
+      <ul className="consultas">
+        {paciente && paciente.length != 0 ? (
+          paciente.map((consul) => (
+            <li key={consul._id}>
+              {formatFecha(consul.fecha)} 
+              <p>{consul.descripcion}</p>
+              <button
+                className="boton-editar"
+                onClick={() =>
+                  editarConsulta(consul._id, setCrearConsulta(false))
+                }
+              >
+                Editar
+              </button>
+              <button 
+                  className="boton-borrar"
+                  onClick={() => borrarConsulta(consul._id)}>Borrar</button>
+            </li>
+          ))
+        ):
+        "No hay consultas"
+        }
+      </ul>
+      
     </div>
   );
 };

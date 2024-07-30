@@ -1,4 +1,5 @@
 import React from 'react'
+import '../Consulta/agregar_consulta.css'
 
 export const CrearConsulta = ({dataPaciente, index, setCrearConsulta}) => {
 
@@ -35,7 +36,7 @@ export const CrearConsulta = ({dataPaciente, index, setCrearConsulta}) => {
 
 
   return (
-    <>
+    <div className='agregar-consulta'>
         <h3>Crear Nueva Consulta</h3>
         <form action="submit" onSubmit={crearConsulta}>
         <input
@@ -47,6 +48,6 @@ export const CrearConsulta = ({dataPaciente, index, setCrearConsulta}) => {
         ></textarea>
         <input type="submit" name="enviar" value="Crear Consulta" />
       </form>
-    </>
+    </div>
   )
 }

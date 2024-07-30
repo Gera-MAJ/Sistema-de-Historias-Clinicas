@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import '../Consulta/editar_consulta.css'
 
 const EditarConsulta = ({ idConsulta, setEditar, index, setActualizar }) => {
   const [indexConsulta, setIndexConsulta] = useState(null);
@@ -149,7 +150,7 @@ const EditarConsulta = ({ idConsulta, setEditar, index, setActualizar }) => {
   
 
   return (
-    <>
+    <div className="editar-consulta">
       <h3>Editar Consulta</h3>
       <form action="submit" onSubmit={editarConsulta}>
         <input
@@ -165,7 +166,7 @@ const EditarConsulta = ({ idConsulta, setEditar, index, setActualizar }) => {
         ></textarea>
         <input type="submit" name="enviar" value="Enviar" />
       </form>
-    </>
+    </div>
   );
 };
 

@@ -1,0 +1,47 @@
+.agregar-consulta {
+    width: 90%;
+    margin-top: 20px;
+}
+
+    .agregar-consulta form {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+        .agregar-consulta h3 {
+            text-align: center;
+            color: #F37E7E;
+            font-weight: bold;
+        }
+            .agregar-consulta input[type="date"]{
+                margin-top: 10px;
+                padding: 5px;
+                border-radius: 5px;
+                border: #F37E7E solid 2px;
+            }
+                .agregar-consulta textarea {
+                    width: 80%;
+                    height: 6rem;
+                    border-radius: 10px;
+                    padding: 10px;
+                    border: #F37E7E solid 2px;
+                }
+
+    .agregar-consulta input[type="submit"]{
+        margin-left: 10px;
+        background-color: #FCE1E4;
+        border-radius: 10px;
+        padding: 10px;
+        color: #F37E7E;
+        font-weight: bold;
+        border: 2px solid #F37E7E;
+        cursor: pointer;
+        transition: all 200ms;
+    }
+        .agregar-consulta input[type="submit"]:hover {
+            background-color: #F37E7E;
+            color: #dddddd;
+        }
