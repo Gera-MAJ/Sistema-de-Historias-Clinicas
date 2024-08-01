@@ -65,27 +65,43 @@
         gap: 10px;
     }
         .datosPsiquiatricos .consulta button{
-            
-            font-size: 1rem;
+            font-size: 1.1rem;
             background-color: #FCE1E4;
-            border: 2px solid #F37E7E;
-            padding: 0 5px;
+            border: none;
+            /* padding: 0 5px; */
             border-radius: 10px 10px 0 0;
             width: 200px;
             height: 50px;
+            position: relative;
+            border: 2px solid #F37E7E;
         }
         .datosPsiquiatricos .consulta button:hover{
             background-color: #F37E7E;
             color: white;
             font-weight: bold;
-            transform: translateY(-5px);
+            /* transform: translateY(-5px); */
             cursor: pointer;
         }
+            .datosPsiquiatricos .consulta button .active {
+                background-color: #F37E7E;
+                color: white;
+                font-weight: bold;
+                /* transform: translateY(-5px); */
+            }        
 
         .datosPsiquiatricos .consulta button a {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px 10px 0 0;
             text-decoration: none;
             color: #F37E7E;
             width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .datosPsiquiatricos .consulta button a:hover {
             color: white;
@@ -103,20 +119,44 @@
             color: #CAB680;
             font-size: 1rem;
             background-color: #FAEDCD;
-            border: 2px solid #CAB680;
+            border: none;
             padding: 0 5px;
-            border-radius: 10px 10px 0 0;
+            border-radius: 10px 10px 0 0; 
             width: 200px;
             height: 50px;
+            position: relative;
+            font-size: 1.1rem;
         }
-            .datosPsiquiatricos .antecedentes button:hover {
-                color: white;
-                font-weight: bold;
+            .datosPsiquiatricos .antecedentes button .active {
                 background-color: #CAB680;
-                transform: translateY(-5px);
-                cursor: pointer;
+                color: #FAEDCD;
+                font-weight: bold;
+                font-size: 1.1em;
             }
-
+            
+            .datosPsiquiatricos .antecedentes button a {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                text-decoration: none;
+                background-color: #FAEDCD;
+                border-radius: 10px 10px 0 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #CAB680;
+                border: 2px solid #CAB680;
+            }
+                .datosPsiquiatricos .antecedentes button a:hover {
+                    background-color: #CAB680;
+                    color: #FAEDCD;
+                    font-weight: bold;
+                    font-size: 1.1em;
+                }
+                    
+                   
 .datosPsiquiatricos .genograma {
     display: flex;
     flex-direction: row;  
@@ -127,19 +167,38 @@
         color: #5D8DB1;
         font-size: 1rem;
         background-color: #DAEAF6;
-        border: 2px solid #5D8DB1;
         padding: 0 5px;
-        border-radius: 10px 10px 0 0;
+        border: none;
         width: 200px;
         height: 50px;
+        position: relative;
+        border-radius: 10px 10px 0 0;
     }
-
-        .datosPsiquiatricos .genograma button:hover{
-            color: white;
-            font-weight: bold;
+        .datosPsiquiatricos .genograma button .active {
             background-color: #5D8DB1;
-            transform: translateY(-5px);
-            cursor: pointer;
+            color: #DAEAF6;
+            font-weight: bold;
+        }
+
+    .datosPsiquiatricos .genograma button a {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        text-decoration: none;
+        color: #5D8DB1;
+        font-size: 1.1rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px 10px 0 0;
+        border: 2px solid #5D8DB1;
+    }
+        .datosPsiquiatricos .genograma button a:hover {
+            background-color: #5D8DB1;
+            color: #DAEAF6;
+            font-weight: bold;
         }
 
 .datosPsiquiatricos .hobbies {
@@ -152,18 +211,40 @@
         color: #9985B8;
         font-size: 1rem;
         background-color: #E8DFF5;
-        border: 2px solid #9985B8;
+        border: none;
         padding: 0 5px;
         border-radius: 10px 10px 0 0;
         width: 200px;
         height: 50px;
+        position: relative;
     }
-        .datosPsiquiatricos .hobbies button:hover{
+        .datosPsiquiatricos .hobbies button .active{
             color: white;
             font-weight: bold;
             background-color: #9985B8;
-            transform: translateY(-5px);
+        }
+
+        .datosPsiquiatricos .hobbies button a{
+            text-decoration: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 10px 10px 0 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.1rem;
+            border: 2px solid #9985B8;
+        }
+
+        .datosPsiquiatricos .hobbies button a:hover{
+            color: white;
+            font-weight: bold;
+            background-color: #9985B8;
             cursor: pointer;
+            font-size: 1.2rem;
         }
 
 .datosPsiquiatricos .tratamientos {
@@ -178,15 +259,36 @@
         background-color: #F1F3DD;
         border: 2px solid #5C8065;
         padding: 0 5px;
+        border: none;
         border-radius: 10px 10px 0 0;
         width: 200px;
         height: 50px;
+        position: relative;
     }
-        .datosPsiquiatricos .tratamientos button:hover{
-            color: white;
+        .datosPsiquiatricos .tratamientos button .active {
+            color: #F1F3DD;
             font-weight: bold;
             background-color: #5C8065;
-            transform: translateY(-5px);
+        }
+        .datosPsiquiatricos .tratamientos button a{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            text-decoration: none;
+            font-size: 1.1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px 10px 0 0;
+            border: 2px solid #5C8065;
+        }
+        .datosPsiquiatricos .tratamientos button a:hover{
+            color: #F1F3DD;
+            font-weight: bold;
+            background-color: #5C8065;
+            font-size: 1.2rem;
             cursor: pointer;
         }
 

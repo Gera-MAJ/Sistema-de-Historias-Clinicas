@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import '../css/PacienteElegido.css'
-import { NavLink, Outlet } from "react-router-dom"
+import { NavLink, Outlet, Navigate } from "react-router-dom"
 import { ProveedorDeContexto } from '../context/ProveedorDeContexto'
 import FormatearFechaLocal from '../Helpers/FormatearFechaLocal'
 
@@ -59,6 +59,8 @@ function PacienteElegido() {
       setIndex(indice)
     }
   }
+
+
 
   if(errores !== ''){
     return(
