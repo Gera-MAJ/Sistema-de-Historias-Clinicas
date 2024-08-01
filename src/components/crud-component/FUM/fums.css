@@ -7,32 +7,50 @@
   overflow-y: scroll;
   border: 1px solid #C4AF76;
   border-right: none;
+  height: 100%;
 }
 
 .fums {
   width: 90%;
   max-height: 1080px;
-  padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   margin-right: 20px;
 }
 
 .fums li {
-  background-color: rgb(255, 255, 255);
+  /* background-color: rgb(255, 255, 255); */
   width: 100%;
   list-style: none;
   padding: 0.5rem;
   border: 2px solid #C4AF76;
-  border-radius: 10px;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  /* border-radius: 10px; */
   text-align: center;
 }
+  .fums li strong {
+    color: #8b763c;
+    font-size: 1.1rem;
+  }
 
-.fums .boton-editar,
+.fums .boton-editar{
+  margin-left: 10rem;
+  margin-top: 0.8rem;
+  background-color: #FAEDCD;
+  border-radius: 10px;
+  padding: 10px;
+  color: #C4AF76;
+  font-weight: bold;
+  border: 2px solid #C4AF76;
+  cursor: pointer;
+  transition: all 200ms;
+}
+
 .conteiner-fums .ciclos .boton-editar,
 .conteiner-fums .otros .boton-editar {
-  margin-left: 10rem;
+  /* margin-left: 10rem; */
   margin-top: 0.8rem;
   background-color: #FAEDCD;
   border-radius: 10px;
@@ -56,15 +74,16 @@
   background-color: #C4AF76;
   border-radius: 10px;
   padding: 10px;
-  color: #FAEDCD;
+  color: white;
   font-weight: bold;
   border: 2px solid #FAEDCD;
   cursor: pointer;
   transition: all 200ms;
 }
 .fums .boton-borrar:hover {
-  background-color: #FAEDCD;
-  color: #C4AF76;
+  background-color: #fae2a6;
+  color: #8b763c;
+  border: 2px solid #C4AF76;
 }
 
 .conteiner-fums .boton-agregar {
@@ -89,8 +108,15 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 20px 0;
+    margin: 50px 0 0 0;
     width: 80%;
+}
+
+.ciclos h4,
+.otros h4{
+  font-size: 1.5rem;
+  color: #8b763c;
+  margin-bottom: 0.5em;
 }
 
 .ciclos textarea,
@@ -100,4 +126,9 @@
   border-radius: 10px;
   padding: 10px;
   border: #C4AF76 solid 2px;
+}
+
+.ciclos textarea:focus,
+.otros textarea:focus {
+  outline-color: #e4bb4b;
 }

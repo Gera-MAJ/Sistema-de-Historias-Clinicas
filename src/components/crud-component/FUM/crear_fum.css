@@ -1,81 +1,51 @@
-.agregar-consulta {
+
+.crear-fum {
+    position: relative;
     width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 1;
-    background-color: #f0b3b3;
-    /* Con esto hago el desenfoque del fondo */
-    backdrop-filter: blur(10px);
+    margin-top: 20px;
 }
 
-    .agregar-consulta form {
+    .crear-fum form{
         width: 60%;
-        margin: 10rem auto 0 auto;
+        margin: 2em auto 0 auto;
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         gap: 10px;
-        position: relative;
     }
-        .agregar-consulta h3 {
-            top: 80px;
+        .crear-fum h3 {
             left: 50%;
             transform: translate(-50%, 0);
             position: absolute;
             text-align: center;
-            color: #2b2626;
+            color: #8b763c;
             font-weight: bold;
-            font-size: 1.8em;
+            font-size: 1.5em;
         }
-            .agregar-consulta input[type="date"]{
+            .crear-fum form input[type="date"],
+            .crear-fum form input[type="submit"]{
                 margin-top: 10px;
                 padding: 5px;
                 border-radius: 5px;
-                border: #F37E7E solid 2px;
+                border: #C4AF76 solid 2px;
             }
-                .agregar-consulta textarea {
-                    width: 80%;
-                    height: 6rem;
-                    border-radius: 10px;
-                    padding: 10px;
-                    border: #F37E7E solid 2px;
+                .crear-fum form input[type="date"]:focus {
+                    outline-color: #e4bb4b;
                 }
+          
 
-    .botones {
-        display: flex;
-        flex-direction: row;
-        gap: 20rem;
-    }
-
-    .agregar-consulta input[type="submit"]{
-        background-color: #FCE1E4;
+    .crear-fum input[type="submit"]{
+        margin-left: 10px;
+        background-color: #FAEDCD;
         border-radius: 10px;
         padding: 10px;
-        color: #F37E7E;
+        color: #C4AF76;
         font-weight: bold;
-        border: 2px solid #F37E7E;
+        border: 2px solid #C4AF76;
         cursor: pointer;
-        transition: all 200ms;
     }
-        .agregar-consulta input[type="submit"]:hover {
-            background-color: #F37E7E;
-            color: #dddddd;
-        }
-
-    .agregar-consulta button {
-        background-color: #FCE1E4;
-        border-radius: 10px;
-        padding: 10px;
-        color: #F37E7E;
-        font-weight: bold;
-        border: 2px solid #F37E7E;
-        cursor: pointer;
-        transition: all 200ms;
-    }
-        .agregar-consulta button:hover{
-            background-color: #F37E7E;
-            color: #dddddd;
+        .crear-fum input[type="submit"]:hover {
+            background-color: #C4AF76;
+            color: white;
         }

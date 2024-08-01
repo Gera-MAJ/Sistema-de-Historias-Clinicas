@@ -12,7 +12,6 @@
     border-radius: 5px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     position: relative;
     flex-wrap: wrap;
@@ -191,8 +190,6 @@
             cursor: pointer;
         }
 
-/* .elementos {
-    background-color: #CCD5AE;
-    border: 1px solid #42443D;
-    border-radius: 10px;
-} */
+.elementos {
+    height: 100%;
+}

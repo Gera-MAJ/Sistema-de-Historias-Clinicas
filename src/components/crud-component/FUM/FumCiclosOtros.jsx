@@ -200,7 +200,7 @@ export const FumCiclosOtros = () => {
         ""
       )}
       <li className="ciclos">
-        <h4>Ciclos</h4>{" "}
+        <h4>CICLOS</h4>{" "}
         <textarea
           type="text"
           name="ciclos"
@@ -213,7 +213,7 @@ export const FumCiclosOtros = () => {
         </button>
       </li>
       <li className="otros">
-        <h4>Otros</h4>{" "}
+        <h4>OTROS</h4>{" "}
         <textarea
           type="text"
           name="otros"

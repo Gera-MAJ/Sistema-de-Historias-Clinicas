@@ -1,4 +1,5 @@
 import React from "react";
+import '../FUM/crear_fum.css'
 
 const CrearFum = ({ setActualizar, idPaciente, setNuevaFum }) => {
 
@@ -31,13 +32,13 @@ const CrearFum = ({ setActualizar, idPaciente, setNuevaFum }) => {
   };
 
   return (
-    <>
+    <div className="crear-fum">
       <h3>Crear Fum</h3>
       <form action="submit" onSubmit={agregarFum}>
         <input type="date" name="fecha" className="fecha" />
         <input type="submit" name="crearFum" value="Agregar FUM" />
       </form>
-    </>
+    </div>
   );
 };
 
