@@ -44,9 +44,11 @@ const RouterPrincipal = () => {
       <div className="conteinerPrincipal">
 
         <nav className={login ? 'navPrincipal' : 'navApagado'}>
-          <ul>
+          <ul className='nav-paciente'>
             <li><NavLink to="/pacientes">Pacientes</NavLink></li>
             <li><NavLink to="/nuevo-paciente">Nuevo Paciente</NavLink></li>
+          </ul>
+          <ul className='nav-sesion'>
             <li><NavLink to='/login' onClick={() => {{login ? setLogin(false) : ""}}}>Cerrar Sesión</NavLink></li>
           </ul>
         </nav>

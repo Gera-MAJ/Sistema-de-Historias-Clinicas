@@ -10,30 +10,66 @@
 
 .navPrincipal{ 
     width: 100%;
-    background-color: #707070;
-    flex: 1;  
+    background-color: #93A39E;
+    flex: 1;
+    display: flex;
+    flex-direction: row; 
+    gap: 900px;
+    justify-content: flex-end; 
 }
 
 .navApagado {
     display: none;
+    
 }
 
-.navPrincipal ul{
+.navPrincipal .nav-paciente{
     display: flex;
     flex-direction: row;
-    gap: 200px;
-    background-color: #707070;
+    align-items: center;
+    gap: 120px;
+}
+.navPrincipal .nav-sesion{
     width: auto;
-    padding: 10px 20px;
+    margin-right: 20px;
+    /* padding: 15px 20px; */
 }
     .navPrincipal ul li {
         list-style: none;
+        position: relative;
+        height: 40px;
+        width: 160px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
+        .navPrincipal ul #pacientes{
+            margin-right: 600px;
+        }
+            .navPrincipal ul #nuevo-paciente{
+                margin-right: 500px;
+            }
         .navPrincipal ul li > a{
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-decoration: none;
             color: white;
-            font-weight: bold;
+            font-weight: bold; 
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%; 
+            height: 100%;
+            text-align: center;
+            transition: all 200ms;
         }
+        .navPrincipal ul li > a:hover{
+            text-decoration: none;
+            color: #4D4D56;
+            font-weight: bold;
+            background-color: #ECF0E2;
+        } 
 
 .routes {
     width: 100%;
