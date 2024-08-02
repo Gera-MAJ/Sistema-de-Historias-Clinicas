@@ -7,7 +7,7 @@
     overflow-y: scroll;
     border: 1px solid #F37E7E;
     border-right: none;
-    max-height: 1080px;
+    height: 100%;
 }
 
 .consultas {

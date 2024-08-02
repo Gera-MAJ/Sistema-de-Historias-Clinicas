@@ -45,7 +45,12 @@
             }
                 .datosPersonales ul li p {
                     color: black;
+                    font-size: 1.1rem;
                 }
+                    .datosPersonales ul li strong {
+                        font-size: 1.1rem;
+                    }
+
     .datosPersonales button {
         margin-top: 20px;
         padding: 15px;
@@ -306,4 +311,5 @@
 
 .elementos {
     height: 86%;
+    max-height: 1000px;
 }
