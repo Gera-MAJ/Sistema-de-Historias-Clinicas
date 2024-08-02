@@ -17,7 +17,7 @@ const TratamientoFarmacologico = () => {
   };
 
   return (
-    <div className="section-editor">
+    <div className="section-tratamientos">
       <h2>Tratamiento Farmacológico</h2>
       <textarea
         value={sectionData}
@@ -27,8 +27,6 @@ const TratamientoFarmacologico = () => {
       />
       <div className="section-buttons">
         <button onClick={handleSave}>Guardar</button>
-        <button onClick={() => setSectionData('')}>Cerrar</button>
-        <button onClick={handleDelete}>Borrar</button>
       </div>
     </div>
   );

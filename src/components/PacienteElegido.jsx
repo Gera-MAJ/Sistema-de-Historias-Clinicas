@@ -94,6 +94,7 @@ function PacienteElegido() {
               <li><strong>N° de Afiliado:</strong> <p>{dataPaciente[index].Num_de_Afiliado}</p></li>
               <li><strong>Diagnóstico:</strong> <p>{dataPaciente[index].Diagnostico}</p></li>       
           </ul>
+          <button>Editar Paciente</button>
         </div>
 
         <div className="elementos">

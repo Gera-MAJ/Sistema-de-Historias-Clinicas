@@ -1,19 +1,17 @@
 .conteinerPrincipal {
-    
     background-color: #E9EDC9;
     position: relative;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-bottom: 40px;
+    /* margin-bottom: 40px; */
+    
 }
 
-.navPrincipal{
-    
+.navPrincipal{ 
     width: 100%;
     background-color: #707070;
-    flex: 1;
-    
+    flex: 1;  
 }
 
 .navApagado {
@@ -40,7 +38,7 @@
 .routes {
     width: 100%;
     box-sizing: border-box;
-    margin: 40px 0;
+    margin: 60px 0 0 0;
     flex: 2;
 } 
 

@@ -69,13 +69,13 @@ const Genograma = () => {
 
   console.log(imagen);
   return (
-    <>
+    <div className="section-genograma">
       <h3>Genograma</h3>
       { paciente.Genograma == "default.png" && <img src="https://i.pinimg.com/originals/d9/b5/2a/d9b52aaa2526e54403b063f6de4bf2f4.jpg"/>}
       { paciente.Genograma != "default.png" && <img src={"http://localhost:3900/api/imagen/" + paciente.Genograma}/>}
       <input type="file" name="genograma" id="file" />
       <button onClick={() => subirImagen()}>Subir Imagen</button>
-    </>
+    </div>
   );
 };
 
