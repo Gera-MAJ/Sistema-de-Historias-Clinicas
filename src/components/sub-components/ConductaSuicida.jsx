@@ -20,7 +20,7 @@ const ConductaSuicida = () => {
 
   return (
     <div className="section-consulta">
-      <h2>ConductaSuicida</h2>
+      <h2>Antecedentes de Conducta Suicida</h2>
       <textarea
         value={sectionData}
         onChange={(e) => setSectionData(e.target.value)}

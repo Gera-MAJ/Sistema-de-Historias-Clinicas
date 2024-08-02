@@ -48,7 +48,7 @@ const Login = () => {
           <div>
             {/* <label htmlFor="password">Contraseña:</label> */}
             <input
-              placeholder='Constraseña'
+              placeholder='Contraseña'
               type="password"
               id="password"
               value={password}
