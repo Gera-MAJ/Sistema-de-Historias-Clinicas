@@ -1,5 +1,4 @@
 body {
-  margin: 0;
   font-family: Arial, sans-serif;
   background-color: #f0f8ff; 
 }
@@ -7,9 +6,8 @@ body {
 .pacientes-container {
   display: flex;
   align-items: center;
-  height: 100vh;
+  height: 82vh;
   width: 80vw;
-
 }
 
 
@@ -26,13 +24,18 @@ body {
 }
 
 .input {
+  text-align: center;
   padding: 10px;
-  border: 2px solid #dcdcdc;
-  border-radius: 5px;
+  border: 3px solid #B1B3A0;
+  border-radius: 20px;
   margin-bottom: 10px;
   font-size: 16px;
-  color: #4a4a4a;
-  background-color: #f5f5f5; 
+  color: #B1B3A0;
+  background-color: #f5f5f500; 
+}
+
+.input:focus {
+  outline-color: #B1B3A0;
 }
 
 .button {
@@ -47,18 +50,20 @@ body {
   display: none;
 }
 
-.button:hover {
-  background-color: #ff69b4; 
+.delete-button:hover {
+  background-color: #E9EDC9; 
+  color: #8AB597;
 }
 
 .delete-button {
   margin-left: 20px;
-  background-color: #F37E7E;
+  background-color: #8AB597;
   border-radius: 10px;
   padding: 10px;
   color: #dcdcdc;
-  border: 2px solid #dcdcdc;
+  border: none;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .pacientes-list {
@@ -67,24 +72,36 @@ body {
   max-height: 70vh;
   overflow: auto;
   justify-content: start;
-  border: 1px black;
-  border-radius: 30px;
-  background: #add8e6;
+  border: 3px solid #8AB597;
+  border-right: none;
+  border-radius: 30px 0 0 30px;
+  background: #CCD5AE;
 }
+/* .pacientes-list::-webkit-scrollbar {
+  width: 20px; 
+  background-color: #8AB597;
 
-  .pacientes-list a {
+} */
+
+  .pacientes-list .paciente-item > a {
     text-decoration: none;
-    color: black;
+    color: #4d4d4d;
+    transition: all 150ms;
+  }
+  .pacientes-list .paciente-item > a:hover{
+    background-color: #ECF0E2;
+    border-radius: 10px;
+    padding: 6px 25px;
+    
   }
 
 
 .paciente-item {
-  padding: 10px;
+  padding: 5px;
   margin: 5px 0;
-  border: 1px solid #dcdcdc;
+  /* border: 1px solid #dcdcdc; */
   border-radius: 5px;
-  background-color: #e6e6fa; 
-  color: #4a4a4a;
-  text-align: center;
+  /* background-color: #e6e6fa;  */
+  color: #4d4d4d;
   font-size: 18px;
 }
