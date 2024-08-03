@@ -91,7 +91,7 @@ const RouterPrincipal = () => {
         </section>
         
         <footer className='footer'>
-            <h3>&reg; Aplicación Historias Clínicas</h3>
+            <h3>&reg; Sistema de Historias Clínicas</h3>
             <p>Gerardo Jatip - Leticia Aráoz</p>
         </footer>
       
