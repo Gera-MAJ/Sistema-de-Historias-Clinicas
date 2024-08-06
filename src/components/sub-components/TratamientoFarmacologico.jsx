@@ -1,15 +1,39 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { ProveedorDeContexto } from '../../context/ProveedorDeContexto';
 
-
-const Tratamiento_Farmacologico = () => {
+const TratamientoFarmacologico = () => {
   const { dataPaciente, index, setDataPaciente } = useContext(ProveedorDeContexto);
-  const [sectionData, setSectionData] = useState(dataPaciente[index].Tratamiento_Farmacologico || '');
+  const [sectionData, setSectionData] = useState('');
 
-  const handleSave = () => {
+  useEffect(() => {
+    if (dataPaciente && dataPaciente[index]) {
+      setSectionData(dataPaciente[index].Tratamiento_Farmacologico || '');
+    }
+  }, [dataPaciente, index]);
+
+  const handleSave = async () => {
     const updatedData = [...dataPaciente];
     updatedData[index].Tratamiento_Farmacologico = sectionData;
     setDataPaciente(updatedData);
+
+    try {
+      const url = `http://localhost:3900/api/editar-paciente/${dataPaciente[index]._id}`;
+      const response = await fetch(url, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ Tratamiento_Farmacologico: sectionData }),
+      });
+
+      const result = await response.json();
+      if (result.status === 'success') {
+        alert('Los datos se guardaron correctamente');
+        console.log('Datos actualizados correctamente');
+      } else {
+        console.error('Error al actualizar los datos:', result.message);
+      }
+    } catch (error) {
+      console.error('Error al realizar la solicitud:', error);
+    }
   };
 
   const handleDelete = () => {
@@ -27,9 +51,10 @@ const Tratamiento_Farmacologico = () => {
       />
       <div className="section-buttons">
         <button onClick={handleSave}>Guardar</button>
+        <button onClick={handleDelete}>Borrar</button>
       </div>
     </div>
   );
 };
 
-export default Tratamiento_Farmacologico;
+export default TratamientoFarmacologico;
