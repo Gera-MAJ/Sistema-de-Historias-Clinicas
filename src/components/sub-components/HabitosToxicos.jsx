@@ -57,4 +57,4 @@ const HabitosToxicos = () => {
   );
 };
 
-export default Habitos_Toxicos;
+export default HabitosToxicos;

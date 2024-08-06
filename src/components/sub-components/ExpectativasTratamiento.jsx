@@ -57,4 +57,4 @@ const ExpectativasTratamiento = () => {
   );
 };
 
-export default Expectativas_del_Tratamiento;
+export default ExpectativasTratamiento;

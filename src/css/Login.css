@@ -1,100 +1,100 @@
 .login-container {
-    display: flex;
-    height: 100%;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 } 
-    .login-container h2 {
-        font-size: 50px;
-        color: #9A9B8F;
-        font-weight: 350;
-        font-style: italic;
-        font-variant:inherit;
-        font-family: Arial, sans-serif;
-        text-align: center;
-      }
-  
-    .login-form {
-      width: 100%;
-      border-radius: 20px;
-      /* justify-content: center; */
+  .login-container h2 {
+      font-size: 50px;
+      color: #9A9B8F;
+      font-weight: 350;
+      font-style: italic;
+      font-variant:inherit;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+
+  .login-form {
+    width: 100%;
+    border-radius: 20px;
+    /* justify-content: center; */
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+  }
+  .login-form img {
+    max-width: 50%;
+    height: auto;
+  }
+
+    .login-form .usuario {
+      margin: 120px auto;
+      width: 30%;
+      border: 3px solid #9A9B8F;
+      border-radius: 60px;
+      height: 360px;
       display: flex;
-      flex-direction: row;
-      height: 100%;
-    }
-    .login-form img {
-      max-width: 50%;
-      height: auto;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #CCD5AE;
     }
 
-      .login-form .usuario {
-        margin: 120px auto;
-        width: 30%;
-        border: 3px solid #9A9B8F;
-        border-radius: 60px;
-        height: 360px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        background-color: #CCD5AE;
-      }
-
-      .login-form .usuario div > input[type="text"],
-      .login-form .usuario div > input[type="password"]{
-          border-radius: 40px;
-          margin: 15px;
-          padding: 20px;
-          border: 4px solid #E9EDC8;
-          font-size: 1.1rem;
-          text-align: center;
-      }
-
-      .login-form .usuario div > input[type="text"]:focus,
-      .login-form .usuario div > input[type="password"]:focus {
-        outline-color: #FAEDCD;
-      }
-
-      .login-form .usuario button{
-        margin-top: 10px;
-        padding: 15px 20px;
-        border: 3px solid #FEFBE1;
-        border-radius: 20px;
-        background-color: #FAEDCD; 
-        color: #4a4a4a;
-        font-size: 16px;
-        cursor: pointer;
-        transition: background-color 200ms;
-      }
-      .login-form .usuario button:hover {
-        background-color: #5C8065;
-        color: #FAEDCD;
-        margin-top: 10px;
+    .login-form .usuario div > input[type="text"],
+    .login-form .usuario div > input[type="password"]{
+        border-radius: 40px;
+        margin: 15px;
+        padding: 20px;
+        border: 4px solid #E9EDC8;
+        font-size: 1.1rem;
+        text-align: center;
     }
-    
 
-    
-    /* .login-form div {
-      margin-bottom: 120px;
-      margin-top: 120px;
+    .login-form .usuario div > input[type="text"]:focus,
+    .login-form .usuario div > input[type="password"]:focus {
+      outline-color: #FAEDCD;
     }
-    
-    .login-form .usuario label {
-      width: 100%;
-    margin-bottom: 10px;
-    padding: 10px;
-    font-size: 16px;
-    }
-    
-    .login-form input {
-      width: 20%;
-      padding: 25px;
-      box-sizing: border-box;
+
+    .login-form .usuario button{
+      margin-top: 10px;
+      padding: 15px 20px;
+      border: 3px solid #FEFBE1;
       border-radius: 20px;
-      background-color: #f5f5f5; 
-    } */
+      background-color: #FAEDCD; 
+      color: #4a4a4a;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 200ms;
+    }
+    .login-form .usuario button:hover {
+      background-color: #5C8065;
+      color: #FAEDCD;
+      margin-top: 10px;
+  }
+  
+
+  
+  /* .login-form div {
+    margin-bottom: 120px;
+    margin-top: 120px;
+  }
+  
+  .login-form .usuario label {
+    width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 16px;
+  }
+  
+  .login-form input {
+    width: 20%;
+    padding: 25px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    background-color: #f5f5f5; 
+  } */
     
   
     

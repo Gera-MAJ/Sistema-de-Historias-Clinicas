@@ -41,7 +41,7 @@ const MedicacionActual = () => {
   };
 
   return (
-    <div className="section-antecedentes">
+    <div className="section-tratamientos">
       <h2>Medicación Actual</h2>
       <textarea
         value={sectionData}
@@ -57,4 +57,4 @@ const MedicacionActual = () => {
   );
 };
 
-export default Medicacion_Actual;
+export default MedicacionActual;

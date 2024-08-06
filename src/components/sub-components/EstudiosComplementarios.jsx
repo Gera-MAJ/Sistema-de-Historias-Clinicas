@@ -57,4 +57,4 @@ const EstudiosComplementarios = () => {
   );
 };
 
-export default Estudios_Complementarios;
+export default EstudiosComplementarios;

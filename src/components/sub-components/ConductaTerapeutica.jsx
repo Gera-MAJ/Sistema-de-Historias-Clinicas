@@ -57,4 +57,4 @@ const ConductaTerapeutica = () => {
   );
 };
 
-export default Conducta_Terapeutica;
+export default ConductaTerapeutica;

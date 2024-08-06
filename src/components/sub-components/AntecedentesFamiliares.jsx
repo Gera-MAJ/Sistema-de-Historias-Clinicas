@@ -57,4 +57,4 @@ const AntecedentesFamiliares = () => {
   );
 };
 
-export default Antecedentes_Familiares;
+export default AntecedentesFamiliares;

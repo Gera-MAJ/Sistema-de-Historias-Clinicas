@@ -57,4 +57,4 @@ const ExamenMental = () => {
   );
 };
 
-export default Examen_Mental;
+export default ExamenMental;

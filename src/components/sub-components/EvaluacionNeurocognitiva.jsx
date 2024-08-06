@@ -57,4 +57,4 @@ const EvaluacionNeurocognitiva = () => {
   );
 };
 
-export default Evaluacion_Neurocognitiva;
+export default EvaluacionNeurocognitiva;
