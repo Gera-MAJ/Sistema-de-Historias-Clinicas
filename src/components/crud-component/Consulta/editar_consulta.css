@@ -1,0 +1,80 @@
+.editar-consulta {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: #f0b3b3;
+    /* Con esto hago el desenfoque del fondo */
+    backdrop-filter: blur(10px);
+}
+
+    .editar-consulta form {
+        width: 60%;
+        margin: 10rem auto 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+        .editar-consulta h3 {
+            top: 80px;
+            left: 50%;
+            transform: translate(-50%, 0);
+            position: absolute;
+            text-align: center;
+            color: #2b2626;
+            font-weight: bold;
+            font-size: 1.8em;
+        }
+            .editar-consulta input[type="date"]{
+                margin-top: 10px;
+                padding: 5px;
+                border-radius: 5px;
+                border: #F37E7E solid 2px;
+            }
+                .editar-consulta textarea {
+                    width: 80%;
+                    height: 6rem;
+                    border-radius: 10px;
+                    padding: 10px;
+                    border: #F37E7E solid 2px;
+                }
+
+                .botones {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 20rem;
+                }
+
+    .editar-consulta input[type="submit"]{
+        margin-left: 10px;
+        background-color: #FCE1E4;
+        border-radius: 10px;
+        padding: 10px;
+        color: #F37E7E;
+        font-weight: bold;
+        border: 2px solid #F37E7E;
+        cursor: pointer;
+    }
+        .editar-consulta input[type="submit"]:hover {
+            background-color: #F37E7E;
+            color: #dddddd;
+        }
+
+        .editar-consulta button {
+            background-color: #FCE1E4;
+            border-radius: 10px;
+            padding: 10px;
+            color: #F37E7E;
+            font-weight: bold;
+            border: 2px solid #F37E7E;
+            cursor: pointer;
+            transition: all 200ms;
+        }
+            .editar-consulta button:hover{
+                background-color: #F37E7E;
+                color: #dddddd;
+            }    

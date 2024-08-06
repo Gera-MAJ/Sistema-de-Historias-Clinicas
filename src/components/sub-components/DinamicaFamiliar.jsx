@@ -17,7 +17,7 @@ const Dinamica_Familiar = () => {
   };
 
   return (
-    <div className="section-editor">
+    <div className="section-genograma">
       <h2>Dinámica Familiar</h2>
       <textarea
         value={sectionData}
@@ -27,8 +27,6 @@ const Dinamica_Familiar = () => {
       />
       <div className="section-buttons">
         <button onClick={handleSave}>Guardar</button>
-        <button onClick={() => setSectionData('')}>Cerrar</button>
-        <button onClick={handleDelete}>Borrar</button>
       </div>
     </div>
   );

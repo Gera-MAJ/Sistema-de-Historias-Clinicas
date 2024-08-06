@@ -1,54 +1,62 @@
 .nuevo-paciente-container {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #f0f8ff; 
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-family: Arial, sans-serif;
-  }
-  
-  .nuevo-paciente-container h2 {
-    text-align: center;
-    color: #6fc76f; 
-  }
-  
-  .nuevo-paciente-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .nuevo-paciente-form label {
-    display: flex;
-    flex-direction: column;
-    color: #333;
-    font-size: 14px;
-  }
-  
-  .nuevo-paciente-form input {
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .submit-button {
-    padding: 10px 20px;
-    background-color: #ffb6c1; 
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    align-self: center;
-    font-size: 16px;
-  }
-  
-  .submit-button:hover {
-<<<<<<< HEAD
-    background-color: #ff69b4; 
-  }
-=======
-    background-color:#ff69b4;
+  max-width: 600px;
+  margin: -20px auto 70px auto;
+  padding: 20px;
+  background-color: #CCD5AE; 
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
 }
->>>>>>> 2745a6b693f801b1d36a1fa919b0ab254b82cc46
+
+.nuevo-paciente-container h2 {
+  text-align: center;
+  color: #68a77b; 
+  font-size: 1.8rem;
+}
+
+.nuevo-paciente-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.nuevo-paciente-form label {
+  display: flex;
+  flex-direction: column;
+  color: #333;
+  font-size: 16px;
+  font-weight: bold;
+  color: #4e8a60;
+}
+
+.nuevo-paciente-form input {
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #edeee9;
+  color: #4e8a60;
+  font-size: 1.1rem;
+}
+
+.nuevo-paciente-form input:focus{
+  outline-color: #68a77b;
+}
+
+.submit-button {
+  padding: 10px 20px;
+  background-color: #E9EDC9; 
+  color: #8AB597;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: center;
+  font-size: 16px;
+  font-weight: bold;
+  transition: all 200ms;
+}
+
+.submit-button:hover {
+  background-color:#8AB597;
+  color: #E9EDC9;
+}

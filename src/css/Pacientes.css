@@ -1,88 +1,14 @@
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f0f8ff; 
-  }
-  
-  .pacientes-container {
-    display: flex;
-    align-items: center;
-    height: 100vh;
-    width: 80vw;
-  
-  }
-
-  
-  .filter-section, .pacientes-list {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .filter-section {
-    border-right: 1px solid #dcdcdc;
-  }
-  
-  .input {
-    padding: 10px;
-    border: 2px solid #dcdcdc;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    font-size: 16px;
-    color: #4a4a4a;
-    background-color: #f5f5f5; 
-  }
-  
-  .button {
-    padding: 10px 20px;
-    border: 20px;
-    border-radius: 5px;
-    background-color: #add8e6; 
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .button:hover {
-    background-color: #ff69b4; 
-  }
-  
-  .pacientes-list {
-    list-style-type: none;
-    padding: 0;
-    max-height: 70vh;
-    overflow: auto;
-    justify-content: start;
-    border: 1px black;
-    border-radius: 30px;
-    background: #add8e6;
-  }
-  
-  
-  .paciente-item {
-    padding: 10px;
-    margin: 5px 0;
-    border: 1px solid #dcdcdc;
-    border-radius: 5px;
-    background-color: #e6e6fa; 
-    color: #4a4a4a;
-    text-align: center;
-    font-size: 18px;
-  
-  margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #f0f8ff 
+  background-color: #f0f8ff; 
 }
 
 .pacientes-container {
   display: flex;
   align-items: center;
-  height: 100vh;
+  height: 86vh;
   width: 80vw;
-
+  margin-top: -40px;
 }
 
 
@@ -99,13 +25,18 @@ body {
 }
 
 .input {
+  text-align: center;
   padding: 10px;
-  border: 2px solid #dcdcdc;
-  border-radius: 5px;
+  border: 3px solid #B1B3A0;
+  border-radius: 20px;
   margin-bottom: 10px;
   font-size: 16px;
-  color: #4a4a4a;
-  background-color: #f5f5f5; 
+  color: #B1B3A0;
+  background-color: #f5f5f500; 
+}
+
+.input:focus {
+  outline-color: #B1B3A0;
 }
 
 .button {
@@ -120,18 +51,20 @@ body {
   display: none;
 }
 
-.button:hover {
-  background-color: #ff69b4; 
+.delete-button:hover {
+  background-color: #E9EDC9; 
+  color: #8AB597;
 }
 
 .delete-button {
   margin-left: 20px;
-  background-color: rgb(223, 79, 79);
+  background-color: #8AB597;
   border-radius: 10px;
   padding: 10px;
   color: #dcdcdc;
-  border: 2px solid #dcdcdc;
+  border: none;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .pacientes-list {
@@ -140,24 +73,36 @@ body {
   max-height: 70vh;
   overflow: auto;
   justify-content: start;
-  border: 1px black;
-  border-radius: 30px;
-  background: #add8e6;
+  border: 3px solid #8AB597;
+  border-right: none;
+  border-radius: 30px 0 0 30px;
+  background: #CCD5AE;
 }
+/* .pacientes-list::-webkit-scrollbar {
+  width: 20px; 
+  background-color: #8AB597;
 
-  .pacientes-list a {
+} */
+
+  .pacientes-list .paciente-item > a {
     text-decoration: none;
-    color: black;
+    color: #4d4d4d;
+    transition: all 150ms;
+  }
+  .pacientes-list .paciente-item > a:hover{
+    background-color: #ECF0E2;
+    border-radius: 16px;
+    padding: 6px 25px;
+    
   }
 
 
 .paciente-item {
-  padding: 10px;
+  padding: 5px;
   margin: 5px 0;
-  border: 1px solid #dcdcdc;
+  /* border: 1px solid #dcdcdc; */
   border-radius: 5px;
-  background-color: #e6e6fa; 
-  color: #4a4a4a;
-  text-align: center;
+  /* background-color: #e6e6fa;  */
+  color: #4d4d4d;
   font-size: 18px;
 }

@@ -17,7 +17,7 @@ const Tipo_de_Psicoterapia = () => {
   };
 
   return (
-    <div className="section-editor">
+    <div className="section-tratamientos">
       <h2>Tipo de Psicoterapia</h2>
       <textarea
         value={sectionData}
@@ -27,8 +27,6 @@ const Tipo_de_Psicoterapia = () => {
       />
       <div className="section-buttons">
         <button onClick={handleSave}>Guardar</button>
-        <button onClick={() => setSectionData('')}>Cerrar</button>
-        <button onClick={handleDelete}>Borrar</button>
       </div>
     </div>
   );

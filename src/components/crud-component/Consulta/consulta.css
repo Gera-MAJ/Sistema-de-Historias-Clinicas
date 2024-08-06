@@ -1,0 +1,89 @@
+.conteiner-consultas {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    background-color: #FCE1E4;
+    border-radius: 10px;
+    overflow-y: scroll;
+    border: 1px solid #F37E7E;
+    border-right: none;
+    height: 100%;
+}
+
+.consultas {
+    width: 90%;
+    /* height: 100%; */
+    padding: 20px;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    margin-right: 20px;
+}
+
+    .consultas li{
+        background-color: white;
+        width: 100%;
+        list-style: none;
+        padding: 0.5rem;
+        border: 2px solid #F37E7E;
+        margin: 20px 0;
+        border-radius: 10px;
+    }
+        .consultas li p {
+            width: 95%;
+            height: 6rem;
+            padding: 10px; 
+            overflow-y: scroll;   
+        }
+
+.boton-editar{
+    /* margin-left: 20px; */
+    margin-top: 0.8rem;
+    background-color: #DAEAF6;
+    border-radius: 10px;
+    padding: 10px;
+    color: #5A8BAF;
+    font-weight: bold;
+    border: 2px solid #5A8BAF;
+    cursor: pointer;
+    transition: all 200ms;
+}
+    .boton-editar:hover{
+        background-color: #5A8BAF;
+        color: white;
+    }
+
+.boton-borrar{
+    margin-left: 10px;
+    background-color: #FCE1E4;
+    border-radius: 10px;
+    padding: 10px;
+    color: #F37E7E;
+    font-weight: bold;
+    border: 2px solid #F37E7E;
+    cursor: pointer;
+    transition: all 200ms;
+}
+    .boton-borrar:hover {
+        background-color: #F37E7E;
+        color: white;
+    }
+
+.boton-agregar{
+    margin-top: 1rem;
+    margin-left: 10px;
+    background-color: #FCE1E4;
+    border-radius: 10px;
+    padding: 10px;
+    color: #F37E7E;
+    font-weight: bold;
+    border: 2px solid #F37E7E;
+    cursor: pointer;
+    transition: all 200ms;
+}
+    .boton-agregar:hover {
+        background-color: #F37E7E;
+        color: #dddddd;
+    }
+
+

@@ -17,7 +17,7 @@ const Habitos_Toxicos = () => {
   };
 
   return (
-    <div className="section-editor">
+    <div className="section-antecedentes">
       <h2>Hábitos Tóxicos</h2>
       <textarea
         value={sectionData}
@@ -27,8 +27,6 @@ const Habitos_Toxicos = () => {
       />
       <div className="section-buttons">
         <button onClick={handleSave}>Guardar</button>
-        <button onClick={() => setSectionData('')}>Cerrar</button>
-        <button onClick={handleDelete}>Borrar</button>
       </div>
     </div>
   );

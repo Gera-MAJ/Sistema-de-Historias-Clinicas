@@ -3,6 +3,7 @@ import { ProveedorDeContexto } from "../../../context/ProveedorDeContexto";
 import EditFum from "./EditFum";
 import FormatearFechasLocal from "../../../Helpers/FormatearFechaLocal";
 import CrearFum from "./CrearFum";
+import '../FUM/fums.css'
 
 export const FumCiclosOtros = () => {
   const [fums, setFums] = useState([]);
@@ -134,39 +135,44 @@ export const FumCiclosOtros = () => {
   }
 
   const borrarFum = async(id) => {
-    try {
+    const confirmacion = window.confirm("Está seguro que desea borrar la fecha???")
+    if (confirmacion){
+      try {
 
-      const url = "http://localhost:3900/api/paciente/borrar-fum/"+idPaciente+"/fum/"+id
-
-      const datos = await fetch(url, { method: "DELETE" });
-
-      const resp = await datos.json()
-
-      console.log(resp.status)
-
-      if(resp.status == "success"){
+        const url = "http://localhost:3900/api/paciente/borrar-fum/"+idPaciente+"/fum/"+id
+  
+        const datos = await fetch(url, { method: "DELETE" });
+  
+        const resp = await datos.json()
+  
+        console.log(resp.status)
+  
+        if(resp.status == "success"){
+          
+          console.log("Se borró correctamente la FUM")
+          
+          listarFums()
+        }
         
-        console.log("Se borró correctamente la FUM")
-        window.confirm("Está seguro que desea borrar la fecha???")
-        listarFums()
+      } catch (error) {
+        console.log("Se produjo el siguiente error: "+ error)
       }
-      
-    } catch (error) {
-      console.log("Se produjo el siguiente error: "+ error)
     }
+    
   }
-
+  console.log(fums)
   return (
-    <>
-      <div>FumCiclosOtros</div>
-      <button onClick={crearFum}>Agregar FUM</button>
+    <div className="conteiner-fums">
+      {/* <h3>Fum - Ciclos - Otros</h3> */}
+      <button onClick={crearFum} className="boton-agregar">Agregar FUM</button>
       {nuevoFum && <CrearFum idPaciente={idPaciente} setActualizar={setActualizar} setNuevaFum={setNuevaFum}/>}
-      {fums &&
+      {fums && fums.length != 0 ? (
         fums.map((fum) => (
-          <ul key={fum._id}>
+          <ul className="fums" key={fum._id}>
             <li>
               <strong>FUM: </strong>
-              {FormatearFechasLocal(fum.fecha)}{" "}
+              {fums && fums.length != 0 ?  FormatearFechasLocal(fum.fecha): 'No hay datos'}{" "}
+              
               <button
                 className="boton-editar"
                 onClick={() => editarFum(fum.fecha, fum._id)}
@@ -176,7 +182,12 @@ export const FumCiclosOtros = () => {
               <button className="boton-borrar" onClick={() => {borrarFum(fum._id)}}>Borrar</button>
             </li>
           </ul>
-        ))}
+        ))
+      )
+      :
+      <p>No hay datos</p>
+      }
+
       {editar == true ? (
         <EditFum
           fechaFum={fechaFum}
@@ -188,8 +199,8 @@ export const FumCiclosOtros = () => {
       ) : (
         ""
       )}
-      <li>
-        <h4>Ciclos</h4>{" "}
+      <li className="ciclos">
+        <h4>CICLOS</h4>{" "}
         <textarea
           type="text"
           name="ciclos"
@@ -201,8 +212,8 @@ export const FumCiclosOtros = () => {
           Editar
         </button>
       </li>
-      <li>
-        <h4>Otros</h4>{" "}
+      <li className="otros">
+        <h4>OTROS</h4>{" "}
         <textarea
           type="text"
           name="otros"
@@ -214,6 +225,6 @@ export const FumCiclosOtros = () => {
           Editar
         </button>
       </li>
-    </>
+    </div>
   );
 };

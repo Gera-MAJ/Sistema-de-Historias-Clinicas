@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import FormatearFechasUTC from "../../../Helpers/FormatearFechaUTC";
-import FormatearFechaParaMongo from "../../../Helpers/FormatearFechaParaMongo";
+import '../FUM/edit_fum.css'
 
 const EditFum = ({ fechaFum, setActualizar, idPaciente, idFum, setEditar }) => {
   console.log(fechaFum, idPaciente, idFum);
@@ -61,7 +61,7 @@ const EditFum = ({ fechaFum, setActualizar, idPaciente, idFum, setEditar }) => {
   };
 
   return (
-    <>
+    <div className="edit-fum">
       <h3>Editar FUM</h3>
       <form action="submit" onSubmit={enviarDatos}>
       <input
@@ -72,7 +72,7 @@ const EditFum = ({ fechaFum, setActualizar, idPaciente, idFum, setEditar }) => {
       />
       <input type="submit" name="botonEnviar" value="Enviar" />
       </form>
-    </>
+    </div>
   );
 };
 

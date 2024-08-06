@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import '../css/PacienteElegido.css'
-import { NavLink, Outlet } from "react-router-dom"
+import { NavLink, Outlet, Navigate } from "react-router-dom"
 import { ProveedorDeContexto } from '../context/ProveedorDeContexto'
 import FormatearFechaLocal from '../Helpers/FormatearFechaLocal'
 
@@ -60,6 +60,8 @@ function PacienteElegido() {
     }
   }
 
+
+
   if(errores !== ''){
     return(
       <>
@@ -92,6 +94,7 @@ function PacienteElegido() {
               <li><strong>N° de Afiliado:</strong> <p>{dataPaciente[index].Num_de_Afiliado}</p></li>
               <li><strong>Diagnóstico:</strong> <p>{dataPaciente[index].Diagnostico}</p></li>       
           </ul>
+          <button>Editar Paciente</button>
         </div>
 
         <div className="elementos">

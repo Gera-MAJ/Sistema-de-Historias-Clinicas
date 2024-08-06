@@ -17,7 +17,7 @@ const Antecedentes_Familiares = () => {
   };
 
   return (
-    <div className="section-editor">
+    <div className="section-genograma">
       <h2>Antecedentes Familiares</h2>
       <textarea
         value={sectionData}
@@ -27,8 +27,6 @@ const Antecedentes_Familiares = () => {
       />
       <div className="section-buttons">
         <button onClick={handleSave}>Guardar</button>
-        <button onClick={() => setSectionData('')}>Cerrar</button>
-        <button onClick={handleDelete}>Borrar</button>
       </div>
     </div>
   );

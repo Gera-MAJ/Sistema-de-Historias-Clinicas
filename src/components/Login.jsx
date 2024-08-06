@@ -28,11 +28,16 @@ const Login = () => {
   
     return (
       <div className="login-container">
+        <h2>Sistema de Historias Clínicas</h2>
         <form className="login-form" onSubmit={handleSubmit}>
-          <h2>¡Bienvenida!</h2>
+          <img src='src/assets/Ingreso de usuario sin fondo 01.png' alt="foto-login" />
+          
+          <section className='usuario'>
+          
           <div>
-            <label htmlFor="username">Usuario:</label>
+            {/* <label htmlFor="username">Usuario:</label> */}
             <input
+              placeholder='Usuario'
               type="text"
               id="username"
               value={username}
@@ -41,8 +46,9 @@ const Login = () => {
             />
           </div>
           <div>
-            <label htmlFor="password">Contraseña:</label>
+            {/* <label htmlFor="password">Contraseña:</label> */}
             <input
+              placeholder='Contraseña'
               type="password"
               id="password"
               value={password}
@@ -52,6 +58,8 @@ const Login = () => {
           </div>
           {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
           <button type="submit">Ingresar</button>
+          </section>
+          
         </form>
       </div>
     );

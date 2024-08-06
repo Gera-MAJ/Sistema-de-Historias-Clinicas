@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import EditarConsulta from "./EditarConsulta";
 import { ProveedorDeContexto } from "../../../context/ProveedorDeContexto";
 import { CrearConsulta } from "../Consulta/CrearConsulta";
+import '../Consulta/consulta.css'
 
 const Consulta = () => {
   const { dataPaciente, index } = useContext(ProveedorDeContexto);
@@ -27,29 +28,32 @@ const Consulta = () => {
     }
   };
   const borrarConsulta = async (consultaId) => {
-    try {
-      const url =
-        "http://localhost:3900/api/paciente/borrar-consulta/" +
-        dataPaciente[index]._id +
-        "/consulta/" +
-        consultaId;
+    const confirmacion = window.confirm('¿Estás seguro/a que quieres borrar la consulta?');
 
-      const resp = await fetch(url, {
-        method: "DELETE",
-      });
-
-      const datos = await resp.json();
-
-      if (datos.status == "success") {
-        console.log("Se ha borrado correctamente la consulta");
-        setEditar(false);
+    if (confirmacion) {
+      try {
+        const url =
+          "http://localhost:3900/api/paciente/borrar-consulta/" +
+          dataPaciente[index]._id +
+          "/consulta/" +
+          consultaId;
+  
+        const resp = await fetch(url, {
+          method: "DELETE",
+        });
+  
+        const datos = await resp.json();
+  
+        if (datos.status == "success") {
+          
+          setEditar(false);
+        }
+      } catch (error) {
+        console.log("Se ha encontrado un el error " + error);
       }
-    } catch (error) {
-      console.log("Se ha encontrado un el error " + error);
+      
+      actualizarPaciente()
     }
-    
-    actualizarPaciente()
-    
   };
   //Esta es la forma de convertir la fecha que viene con la hora desde la base de datos, la base de datos de mongo DB da la fecha en modo UTC
   const formatFecha = (fechaDB) => {
@@ -83,30 +87,14 @@ const Consulta = () => {
   };
 
   return (
-    <div>
-      <ul className="consultas">
-        {paciente &&
-          paciente.map((consul) => (
-            <li key={consul._id}>
-              {formatFecha(consul.fecha)} {consul.descripcion}
-              <button
-                onClick={() =>
-                  editarConsulta(consul._id, setCrearConsulta(false))
-                }
-              >
-                Editar
-              </button>
-              <button onClick={() => borrarConsulta(consul._id)}>Borrar</button>
-            </li>
-          ))}
-      </ul>
+    <div className="conteiner-consultas">
       <button
-        className="boton_consulta"
+        className="boton-agregar"
         onClick={() => {
           setCrearConsulta(true), setEditar(false);
         }}
       >
-        Agregar Consulta
+        Nueva Consulta
       </button>
       {editar === true && idConsulta != null ? (
         <EditarConsulta
@@ -118,15 +106,41 @@ const Consulta = () => {
       ) : (
         ""
       )}
+
       {crearConsulta ? (
-        <CrearConsulta
-          dataPaciente={dataPaciente}
-          index={index}
-          setCrearConsulta={setCrearConsulta}
-        />
-      ) : (
-        ""
-      )}
+              <CrearConsulta
+                dataPaciente={dataPaciente}
+                index={index}
+                setCrearConsulta={setCrearConsulta}
+              />
+            ) : (
+              ""
+            )}
+            
+      <ul className="consultas">
+        {paciente && paciente.length != 0 ? (
+          paciente.map((consul) => (
+            <li key={consul._id}>
+              {formatFecha(consul.fecha)} 
+              <p>{consul.descripcion}</p>
+              <button
+                className="boton-editar"
+                onClick={() =>
+                  editarConsulta(consul._id, setCrearConsulta(false))
+                }
+              >
+                Editar
+              </button>
+              <button 
+                  className="boton-borrar"
+                  onClick={() => borrarConsulta(consul._id)}>Borrar</button>
+            </li>
+          ))
+        ):
+        "No hay consultas"
+        }
+      </ul>
+      
     </div>
   );
 };

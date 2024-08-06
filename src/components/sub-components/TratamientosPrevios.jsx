@@ -17,7 +17,7 @@ const Tratamientos_Previos = () => {
   };
 
   return (
-    <div className="section-editor">
+    <div className="section-antecedentes">
       <h2>Tratamientos Previos</h2>
       <textarea
         value={sectionData}
@@ -27,8 +27,6 @@ const Tratamientos_Previos = () => {
       />
       <div className="section-buttons">
         <button onClick={handleSave}>Guardar</button>
-        <button onClick={() => setSectionData('')}>Cerrar</button>
-        <button onClick={handleDelete}>Borrar</button>
       </div>
     </div>
   );
