@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { ProveedorDeContexto } from '../../context/ProveedorDeContexto';
 
 
@@ -12,9 +12,9 @@ const AntecedentesFamiliares = () => {
     setDataPaciente(updatedData);
   };
 
-  const handleDelete = () => {
-    setSectionData('');
-  };
+  useEffect(()=>{
+    window.scrollTo(0, 0)
+  },[])
 
   return (
     <div className="section-genograma">

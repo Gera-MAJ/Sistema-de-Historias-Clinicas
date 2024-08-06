@@ -11,29 +11,31 @@
 .navPrincipal{ 
     width: 100%;
     background-color: #93A39E;
-    flex: 1;
-    display: flex;
-    flex-direction: row; 
-    gap: 900px;
-    justify-content: flex-end; 
 }
 
 .navApagado {
     display: none;
     
 }
+    .navPrincipal ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
 
-.navPrincipal .nav-paciente{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 120px;
-}
-.navPrincipal .nav-sesion{
-    width: auto;
-    margin-right: 20px;
-    /* padding: 15px 20px; */
-}
+    .navPrincipal ul .left {
+        display: flex;
+        gap: 40px;
+    }
+
+    .navPrincipal ul .right {
+        margin-left: auto;
+    }
+
+    .navPrincipal ul .right li > a:hover{
+        background-color: #ECF0E2;
+        color: #529165;
+    }
     .navPrincipal ul li {
         list-style: none;
         position: relative;
@@ -43,12 +45,8 @@
         align-items: center;
         justify-content: center;
     }
-        .navPrincipal ul #pacientes{
-            margin-right: 600px;
-        }
-            .navPrincipal ul #nuevo-paciente{
-                margin-right: 500px;
-            }
+
+
         .navPrincipal ul li > a{
             display: flex;
             align-items: center;

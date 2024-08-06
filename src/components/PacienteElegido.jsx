@@ -96,7 +96,7 @@ function PacienteElegido() {
               <li><strong>N° de Afiliado:</strong> <p>{dataPaciente[index].Num_de_Afiliado}</p></li>
               <li><strong>Diagnóstico:</strong> <p>{dataPaciente[index].Diagnostico}</p></li>       
           </ul>
-          <button onClick={() => navigate("/editar-paciente")}>Editar Paciente</button>
+          <button onClick={() => navigate("/editar-paciente")}>Editar</button>
         </div>
 
         <div className="elementos">

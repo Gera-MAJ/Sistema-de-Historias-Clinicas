@@ -20,6 +20,7 @@ export const FumCiclosOtros = () => {
   useEffect(() => {
     listarFums();
     get_paciente();
+    window.scrollTo(0,0)
   }, []);
 
   useEffect(() => {

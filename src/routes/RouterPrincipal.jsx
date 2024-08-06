@@ -45,12 +45,15 @@ const RouterPrincipal = () => {
       <div className="conteinerPrincipal">
 
         <nav className={login ? 'navPrincipal' : 'navApagado'}>
-          <ul className='nav-paciente'>
-            <li><NavLink to="/pacientes">Pacientes</NavLink></li>
-            <li><NavLink to="/nuevo-paciente">Nuevo Paciente</NavLink></li>
-          </ul>
-          <ul className='nav-sesion'>
-            <li><NavLink to='/login' onClick={() => {{login ? setLogin(false) : ""}}}>Cerrar Sesión</NavLink></li>
+          <ul>
+            <section className='left'>
+              <li><NavLink to="/pacientes">Pacientes</NavLink></li>
+              <li><NavLink to="/nuevo-paciente">Nuevo Paciente</NavLink></li>
+            </section>
+            <section className='right'>
+              <li><NavLink to='/login' onClick={() => {{login ? setLogin(false) : ""}}}>Cerrar Sesión</NavLink></li>
+            </section>
+            
           </ul>
         </nav>
 

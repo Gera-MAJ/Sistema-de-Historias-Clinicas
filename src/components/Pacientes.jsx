@@ -71,7 +71,7 @@ const Pacientes = () => {
       <div className="filter-section">
         <input
           type="text"
-          placeholder="Filtrar por apellido"
+          placeholder="Escriba el Apellido o Nombre"
           value={apellido}
           onChange={handleFilterChange}
           className="input"

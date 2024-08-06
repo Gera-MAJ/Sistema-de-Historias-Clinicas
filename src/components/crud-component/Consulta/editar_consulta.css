@@ -5,7 +5,7 @@
     top: 0;
     left: 0;
     z-index: 1;
-    background-color: #f0b3b3;
+    background-color: #f0b3b3d7;
     /* Con esto hago el desenfoque del fondo */
     backdrop-filter: blur(10px);
 }
@@ -25,7 +25,7 @@
             transform: translate(-50%, 0);
             position: absolute;
             text-align: center;
-            color: #2b2626;
+            color: #b16464;
             font-weight: bold;
             font-size: 1.8em;
         }
@@ -41,7 +41,13 @@
                     border-radius: 10px;
                     padding: 10px;
                     border: #F37E7E solid 2px;
+                    color: #c76060;
+                    font-size: 1rem;
                 }
+                .editar-consulta textarea:focus {
+                    outline-color: #f0b3b3;
+                    color: #F37E7E;
+                 }
 
                 .botones {
                     display: flex;

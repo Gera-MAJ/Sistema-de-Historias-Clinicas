@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { ProveedorDeContexto } from '../../context/ProveedorDeContexto';
 import '../../css/subcomponentes.css'
 
@@ -12,9 +12,9 @@ const AntecedentesPersonales = () => {
     setDataPaciente(updatedData);
   };
 
-  const handleDelete = () => {
-    setSectionData('');
-  };
+  useEffect(()=>{
+    window.scrollTo(0, 0)
+  },[])
 
   return (
     <div className="section-antecedentes">
