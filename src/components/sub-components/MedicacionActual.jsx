@@ -1,7 +1,7 @@
 import React, { useState, useContext, useEffect } from 'react';
 import { ProveedorDeContexto } from '../../context/ProveedorDeContexto';
 
-const Medicacion_Actual = () => {
+const MedicacionActual = () => {
   const { dataPaciente, index, setDataPaciente } = useContext(ProveedorDeContexto);
   const [sectionData, setSectionData] = useState('');
 
