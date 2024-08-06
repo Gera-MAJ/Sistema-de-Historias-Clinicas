@@ -1,27 +1,32 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import '../css/NuevoPaciente.css';
+import { ProveedorDeContexto } from '../context/ProveedorDeContexto';
+import FormatearFechaUTC from '../Helpers/FormatearFechaUTC'
 
 
-const NuevoPaciente = () => {
+const EditarPaciente = () => {
+
+  const {dataPaciente, index} = useContext(ProveedorDeContexto)
 
   const [formData, setFormData] = useState({
-    Apellidos: '',
-    Nombres: '',
-    Edad: '',
-    Fecha_de_Nacimiento: '',
-    DNI: '',
-    Domicilio: '',
-    Localidad: '',
-    Telefono: '',
-    Ocupacion: '',
-    Estado_Civil: '',
-    Licencia: '',
-    Responsable: '',
-    Obra_Social: '',
-    Num_de_Afiliado: '',
-    Diagnostico: ''
+    Apellidos: dataPaciente[index].Apellidos,
+    Nombres: dataPaciente[index].Nombres,
+    Edad: dataPaciente[index].Edad,
+    Fecha_de_Nacimiento: FormatearFechaUTC(dataPaciente[index].Fecha_de_Nacimiento),
+    DNI: dataPaciente[index].DNI,
+    Domicilio: dataPaciente[index].Domicilio,
+    Localidad: dataPaciente[index].Localidad,
+    Telefono: dataPaciente[index].Telefono,
+    Ocupacion: dataPaciente[index].Ocupacion,
+    Estado_Civil: dataPaciente[index].Estado_Civil,
+    Licencia: dataPaciente[index].Licencia,
+    Responsable: dataPaciente[index].Responsable,
+    Obra_Social: dataPaciente[index].Obra_Social,
+    Num_de_Afiliado: dataPaciente[index].Num_de_Afiliado,
+    Diagnostico: dataPaciente[index].Diagnostico
   });
 
+  
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -35,17 +40,14 @@ const NuevoPaciente = () => {
     console.log(formData);
 
     enviar_paciente(formData)
-    
-    alert('Paciente registrado con éxito!');
-    // Agregar la lógica para enviar los datos a un servidor o almacenarlos de alguna manera (falta!!!!)
   };
 
   const enviar_paciente = async(data)=>{
-    
-    const url = "http://localhost:3900/api/crear-paciente-nuevo"
+
+    const url = "http://localhost:3900/api/editar-paciente/" + dataPaciente[index]._id
     
     const resp = await fetch(url, {
-      method: "POST",
+      method: "PUT",
       body: JSON.stringify(data),
       headers: {"Content-Type": "application/json"}
     })
@@ -53,22 +55,24 @@ const NuevoPaciente = () => {
     let resultado = await resp.json();
 
     if (resultado.status == "success"){
+      alert("Paciente editado correctamente !!!!")
+
       setFormData({
-        Apellidos: '',
-        Nombres: '',
-        Edad: '',
-        Fecha_de_Nacimiento: '',
-        DNI: '',
-        Domicilio: '',
-        Localidad: '',
-        Telefono: '',
-        Ocupacion: '',
-        Estado_Civil: '',
-        Licencia: '',
-        Responsable: '',
-        Obra_Social: '',
-        Num_de_Afiliado: '',
-        Diagnostico: ''})
+        Apellidos: resultado.paciente_editado.Apellidos,
+        Nombres: resultado.paciente_editado.Nombres,
+        Edad: resultado.paciente_editado.Edad,
+        Fecha_de_Nacimiento: FormatearFechaUTC(resultado.paciente_editado.Fecha_de_Nacimiento),
+        DNI: resultado.paciente_editado.DNI,
+        Domicilio: resultado.paciente_editado.Domicilio,
+        Domicilio: resultado.paciente_editado.Localidad,
+        Telefono: resultado.paciente_editado.Telefono,
+        Ocupacion: resultado.paciente_editado.Ocupacion,
+        Estado_Civil: resultado.paciente_editado.Estado_Civil,
+        Licencia: resultado.paciente_editado.Licencia,
+        Responsable: resultado.paciente_editado.Responsable,
+        Obra_Social: resultado.paciente_editado.Obra_Social,
+        Num_de_Afiliado: resultado.paciente_editado.Num_de_Afiliado,
+        Diagnostico: resultado.paciente_editado.Diagnostico})
     }else{
       alert("No se pudo registrar el paciente")
     }
@@ -78,7 +82,7 @@ const NuevoPaciente = () => {
 
   return (
     <div className="nuevo-paciente-container">
-      <h2>Nuevo Paciente</h2>
+      <h2>Editar Paciente</h2>
       <form onSubmit={handleSubmit} className="nuevo-paciente-form">
         <label>Apellido/s:
           <input type="text" name="Apellidos" value={formData.Apellidos} onChange={handleChange} required />
@@ -96,7 +100,7 @@ const NuevoPaciente = () => {
           <input type="number" name="DNI" value={formData.DNI} onChange={handleChange} required />
         </label>
         <label>Dirección:
-          <input type="text" name="Domicilio" value={formData.Direccion} onChange={handleChange} required />
+          <input type="text" name="Domicilio" value={formData.Domicilio} onChange={handleChange} required />
         </label>
         <label>Localidad:
           <input type="text" name="Localidad" value={formData.Localidad} onChange={handleChange} required />
@@ -125,10 +129,10 @@ const NuevoPaciente = () => {
         <label>Diagnóstico:
           <input type="text" name="Diagnostico" value={formData.Diagnostico} onChange={handleChange} required />
         </label>
-        <button type="submit" className="submit-button">Registrar</button>
+        <button type="submit" className="submit-button">Enviar</button>
       </form>
     </div>
   );
 };
 
-export default NuevoPaciente;
+export default EditarPaciente;

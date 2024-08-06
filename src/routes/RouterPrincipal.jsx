@@ -31,6 +31,7 @@ import OtrasIndicaciones from '../components/sub-components/OtrasIndicaciones'
 import Evaluaciones from '../components/sub-components/Evaluaciones'
 import Genograma from '../components/crud-component/genograma/Genograma'
 import { ProveedorDeContexto } from '../context/ProveedorDeContexto'
+import EditarPaciente from '../components/EditarPaciente'
 
 const RouterPrincipal = () => {
 
@@ -87,6 +88,7 @@ const RouterPrincipal = () => {
 
             </Route>
             <Route path='/nuevo-paciente' element={<NuevoPaciente />}/>
+            <Route path='/editar-paciente' element={<EditarPaciente />}/>
           </Routes>
         </section>
         

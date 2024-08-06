@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import '../css/PacienteElegido.css'
-import { NavLink, Outlet, Navigate } from "react-router-dom"
+import { NavLink, Outlet, useNavigate } from "react-router-dom"
 import { ProveedorDeContexto } from '../context/ProveedorDeContexto'
 import FormatearFechaLocal from '../Helpers/FormatearFechaLocal'
 
@@ -9,6 +9,7 @@ function PacienteElegido() {
   const {idPaciente, dataPaciente, setDataPaciente, index, setIndex} = useContext(ProveedorDeContexto)
   const [carga, setCarga] = useState(true)
   const [errores, setErrores] = useState('')
+  const navigate = useNavigate()
   
 // console.log(idPaciente.id)
   const cargarDatosPaciente = async() =>{
@@ -85,6 +86,7 @@ function PacienteElegido() {
               <li><strong>Edad:</strong><p>{dataPaciente[index].Edad}</p></li>
               <li><strong>Fecha de Nacimiento:</strong> <p>{FormatearFechaLocal(dataPaciente[index].Fecha_de_Nacimiento)}</p></li>
               <li><strong>Domicilio:</strong><p>{dataPaciente[index].Domicilio}</p></li>
+              <li><strong>Localidad:</strong><p>{dataPaciente[index].Localidad}</p></li>
               <li><strong>Teléfono:</strong><p>{dataPaciente[index].Telefono}</p></li>
               <li><strong>Ocupación:</strong> <p>{dataPaciente[index].Ocupacion}</p></li>
               <li><strong>Estado Civil:</strong> <p>{dataPaciente[index].Estado_Civil}</p></li>
@@ -94,7 +96,7 @@ function PacienteElegido() {
               <li><strong>N° de Afiliado:</strong> <p>{dataPaciente[index].Num_de_Afiliado}</p></li>
               <li><strong>Diagnóstico:</strong> <p>{dataPaciente[index].Diagnostico}</p></li>       
           </ul>
-          <button>Editar Paciente</button>
+          <button onClick={() => navigate("/editar-paciente")}>Editar Paciente</button>
         </div>
 
         <div className="elementos">
@@ -141,14 +143,11 @@ function PacienteElegido() {
             <button><NavLink to="evaluaciones">Evaluaciones</NavLink></button>
           </section>     
         </div>
-
-        
-        
       </div>
   
     )
   }else{
-    return <h3>No es encotró el paciente</h3>
+    return <h3>No se encotró el paciente</h3>
   }
   
 }
