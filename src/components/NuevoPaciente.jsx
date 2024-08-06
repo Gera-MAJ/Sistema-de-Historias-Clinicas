@@ -51,6 +51,26 @@ const NuevoPaciente = () => {
 
     let resultado = await resp.json();
 
+    if (resultado.status == "success"){
+      setFormData({
+        Apellidos: '',
+        Nombres: '',
+        Edad: '',
+        Fecha_de_Nacimiento: '',
+        DNI: '',
+        Direccion: '',
+        Telefono: '',
+        Ocupacion: '',
+        Estado_Civil: '',
+        Licencia: '',
+        Responsable: '',
+        Obra_Social: '',
+        Num_de_Afiliado: '',
+        Diagnostico: ''})
+    }else{
+      alert("No se pudo registrar el paciente")
+    }
+
     console.log(resultado)
   }
 

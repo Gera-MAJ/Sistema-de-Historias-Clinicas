@@ -34,10 +34,7 @@ import { ProveedorDeContexto } from '../context/ProveedorDeContexto'
 
 const RouterPrincipal = () => {
 
-  const {login} = useContext(ProveedorDeContexto)
-  
-
-  
+  const {login, setLogin} = useContext(ProveedorDeContexto)
 
   return (
 
@@ -47,10 +44,12 @@ const RouterPrincipal = () => {
       <div className="conteinerPrincipal">
 
         <nav className={login ? 'navPrincipal' : 'navApagado'}>
-          <ul>
+          <ul className='nav-paciente'>
             <li><NavLink to="/pacientes">Pacientes</NavLink></li>
             <li><NavLink to="/nuevo-paciente">Nuevo Paciente</NavLink></li>
-            <li><NavLink to='/login' onClick={() => {setLogin(false)}}>Cerrar Sesión</NavLink></li>
+          </ul>
+          <ul className='nav-sesion'>
+            <li><NavLink to='/login' onClick={() => {{login ? setLogin(false) : ""}}}>Cerrar Sesión</NavLink></li>
           </ul>
         </nav>
 
@@ -92,8 +91,8 @@ const RouterPrincipal = () => {
         </section>
         
         <footer className='footer'>
-            <div>Aplicación Historias Clínicas</div>
-            <div>Jatip Gerardo - Araoz Leticia</div>
+            <h3>&reg; Sistema de Historias Clínicas</h3>
+            <p>Gerardo Jatip - Leticia Aráoz</p>
         </footer>
       
       </div>   
