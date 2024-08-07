@@ -37,15 +37,12 @@ function PacienteElegido() {
     }
   }
 
-  useEffect(() =>{
-      
-      cargarDatosPaciente()
-    
+  useEffect(() =>{  
+    cargarDatosPaciente()
   },[])
 
   useEffect(() =>{
     cargarDatosPaciente();
-
   }, [idPaciente])
 
   // uso otro useEffect para que se ejecute el index antes de que cargue el return
@@ -60,7 +57,6 @@ function PacienteElegido() {
       setIndex(indice)
     }
   }
-
 
 
   if(errores !== ''){

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Routes, NavLink, BrowserRouter, Route } from 'react-router-dom'
 import PacienteElegido from '../components/PacienteElegido'
 import Login from '../components/Login'
@@ -35,7 +35,7 @@ import EditarPaciente from '../components/EditarPaciente'
 
 const RouterPrincipal = () => {
 
-  const {login, setLogin} = useContext(ProveedorDeContexto)
+  const {login, setLogin, usuario} = useContext(ProveedorDeContexto)
 
   return (
 
@@ -44,16 +44,20 @@ const RouterPrincipal = () => {
 
       <div className="conteinerPrincipal">
 
-        <nav className={login ? 'navPrincipal' : 'navApagado'}>
+        <nav className={login && login != null ? 'navPrincipal' : 'navApagado'}>
           <ul>
             <section className='left'>
               <li><NavLink to="/pacientes">Pacientes</NavLink></li>
               <li><NavLink to="/nuevo-paciente">Nuevo Paciente</NavLink></li>
             </section>
+            <section className="center">
+              <li>
+                {usuario}
+              </li>
+            </section>
             <section className='right'>
               <li><NavLink to='/login' onClick={() => {{login ? setLogin(false) : ""}}}>Cerrar Sesión</NavLink></li>
             </section>
-            
           </ul>
         </nav>
 

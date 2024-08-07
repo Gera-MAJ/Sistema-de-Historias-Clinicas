@@ -62,7 +62,8 @@ const Pacientes = () => {
 
   const elegirPaciente = (id) => {
     navigate("/paciente-elegido");
-    setIdPaciente(id)
+    localStorage.setItem("IdPaciente", id)
+    setIdPaciente(localStorage.getItem("IdPaciente"))
   }
 
 

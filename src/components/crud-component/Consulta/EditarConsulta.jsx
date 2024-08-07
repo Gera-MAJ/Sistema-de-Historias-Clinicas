@@ -13,6 +13,7 @@ const EditarConsulta = ({ idConsulta, setEditar, index, setActualizar }) => {
   useEffect(() => {
     //Traer los datos de todos los pacientes de nuevo
     listarPacientes();
+    window.scrollTo({top: 0, behavior: "smooth"})
   }, []);
 
   const listarPacientes = async () => {

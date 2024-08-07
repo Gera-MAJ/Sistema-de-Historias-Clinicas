@@ -9,7 +9,7 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate();
-    const {setLogin} = useContext(ProveedorDeContexto)
+    const {login, setLogin, setUsuario} = useContext(ProveedorDeContexto)
     
     // console.log(idPaciente)
   
@@ -18,11 +18,10 @@ const Login = () => {
       if (username === 'admin' && password === '1234') {
         navigate("/pacientes")
         alert('Ingresaste exitosamente!');
-        // setIdPaciente("2")
         setLogin(true)
+        setUsuario(username)
       } else {
         setErrorMessage('Usuario y/o Contraseña inválidos');
-        // setIdPaciente("3")
       }
     };
   

@@ -44,7 +44,8 @@
                 gap: 1px;
             }
                 .datosPersonales ul li p {
-                    color: black;
+                    color: #2c2e29;
+                    font-weight: 500;
                     font-size: 1.1rem;
                 }
                     .datosPersonales ul li strong {

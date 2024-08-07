@@ -128,10 +128,11 @@
   border: #C4AF76 solid 2px;
   color: #9e8f65;
   font-size: 1rem;
+  background-color: #f8f2e4;
 }
 
 .ciclos textarea:focus,
 .otros textarea:focus {
   outline-color: #e4bb4b;
-  color: #e4bb4b;
+  color: #c09e41;
 }
