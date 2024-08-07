@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import '../css/Login.css';
 import { useNavigate } from 'react-router-dom';
-import { ProveedorDeContexto } from '../context/ProveedorDeContexto';
 
 
 const Login = () => {
@@ -9,17 +8,15 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate();
-    const {login, setLogin, setUsuario} = useContext(ProveedorDeContexto)
     
-    // console.log(idPaciente)
-  
+   
     const handleSubmit = (e) => {
       e.preventDefault();
       if (username === 'admin' && password === '1234') {
         navigate("/pacientes")
         alert('Ingresaste exitosamente!');
-        setLogin(true)
-        setUsuario(username)
+        localStorage.setItem("login", true)
+        localStorage.setItem("usuario", username)
       } else {
         setErrorMessage('Usuario y/o Contraseña inválidos');
       }

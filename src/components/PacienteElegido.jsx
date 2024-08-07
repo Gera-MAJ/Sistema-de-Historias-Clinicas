@@ -20,9 +20,9 @@ function PacienteElegido() {
 
       if(datos.status == "success"){
         setDataPaciente(datos.pacientes)
-
+        localStorage.setItem("dataPacientes", JSON.stringify(datos.pacientes))
         setCarga(false)
-        // console.log(datos)
+        
       }else{
         return (
           <>
@@ -54,7 +54,9 @@ function PacienteElegido() {
   const encontrar_index = async() =>{
     if(dataPaciente.length > 0){
       const indice = await dataPaciente.findIndex(element => element._id === idPaciente)
+      localStorage.setItem("index", indice)
       setIndex(indice)
+      localStorage.setItem("index", indice)
     }
   }
 

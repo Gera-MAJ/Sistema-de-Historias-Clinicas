@@ -7,12 +7,13 @@ import { useNavigate } from 'react-router-dom';
 const Pacientes = () => {
   const [apellido, setApellido] = useState('');
   const [pacientes, setPacientes] = useState([]);
-  const { setIdPaciente } = useContext(ProveedorDeContexto)
+  const { setIdPaciente, setLogin } = useContext(ProveedorDeContexto)
   const navigate = useNavigate()
 
 
   useEffect(() => {
     fetchPacientes();
+    setLogin(localStorage.getItem("login"))
   }, []);
 
   const fetchPacientes = async() => {

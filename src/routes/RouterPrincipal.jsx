@@ -35,7 +35,22 @@ import EditarPaciente from '../components/EditarPaciente'
 
 const RouterPrincipal = () => {
 
-  const {login, setLogin, usuario} = useContext(ProveedorDeContexto)
+  const {login, setLogin, usuario, setUsuario} = useContext(ProveedorDeContexto)
+
+  useEffect(() => {
+    setLogin(localStorage.getItem("login"))
+    setUsuario(localStorage.getItem("usuario"))
+  }, [])
+
+  const cerrarSesion = () =>{
+    if (login){
+      localStorage.setItem("login", false)
+      localStorage.setItem("usuario", "")
+      setLogin(false)
+    }else{
+      ""
+    }
+  }
 
   return (
 
@@ -44,7 +59,7 @@ const RouterPrincipal = () => {
 
       <div className="conteinerPrincipal">
 
-        <nav className={login && login != null ? 'navPrincipal' : 'navApagado'}>
+        <nav className={login ? 'navPrincipal' : 'navApagado'}>
           <ul>
             <section className='left'>
               <li><NavLink to="/pacientes">Pacientes</NavLink></li>
@@ -56,7 +71,7 @@ const RouterPrincipal = () => {
               </li>
             </section>
             <section className='right'>
-              <li><NavLink to='/login' onClick={() => {{login ? setLogin(false) : ""}}}>Cerrar Sesión</NavLink></li>
+              <li><NavLink to='/login' onClick={() => cerrarSesion()}>Cerrar Sesión</NavLink></li>
             </section>
           </ul>
         </nav>

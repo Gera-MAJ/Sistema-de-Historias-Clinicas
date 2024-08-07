@@ -5,12 +5,12 @@ import { ProveedorDeContexto } from "./context/ProveedorDeContexto";
 
 function App() {
   
-  const [idPaciente, setIdPaciente] = useState('');
-  const [dataPaciente, setDataPaciente] = useState([])
-  const [index, setIndex] = useState(0)
+  const [idPaciente, setIdPaciente] = useState(localStorage.getItem("IdPaciente"));
+  const [dataPaciente, setDataPaciente] = useState(JSON.parse(localStorage.getItem("dataPacientes")))
+  const [index, setIndex] = useState(localStorage.getItem("index"))
   const [idConsulta, setIdConsulta] = useState()
-  const [login, setLogin] = useState(null)
-  const [usuario, setUsuario] = useState()
+  const [login, setLogin] = useState(localStorage.getItem("login"))
+  const [usuario, setUsuario] = useState(localStorage.getItem("usuario"))
 
   return (
       <ProveedorDeContexto.Provider value = {{
