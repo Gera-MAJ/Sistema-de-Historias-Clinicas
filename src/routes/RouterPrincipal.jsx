@@ -92,10 +92,11 @@ const RouterPrincipal = () => {
                 <Route path='otras-indicaciones' element={<OtrasIndicaciones/>}/>
                 <Route path='evaluaciones' element={<Evaluaciones/>}/>
                 <Route path='genograma' element={<Genograma/>}/>
-
+                
             </Route>
             <Route path='/nuevo-paciente' element={<NuevoPaciente />}/>
             <Route path='/editar-paciente' element={<EditarPaciente />}/>
+            <Route path='*' element={<Error />}/>
           </Routes>
         </section>
         
