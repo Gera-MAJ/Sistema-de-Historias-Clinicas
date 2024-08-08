@@ -20,9 +20,9 @@ function PacienteElegido() {
 
       if(datos.status == "success"){
         setDataPaciente(datos.pacientes)
-
+        localStorage.setItem("dataPacientes", JSON.stringify(datos.pacientes))
         setCarga(false)
-        // console.log(datos)
+        
       }else{
         return (
           <>
@@ -37,15 +37,12 @@ function PacienteElegido() {
     }
   }
 
-  useEffect(() =>{
-      
-      cargarDatosPaciente()
-    
+  useEffect(() =>{  
+    cargarDatosPaciente()
   },[])
 
   useEffect(() =>{
     cargarDatosPaciente();
-
   }, [idPaciente])
 
   // uso otro useEffect para que se ejecute el index antes de que cargue el return
@@ -57,10 +54,11 @@ function PacienteElegido() {
   const encontrar_index = async() =>{
     if(dataPaciente.length > 0){
       const indice = await dataPaciente.findIndex(element => element._id === idPaciente)
+      localStorage.setItem("index", indice)
       setIndex(indice)
+      localStorage.setItem("index", indice)
     }
   }
-
 
 
   if(errores !== ''){
@@ -96,7 +94,7 @@ function PacienteElegido() {
               <li><strong>N° de Afiliado:</strong> <p>{dataPaciente[index].Num_de_Afiliado}</p></li>
               <li><strong>Diagnóstico:</strong> <p>{dataPaciente[index].Diagnostico}</p></li>       
           </ul>
-          <button onClick={() => navigate("/editar-paciente")}>Editar Paciente</button>
+          <button onClick={() => navigate("/editar-paciente")}>Editar</button>
         </div>
 
         <div className="elementos">

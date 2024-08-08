@@ -11,8 +11,7 @@ const Genograma = () => {
 
   useEffect(() => {
     cargarPaciente();
-    
-
+    window.scrollTo({top: 0, behavior: "smooth"})
   }, []);
 
   // useEffect(() => {

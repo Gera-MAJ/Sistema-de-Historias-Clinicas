@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import '../css/NuevoPaciente.css';
 import { ProveedorDeContexto } from '../context/ProveedorDeContexto';
 import FormatearFechaUTC from '../Helpers/FormatearFechaUTC'
@@ -26,6 +26,9 @@ const EditarPaciente = () => {
     Diagnostico: dataPaciente[index].Diagnostico
   });
 
+  useEffect(()=>{
+    window.scrollTo(0, 0)
+  },[])
   
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -64,7 +67,7 @@ const EditarPaciente = () => {
         Fecha_de_Nacimiento: FormatearFechaUTC(resultado.paciente_editado.Fecha_de_Nacimiento),
         DNI: resultado.paciente_editado.DNI,
         Domicilio: resultado.paciente_editado.Domicilio,
-        Domicilio: resultado.paciente_editado.Localidad,
+        Localidad: resultado.paciente_editado.Localidad,
         Telefono: resultado.paciente_editado.Telefono,
         Ocupacion: resultado.paciente_editado.Ocupacion,
         Estado_Civil: resultado.paciente_editado.Estado_Civil,
@@ -129,7 +132,7 @@ const EditarPaciente = () => {
         <label>Diagnóstico:
           <input type="text" name="Diagnostico" value={formData.Diagnostico} onChange={handleChange} required />
         </label>
-        <button type="submit" className="submit-button">Enviar</button>
+        <button type="submit" className="submit-button">Editar</button>
       </form>
     </div>
   );

@@ -5,6 +5,7 @@ const SintomatologiaActual = () => {
   const { dataPaciente, index, setDataPaciente } = useContext(ProveedorDeContexto);
   const [sectionData, setSectionData] = useState('');
 
+<<<<<<< HEAD
   useEffect(() => {
     if (dataPaciente && dataPaciente[index]) {
       setSectionData(dataPaciente[index].Sintomatologia_Actual || '');
@@ -12,6 +13,9 @@ const SintomatologiaActual = () => {
   }, [dataPaciente, index]);
 
   const handleSave = async () => {
+=======
+  const handleSave = async() => {
+>>>>>>> 72d078293e0f8ea2ed73bd3d932640adda3b49bf
     const updatedData = [...dataPaciente];
     updatedData[index].Sintomatologia_Actual = sectionData;
     setDataPaciente(updatedData);
@@ -36,9 +40,9 @@ const SintomatologiaActual = () => {
     }
   };
 
-  const handleDelete = () => {
-    setSectionData('');
-  };
+  useEffect(()=>{
+    window.scrollTo({top: 0, behavior: "smooth"})
+  },[])
 
   return (
     <div className="section-consulta">

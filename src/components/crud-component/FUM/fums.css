@@ -64,9 +64,9 @@
 .fums .boton-editar:hover,
 .conteiner-fums .ciclos .boton-editar:hover,
 .conteiner-fums .otros .boton-editar:hover {
-  background-color: #C4AF76;
-  border: 2px solid #FAEDCD;
-  color: white;
+  background-color: #fae2a6;
+  border: 2px solid #e9d194;
+  color: #a19064;
 }
 
 .fums .boton-borrar {
@@ -81,8 +81,8 @@
   transition: all 200ms;
 }
 .fums .boton-borrar:hover {
-  background-color: #fae2a6;
-  color: #8b763c;
+  background-color: #776b47;
+  color: #FAEDCD;
   border: 2px solid #C4AF76;
 }
 
@@ -126,9 +126,13 @@
   border-radius: 10px;
   padding: 10px;
   border: #C4AF76 solid 2px;
+  color: #9e8f65;
+  font-size: 1rem;
+  background-color: #f8f2e4;
 }
 
 .ciclos textarea:focus,
 .otros textarea:focus {
   outline-color: #e4bb4b;
+  color: #c09e41;
 }

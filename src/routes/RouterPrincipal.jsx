@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import { Routes, NavLink, BrowserRouter, Route } from 'react-router-dom'
 import PacienteElegido from '../components/PacienteElegido'
 import Login from '../components/Login'
@@ -35,7 +35,25 @@ import EditarPaciente from '../components/EditarPaciente'
 
 const RouterPrincipal = () => {
 
-  const {login, setLogin} = useContext(ProveedorDeContexto)
+  const {login, setLogin, usuario, setUsuario} = useContext(ProveedorDeContexto)
+
+  useEffect(() => {
+    setLogin(localStorage.getItem("login"))
+    setUsuario(localStorage.getItem("usuario"))
+  }, [])
+
+  //Esto coloco para hacer que se cargue de nuevo el usuario luego de que se haga refresh en la página
+  window.addEventListener('beforeunload', setUsuario(localStorage.getItem("usuario")))
+
+  const cerrarSesion = () =>{
+    if (login){
+      localStorage.setItem("login", false)
+      localStorage.setItem("usuario", "")
+      setLogin(false)
+    }else{
+      ""
+    }
+  }
 
   return (
 
@@ -44,13 +62,20 @@ const RouterPrincipal = () => {
 
       <div className="conteinerPrincipal">
 
-        <nav className={login ? 'navPrincipal' : 'navApagado'}>
-          <ul className='nav-paciente'>
-            <li><NavLink to="/pacientes">Pacientes</NavLink></li>
-            <li><NavLink to="/nuevo-paciente">Nuevo Paciente</NavLink></li>
-          </ul>
-          <ul className='nav-sesion'>
-            <li><NavLink to='/login' onClick={() => {{login ? setLogin(false) : ""}}}>Cerrar Sesión</NavLink></li>
+        <nav className={login === 'true' ? 'navPrincipal' : 'navApagado'}>
+          <ul>
+            <section className='left'>
+              <li><NavLink to="/pacientes">Pacientes</NavLink></li>
+              <li><NavLink to="/nuevo-paciente">Nuevo Paciente</NavLink></li>
+            </section>
+            <section className="center">
+              <li>
+               {usuario}
+              </li>
+            </section>
+            <section className='right'>
+              <li><NavLink to='/login' onClick={() => cerrarSesion()}>Cerrar Sesión</NavLink></li>
+            </section>
           </ul>
         </nav>
 
@@ -85,10 +110,11 @@ const RouterPrincipal = () => {
                 <Route path='otras-indicaciones' element={<OtrasIndicaciones/>}/>
                 <Route path='evaluaciones' element={<Evaluaciones/>}/>
                 <Route path='genograma' element={<Genograma/>}/>
-
+                
             </Route>
             <Route path='/nuevo-paciente' element={<NuevoPaciente />}/>
             <Route path='/editar-paciente' element={<EditarPaciente />}/>
+            <Route path='*' element={<Error />}/>
           </Routes>
         </section>
         

@@ -5,6 +5,7 @@ const AntecedentesQuirurgicos = () => {
   const { dataPaciente, index, setDataPaciente } = useContext(ProveedorDeContexto);
   const [sectionData, setSectionData] = useState('');
 
+<<<<<<< HEAD
   useEffect(() => {
     if (dataPaciente && dataPaciente[index]) {
       setSectionData(dataPaciente[index].Antecedentes_Quirurgicos || '');
@@ -12,6 +13,9 @@ const AntecedentesQuirurgicos = () => {
   }, [dataPaciente, index]);
 
   const handleSave = async () => {
+=======
+  const handleSave = async() => {
+>>>>>>> 72d078293e0f8ea2ed73bd3d932640adda3b49bf
     const updatedData = [...dataPaciente];
     updatedData[index].Antecedentes_Quirurgicos = sectionData;
     setDataPaciente(updatedData);
@@ -36,9 +40,9 @@ const AntecedentesQuirurgicos = () => {
     }
   };
 
-  const handleDelete = () => {
-    setSectionData('');
-  };
+  useEffect(()=>{
+    window.scrollTo({top: 0, behavior: "smooth"})
+  },[])
 
   return (
     <div className="section-antecedentes">
@@ -46,8 +50,7 @@ const AntecedentesQuirurgicos = () => {
       <textarea
         value={sectionData}
         onChange={(e) => setSectionData(e.target.value)}
-        rows="10"
-        cols="50"
+       
       />
       <div className="section-buttons">
         <button onClick={handleSave}>Guardar</button>

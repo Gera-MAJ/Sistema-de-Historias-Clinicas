@@ -36,9 +36,9 @@ const ConductaSuicida = () => {
     }
   };
 
-  const handleDelete = () => {
-    setSectionData('');
-  };
+  useEffect(()=>{
+    window.scrollTo({top: 0, behavior: "smooth"})
+  },[])
 
   return (
     <div className="section-consulta">
@@ -46,12 +46,10 @@ const ConductaSuicida = () => {
       <textarea
         value={sectionData}
         onChange={(e) => setSectionData(e.target.value)}
-        rows="10"
-        cols="50"
+      
       />
       <div className="section-buttons">
         <button onClick={handleSave}>Guardar</button>
-        <button onClick={handleDelete}>Borrar</button>
       </div>
     </div>
   );

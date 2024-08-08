@@ -21,7 +21,7 @@
 }
 
     .consultas li{
-        background-color: white;
+        background-color: #fcf1f2;
         width: 100%;
         list-style: none;
         padding: 0.5rem;
@@ -80,10 +80,11 @@
     border: 2px solid #F37E7E;
     cursor: pointer;
     transition: all 200ms;
+    font-size: 1rem;
 }
     .boton-agregar:hover {
         background-color: #F37E7E;
-        color: #dddddd;
+        color: #FCE1E4;
     }
 
 

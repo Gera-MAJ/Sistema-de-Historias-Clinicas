@@ -7,12 +7,13 @@ import { useNavigate } from 'react-router-dom';
 const Pacientes = () => {
   const [apellido, setApellido] = useState('');
   const [pacientes, setPacientes] = useState([]);
-  const { setIdPaciente } = useContext(ProveedorDeContexto)
+  const { setIdPaciente, setLogin } = useContext(ProveedorDeContexto)
   const navigate = useNavigate()
 
 
   useEffect(() => {
     fetchPacientes();
+    setLogin(localStorage.getItem("login"))
   }, []);
 
   const fetchPacientes = async() => {
@@ -62,7 +63,8 @@ const Pacientes = () => {
 
   const elegirPaciente = (id) => {
     navigate("/paciente-elegido");
-    setIdPaciente(id)
+    localStorage.setItem("IdPaciente", id)
+    setIdPaciente(localStorage.getItem("IdPaciente"))
   }
 
 
@@ -71,7 +73,7 @@ const Pacientes = () => {
       <div className="filter-section">
         <input
           type="text"
-          placeholder="Filtrar por apellido"
+          placeholder="Escriba el Apellido o Nombre"
           value={apellido}
           onChange={handleFilterChange}
           className="input"

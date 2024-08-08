@@ -36,9 +36,9 @@ const HabitosToxicos = () => {
     }
   };
 
-  const handleDelete = () => {
-    setSectionData('');
-  };
+  useEffect(()=>{
+    window.scrollTo({top: 0, behavior: "smooth"})
+  },[])
 
   return (
     <div className="section-antecedentes">
@@ -51,7 +51,6 @@ const HabitosToxicos = () => {
       />
       <div className="section-buttons">
         <button onClick={handleSave}>Guardar</button>
-        <button onClick={handleDelete}>Borrar</button>
       </div>
     </div>
   );
