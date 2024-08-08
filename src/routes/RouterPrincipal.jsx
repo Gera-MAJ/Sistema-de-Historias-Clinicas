@@ -40,6 +40,8 @@ const RouterPrincipal = () => {
   useEffect(() => {
     setLogin(localStorage.getItem("login"))
     setUsuario(localStorage.getItem("usuario"))
+
+    console.log(typeof(login))
   }, [])
 
   const cerrarSesion = () =>{
@@ -59,7 +61,7 @@ const RouterPrincipal = () => {
 
       <div className="conteinerPrincipal">
 
-        <nav className={login ? 'navPrincipal' : 'navApagado'}>
+        <nav className={login === 'true' ? 'navPrincipal' : 'navApagado'}>
           <ul>
             <section className='left'>
               <li><NavLink to="/pacientes">Pacientes</NavLink></li>
@@ -67,7 +69,7 @@ const RouterPrincipal = () => {
             </section>
             <section className="center">
               <li>
-                {usuario}
+                {usuario ? usuario : ""}
               </li>
             </section>
             <section className='right'>
