@@ -106,6 +106,7 @@
 
         .datosPsiquiatricos .consulta button a {
             position: absolute;
+            font-weight: 500;
             top: 0;
             left: 0;
             width: 100%;
@@ -153,6 +154,8 @@
             }
             
             .datosPsiquiatricos .antecedentes button a {
+                color: #CAB680;
+                font-weight: 500;
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -199,6 +202,8 @@
         }
 
     .datosPsiquiatricos .genograma button a {
+        color: #5D8DB1;
+        font-weight: 500;
         position: absolute;
         top: 0;
         left: 0;
@@ -244,6 +249,7 @@
 
         .datosPsiquiatricos .hobbies button a{
             color: #9985B8;
+            font-weight: 500;
             text-decoration: none;
             position: absolute;
             top: 0;
@@ -291,6 +297,7 @@
         }
         .datosPsiquiatricos .tratamientos button a{
             color: #5C8065;
+            font-weight: 500;
             position: absolute;
             top: 0;
             left: 0;

@@ -70,7 +70,7 @@ const RouterPrincipal = () => {
             </section>
             <section className="center">
               <li>
-                {usuario}
+               {usuario}
               </li>
             </section>
             <section className='right'>
