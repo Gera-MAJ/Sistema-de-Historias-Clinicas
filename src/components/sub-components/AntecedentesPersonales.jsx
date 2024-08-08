@@ -41,7 +41,7 @@ const AntecedentesPersonales = () => {
       <textarea
         value={sectionData}
         onChange={(e) => setSectionData(e.target.value)}
-        
+        placeholder={ sectionData ? "" : "No hay datos"}
       />
       <div className="section-buttons">
         <button onClick={handleSave}>Guardar</button>
