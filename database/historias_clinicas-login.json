@@ -1,0 +1,38 @@
+[{
+  "_id": {
+    "$oid": "66848bd784ed18607467f3cd"
+  },
+  "password": "casa123",
+  "user": "mjose"
+},
+{
+  "_id": {
+    "$oid": "66848bd784ed18607467f3ce"
+  },
+  "password": "casa231",
+  "user": "mjoseManuel"
+},
+{
+  "_id": {
+    "$oid": "668eb2703652ffc36b17a59c"
+  },
+  "password": "123Mu*",
+  "user": "gera10",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "668eb3525bd4dd405959d70a"
+  },
+  "password": "123nR8*",
+  "user": "gera11",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a26f350cd9fbeda8c37004"
+  },
+  "password": "1234",
+  "user": "admin",
+  "__v": 0
+}]

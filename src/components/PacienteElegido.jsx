@@ -22,7 +22,7 @@ function PacienteElegido() {
         setDataPaciente(datos.pacientes)
         localStorage.setItem("dataPacientes", JSON.stringify(datos.pacientes))
         setCarga(false)
-        
+        console.log(datos.pacientes)
       }else{
         return (
           <>
@@ -56,7 +56,6 @@ function PacienteElegido() {
       const indice = await dataPaciente.findIndex(element => element._id === idPaciente)
       localStorage.setItem("index", indice)
       setIndex(indice)
-      localStorage.setItem("index", indice)
     }
   }
 
@@ -73,7 +72,7 @@ function PacienteElegido() {
     <h3>Cargando datos .....</h3>
     </>
     )
-  }else if (errores == '' && carga === false && dataPaciente.length > 0){
+  }else if (errores == '' && carga === false && dataPaciente.length > 0 && dataPaciente[index] != undefined){
     return(
       <div className='pacienteElegido'>
         <div className='datosPersonales'>

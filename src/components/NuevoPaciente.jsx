@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import '../css/NuevoPaciente.css';
 
-
 const NuevoPaciente = () => {
 
   const [formData, setFormData] = useState({
@@ -69,6 +68,7 @@ const NuevoPaciente = () => {
         Obra_Social: '',
         Num_de_Afiliado: '',
         Diagnostico: ''})
+        
     }else{
       alert("No se pudo registrar el paciente")
     }

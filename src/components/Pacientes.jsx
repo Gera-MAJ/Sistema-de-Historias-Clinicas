@@ -24,6 +24,7 @@ const Pacientes = () => {
       }
       const data = await response.json();
       setPacientes(data.pacientes);
+      console.log(data.pacientes)
     } catch (error) {
       console.error('Error fetching pacientes:', error.message);
     }
