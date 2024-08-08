@@ -243,6 +243,7 @@
         }
 
         .datosPsiquiatricos .hobbies button a{
+            color: #9985B8;
             text-decoration: none;
             position: absolute;
             top: 0;
@@ -289,6 +290,7 @@
             background-color: #5C8065;
         }
         .datosPsiquiatricos .tratamientos button a{
+            color: #5C8065;
             position: absolute;
             top: 0;
             left: 0;

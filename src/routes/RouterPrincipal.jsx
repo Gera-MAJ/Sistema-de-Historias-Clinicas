@@ -40,9 +40,10 @@ const RouterPrincipal = () => {
   useEffect(() => {
     setLogin(localStorage.getItem("login"))
     setUsuario(localStorage.getItem("usuario"))
-
-    console.log(typeof(login))
   }, [])
+
+  //Esto coloco para hacer que se cargue de nuevo el usuario luego de que se haga refresh en la página
+  window.addEventListener('beforeunload', setUsuario(localStorage.getItem("usuario")))
 
   const cerrarSesion = () =>{
     if (login){
@@ -69,7 +70,7 @@ const RouterPrincipal = () => {
             </section>
             <section className="center">
               <li>
-                {usuario ? usuario : ""}
+                {usuario}
               </li>
             </section>
             <section className='right'>
