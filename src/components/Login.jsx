@@ -9,32 +9,32 @@ const Login = () => {
     const [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate();
 
-    const [users, setUsers] = useState([])
+    // const [users, setUsers] = useState([])
 
-    useEffect(() => {
-      fetchUsers()
-    }, [])
+    // useEffect(() => {
+    //   fetchUsers()
+    // }, [])
 
-    //terminar de hacer lo de users
-    const fetchUsers = async() => {
-      try {
-        const response = await fetch("http://localhost:3900/login/users");
+    // //terminar de hacer lo de users
+    // const fetchUsers = async() => {
+    //   try {
+    //     const response = await fetch("http://localhost:3900/login/users");
 
-        const data = await response.json();
+    //     const data = await response.json();
 
-        if (data.status === "error") {
-          throw new Error('Error al obtener los usuarios');
-        }
+    //     if (data.status === "error") {
+    //       throw new Error('Error al obtener los usuarios');
+    //     }
 
-        if (data.status === "success"){
-          setUsers(data.users)
-          console.log(data.users)
-        }
+    //     if (data.status === "success"){
+    //       setUsers(data.users)
+    //       console.log(data.users)
+    //     }
         
-      } catch (error) {
-        console.error('Error fetching pacientes:', error.message);
-      }
-    };
+    //   } catch (error) {
+    //     console.error('Error fetching pacientes:', error.message);
+    //   }
+    // };
     
    
     const handleSubmit = (e) => {
@@ -55,7 +55,7 @@ const Login = () => {
       <div className="login-container">
         <h2>Sistema de Historias Clínicas</h2>
         <form className="login-form" onSubmit={handleSubmit}>
-          <img src='/public/Ingreso de usuario sin fondo 01.png' alt="foto-login" />
+          <img src='/Ingreso de usuario sin fondo 01.png' alt="foto-login" />
           
           <section className='usuario'>
           
