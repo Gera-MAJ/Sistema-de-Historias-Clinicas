@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../css/Login.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -8,11 +8,39 @@ const Login = () => {
     const [password, setPassword] = useState('');
     const [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate();
+
+    const [users, setUsers] = useState([])
+
+    useEffect(() => {
+      fetchUsers()
+    }, [])
+
+    const fetchUsers = async() => {
+      try {
+        const response = await fetch("http://localhost:3900/login/users");
+
+        const data = await response.json();
+
+        if (data.status === "error") {
+          throw new Error('Error al obtener los usuarios');
+        }
+
+        if (data.status === "success"){
+          setUsers(data.users)
+          console.log(data.users)
+        }
+        
+      } catch (error) {
+        console.error('Error fetching pacientes:', error.message);
+      }
+    };
     
    
     const handleSubmit = (e) => {
       e.preventDefault();
-      if (username === 'admin' && password === '1234') {
+
+      
+      if (username === 'admin' && password === '1234' || username === 'gerardo' && password === '4321' || username === 'leti' && password === '2345') {
         navigate("/pacientes")
         alert('Ingresaste exitosamente!');
         localStorage.setItem("login", true)
