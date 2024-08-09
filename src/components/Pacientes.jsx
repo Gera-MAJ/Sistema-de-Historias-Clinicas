@@ -11,10 +11,13 @@ const Pacientes = () => {
   const { setIdPaciente, setLogin } = useContext(ProveedorDeContexto)
   const navigate = useNavigate()
 
+  
 
   useEffect(() => {
+    console.log(url)
     fetchPacientes();
     setLogin(localStorage.getItem("login"))
+    
   }, []);
 
   const fetchPacientes = async() => {
