@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import '../css/Pacientes.css';
 import { ProveedorDeContexto } from '../context/ProveedorDeContexto';
 import { useNavigate } from 'react-router-dom';
+import url from '../Helpers/url_render'
 
 
 const Pacientes = () => {
@@ -18,9 +19,6 @@ const Pacientes = () => {
 
   const fetchPacientes = async() => {
     try {
-
-      const url = "https://api-sistemas-historias-clinicas.onrender.com"
-      
       const response = await fetch(url + "/api/obtener-pacientes");
       if (response.status === "error") {
         throw new Error('Error al obtener los pacientes');
@@ -45,7 +43,7 @@ const Pacientes = () => {
     const confirmacion = window.confirm('¿Estás seguro de que quieres eliminar este paciente?');
     if (confirmacion) {
       try {
-        const response = await fetch("http://localhost:3900/api/eliminar-paciente/"+dni, { method: 'DELETE' }); 
+        const response = await fetch(url + "/api/eliminar-paciente/"+dni, { method: 'DELETE' }); 
         if (response.status === "error") {
           throw new Error('Error al eliminar el paciente');
         }
