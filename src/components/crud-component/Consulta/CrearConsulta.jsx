@@ -1,5 +1,6 @@
 import React from 'react'
 import '../Consulta/agregar_consulta.css'
+import urlWeb from '../../../Helpers/url_render'
 
 export const CrearConsulta = ({dataPaciente, index, setCrearConsulta}) => {
 
@@ -13,7 +14,7 @@ export const CrearConsulta = ({dataPaciente, index, setCrearConsulta}) => {
 
         try {
             const url =
-              "http://localhost:3900/api/paciente/agregar-consulta/" +
+              urlWeb + "/api/paciente/agregar-consulta/" +
               dataPaciente[index]._id
       
             const resp = await fetch(url, {

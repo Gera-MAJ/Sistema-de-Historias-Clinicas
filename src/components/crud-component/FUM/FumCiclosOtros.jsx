@@ -4,6 +4,7 @@ import EditFum from "./EditFum";
 import FormatearFechasLocal from "../../../Helpers/FormatearFechaLocal";
 import CrearFum from "./CrearFum";
 import '../FUM/fums.css'
+import urlWeb from '../../../Helpers/url_render'
 
 export const FumCiclosOtros = () => {
   const [fums, setFums] = useState([]);
@@ -30,7 +31,7 @@ export const FumCiclosOtros = () => {
   //Cargar los datos de la base de datos de las fums
   const listarFums = async () => {
     try {
-      const url = "http://localhost:3900/api/paciente/fums/" + idPaciente;
+      const url = urlWeb + "/api/paciente/fums/" + idPaciente;
 
       const datos = await fetch(url);
       const resp = await datos.json();
@@ -47,7 +48,7 @@ export const FumCiclosOtros = () => {
   //Sacar los datos de un solo paciente
   const get_paciente = async () => {
     try {
-      const url = "http://localhost:3900/api/get_paciente/" + idPaciente;
+      const url = urlWeb + "/api/get_paciente/" + idPaciente;
       const datos = await fetch(url);
       const resp = await datos.json();
       // console.log(resp);
@@ -77,7 +78,7 @@ export const FumCiclosOtros = () => {
     };
 
     try {
-      const url = "http://localhost:3900/api/editar-paciente/" + idPaciente;
+      const url = urlWeb + "/api/editar-paciente/" + idPaciente;
       const datos = await fetch(url, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
@@ -103,7 +104,7 @@ export const FumCiclosOtros = () => {
     };
 
     try {
-      const url = "http://localhost:3900/api/editar-paciente/" + idPaciente;
+      const url = urlWeb + "/api/editar-paciente/" + idPaciente;
       const datos = await fetch(url, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
@@ -140,7 +141,7 @@ export const FumCiclosOtros = () => {
     if (confirmacion){
       try {
 
-        const url = "http://localhost:3900/api/paciente/borrar-fum/"+idPaciente+"/fum/"+id
+        const url = urlWeb + "/api/paciente/borrar-fum/"+idPaciente+"/fum/"+id
   
         const datos = await fetch(url, { method: "DELETE" });
   

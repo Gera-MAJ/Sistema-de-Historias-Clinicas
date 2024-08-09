@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import '../css/NuevoPaciente.css';
+import urlWeb from '../Helpers/url_render'
 
 const NuevoPaciente = () => {
 
@@ -41,7 +42,7 @@ const NuevoPaciente = () => {
 
   const enviar_paciente = async(data)=>{
     
-    const url = "http://localhost:3900/api/crear-paciente-nuevo"
+    const url = urlWeb + "/api/crear-paciente-nuevo"
     
     const resp = await fetch(url, {
       method: "POST",

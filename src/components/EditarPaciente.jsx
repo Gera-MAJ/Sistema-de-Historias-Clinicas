@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import '../css/NuevoPaciente.css';
 import { ProveedorDeContexto } from '../context/ProveedorDeContexto';
 import FormatearFechaUTC from '../Helpers/FormatearFechaUTC'
-
+import urlWeb from '../Helpers/url_render'
 
 const EditarPaciente = () => {
 
@@ -47,7 +47,7 @@ const EditarPaciente = () => {
 
   const enviar_paciente = async(data)=>{
 
-    const url = "http://localhost:3900/api/editar-paciente/" + dataPaciente[index]._id
+    const url = urlWeb + "/api/editar-paciente/" + dataPaciente[index]._id
     
     const resp = await fetch(url, {
       method: "PUT",

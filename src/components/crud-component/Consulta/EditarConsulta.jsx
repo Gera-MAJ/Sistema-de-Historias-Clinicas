@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import '../Consulta/editar_consulta.css'
+import urlWeb from '../../../Helpers/url_render'
 
 const EditarConsulta = ({ idConsulta, setEditar, index, setActualizar }) => {
   const [indexConsulta, setIndexConsulta] = useState(null);
@@ -18,7 +19,7 @@ const EditarConsulta = ({ idConsulta, setEditar, index, setActualizar }) => {
 
   const listarPacientes = async () => {
     try {
-      const url = "http://localhost:3900/api/obtener-pacientes/";
+      const url = urlWeb + "/api/obtener-pacientes/";
       const resp = await fetch(url);
       let datos = await resp.json();
 
@@ -97,7 +98,7 @@ const EditarConsulta = ({ idConsulta, setEditar, index, setActualizar }) => {
 
     try {
       const url =
-        "http://localhost:3900/api/paciente/editar-consulta/" +
+        urlWeb + "/api/paciente/editar-consulta/" +
         pacienteElegido._id +
         "/consulta/" +
         idConsulta;

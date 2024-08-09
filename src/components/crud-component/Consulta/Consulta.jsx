@@ -3,6 +3,8 @@ import EditarConsulta from "./EditarConsulta";
 import { ProveedorDeContexto } from "../../../context/ProveedorDeContexto";
 import { CrearConsulta } from "../Consulta/CrearConsulta";
 import '../Consulta/consulta.css'
+import urlWeb from '../../../Helpers/url_render'
+
 
 const Consulta = () => {
   const { dataPaciente, index } = useContext(ProveedorDeContexto);
@@ -10,8 +12,8 @@ const Consulta = () => {
   const [idConsulta, setIdConsulta] = useState("");
   const [crearConsulta, setCrearConsulta] = useState(false);
   const [paciente, setPaciente] = useState([]);
-  const [actualizar, setActualizar] = useState()
-
+  const [actualizar, setActualizar] = useState();
+  
 
   useEffect(() => {
     actualizarPaciente();
@@ -34,7 +36,7 @@ const Consulta = () => {
     if (confirmacion) {
       try {
         const url =
-          "http://localhost:3900/api/paciente/borrar-consulta/" +
+          urlWeb + "/api/paciente/borrar-consulta/" +
           dataPaciente[index]._id +
           "/consulta/" +
           consultaId;
@@ -70,7 +72,7 @@ const Consulta = () => {
   const actualizarPaciente = async () => {
     try {
       const url =
-        "http://localhost:3900/api/paciente/consultas/" +
+        urlWeb + "/api/paciente/consultas/" +
         dataPaciente[index]._id;
 
       const resp = await fetch(url);

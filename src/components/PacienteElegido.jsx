@@ -3,6 +3,7 @@ import '../css/PacienteElegido.css'
 import { NavLink, Outlet, useNavigate } from "react-router-dom"
 import { ProveedorDeContexto } from '../context/ProveedorDeContexto'
 import FormatearFechaLocal from '../Helpers/FormatearFechaLocal'
+import urlweb from '../Helpers/url_render'
 
 function PacienteElegido() {
 
@@ -14,7 +15,7 @@ function PacienteElegido() {
 // console.log(idPaciente.id)
   const cargarDatosPaciente = async() =>{
     try{
-      const url = 'http://localhost:3900/api/obtener-pacientes/';
+      const url = urlweb + '/api/obtener-pacientes/';
       const resp = await fetch(url)
       let datos = await resp.json();
 

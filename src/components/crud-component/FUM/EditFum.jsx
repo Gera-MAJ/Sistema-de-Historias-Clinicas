@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import FormatearFechasUTC from "../../../Helpers/FormatearFechaUTC";
 import '../FUM/edit_fum.css'
+import urlWeb from '../../../Helpers/url_render'
 
 const EditFum = ({ fechaFum, setActualizar, idPaciente, idFum, setEditar }) => {
   console.log(fechaFum, idPaciente, idFum);
@@ -32,7 +33,7 @@ const EditFum = ({ fechaFum, setActualizar, idPaciente, idFum, setEditar }) => {
 
     try {
       const url =
-        "http://localhost:3900/api/paciente/editar-fum/" +
+        urlWeb + "/api/paciente/editar-fum/" +
         idPaciente +
         "/fum/" +
         idFum;

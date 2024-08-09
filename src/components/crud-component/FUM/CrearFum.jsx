@@ -1,7 +1,8 @@
 import React from "react";
 import '../FUM/crear_fum.css'
+import urlWeb from '../../../Helpers/url_render'
 
-const CrearFum = ({ setActualizar, idPaciente, setNuevaFum }) => {
+const CrearFum = ({ idPaciente, setNuevaFum }) => {
 
   const agregarFum = async (e) => {
     e.preventDefault()
@@ -13,7 +14,7 @@ const CrearFum = ({ setActualizar, idPaciente, setNuevaFum }) => {
 
     try {
       const url =
-        "http://localhost:3900/api/paciente/agregar-fum/" + idPaciente;
+        urlWeb + "/api/paciente/agregar-fum/" + idPaciente;
       const resp = await fetch(url, {
         method: "POST",
         headers: { "Content-Type": "application/json" },

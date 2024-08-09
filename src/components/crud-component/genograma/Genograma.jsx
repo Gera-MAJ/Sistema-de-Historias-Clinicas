@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { ProveedorDeContexto } from "../../../context/ProveedorDeContexto";
 import "../genograma/genograma.css"
+import urlWeb from '../../../Helpers/url_render'
 
 const Genograma = () => {
   const [imagen, setImagen] = useState("Esta es la imagen");
@@ -71,7 +72,7 @@ const Genograma = () => {
     <div className="section-genograma">
       <h3>Genograma</h3>
       { paciente.Genograma == "default.png" && <img src="https://i.pinimg.com/originals/d9/b5/2a/d9b52aaa2526e54403b063f6de4bf2f4.jpg"/>}
-      { paciente.Genograma != "default.png" && <img src={"http://localhost:3900/api/imagen/" + paciente.Genograma}/>}
+      { paciente.Genograma != "default.png" && <img src={urlWeb+ "/api/imagen/" + paciente.Genograma}/>}
       <input type="file" name="genograma" id="file" />
       <button onClick={() => subirImagen()}>Subir Imagen</button>
     </div>
