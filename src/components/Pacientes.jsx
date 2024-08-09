@@ -18,7 +18,10 @@ const Pacientes = () => {
 
   const fetchPacientes = async() => {
     try {
-      const response = await fetch("http://localhost:3900/api/obtener-pacientes");
+
+      const url = "https://api-sistemas-historias-clinicas.onrender.com"
+      
+      const response = await fetch(url + "/api/obtener-pacientes");
       if (response.status === "error") {
         throw new Error('Error al obtener los pacientes');
       }
