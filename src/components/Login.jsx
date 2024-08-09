@@ -55,7 +55,7 @@ const Login = () => {
       <div className="login-container">
         <h2>Sistema de Historias Clínicas</h2>
         <form className="login-form" onSubmit={handleSubmit}>
-          <img src='/Ingreso de usuario sin fondo 01.png' alt="foto-login" />
+          <img src='/Ingreso_de_usuario_sin_fondo_01.png' alt="foto-login" />
           
           <section className='usuario'>
           
