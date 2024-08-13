@@ -1,0 +1,1059 @@
+[{
+  "_id": {
+    "$oid": "66848a5484ed18607467f3c5"
+  },
+  "Apellidos": "Rodríguez",
+  "Nombres": "Juan Pablo",
+  "Edad": 28,
+  "Fecha_de_Nacimiento": {
+    "$date": "1996-08-25T00:00:00.000Z"
+  },
+  "DNI": 42111111,
+  "Domicilio": "Avenida de Mayo 123",
+  "Localidad": "Buenos Aires",
+  "Telefono": 1155555555,
+  "Ocupacion": "Estudiante",
+  "Estado_Civil": "Soltero",
+  "Licencia": "Psiquiátrica",
+  "Responsable": "Sofía Rodríguez - Madre",
+  "Obra_Social": "Subsidio de Salud",
+  "Num_de_Afiliado": 21458,
+  "Diagnostico": "Ansiedad - Conducta Suicida",
+  "Consulta": [
+    {
+      "_id": {
+        "$oid": "669b4859542750bbb2a58d4c"
+      },
+      "descripcion": "Presentó síntomas de ansiedad",
+      "fecha": {
+        "$date": "2024-06-15T00:00:00.000Z"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "669b486e542750bbb2a58d4d"
+      },
+      "descripcion": "Consulta de rutina 2000 + 1",
+      "fecha": {
+        "$date": "2024-01-15T00:00:00.000Z"
+      }
+    },
+    {
+      "fecha": {
+        "$date": "2024-07-11T00:00:00.000Z"
+      },
+      "descripcion": "nueva mision bloo",
+      "_id": {
+        "$oid": "66a04c819dd4851f576d168e"
+      }
+    }
+  ],
+  "Sintomatologia_Actual": "Síntomas de ansiedad",
+  "Habitos_Toxicos": "Fuma 5 cigarros al día",
+  "Antecedentes_Quirurgicos": "Operación de hernia",
+  "Antecedentes_Clinicos": "Historia de ansiedad",
+  "Antecedentes_de_Internacion": "Internado en un hospital psiquiátrico",
+  "Tratamientos_Previos": "Terapia cognitivo-conductual",
+  "Genograma": "genograma1721933609515para discord.jpeg",
+  "Antecedentes_de_Conducta_Suicida": "Intento de suicidio en el pasado",
+  "Dinamica_Familiar": "Conflictos con la familia",
+  "Antecedentes_Familiares": "Madre con depresión",
+  "Hobbies": "Leer y escuchar música",
+  "Actividades": "Practicar yoga",
+  "Examen_Mental": "Presenta signos de ansiedad",
+  "Expectativas_del_Tratamiento": "Mejora en la ansiedad",
+  "Estudios_Complementarios": "Evaluación neurológica",
+  "Tipo_de_Psicoterapia": "Psicoterapia cognitivo-conductual",
+  "Otras_Indicaciones": "Terapia de aceptación y compromiso",
+  "Evaluaciones": "Evaluación neurológica",
+  "FUM": [
+    {
+      "fecha": {
+        "$date": "2024-08-15T00:00:00.000Z"
+      },
+      "_id": {
+        "$oid": "66b396d844fc29b7b253b86f"
+      }
+    }
+  ],
+  "Ciclos": "hola",
+  "Otros": "Algo de otros 1000",
+  "Antecedentes_Personales": "Problemas de infancia",
+  "Conducta_Terapeutica": "Terapia de aceptación y compromiso",
+  "Evaluacion_Neurocognitiva": "Disminución de la memoria",
+  "Medicacion_Actual": "Fluoxetina",
+  "Tratamiento_Farmacologico": "Fluoxetina"
+},
+{
+  "_id": {
+    "$oid": "66848a5484ed18607467f3c6"
+  },
+  "Apellidos": "Gómez",
+  "Nombres": "Lucía Valeria",
+  "Edad": 28,
+  "Fecha_de_Nacimiento": {
+    "$date": "1989-12-02T00:00:00.000Z"
+  },
+  "DNI": 35111111,
+  "Domicilio": "Avenida de la República 10000",
+  "Localidad": "Córdoba - Córdoba",
+  "Telefono": 3511111111,
+  "Ocupacion": "Profesora",
+  "Estado_Civil": "Soltera",
+  "Licencia": "Psiquiátrica",
+  "Responsable": "María Gómez - Madre",
+  "Obra_Social": "Subsidio de Salud",
+  "Num_de_Afiliado": 21459,
+  "Diagnostico": "Depresión - Conducta Suicida",
+  "Consulta": [
+    {
+      "_id": {
+        "$oid": "669eba57c9394e35b0b2c823"
+      },
+      "descripcion": "Una paciente experimenta una profunda fobia a las redes sociales, caracterizada por ansiedad severa y evitación total de cualquier plataforma digital. Su miedo se centra en la posibilidad de ser juzgada, criticada o expuesta públicamente, lo que genera un estrés significativo. Esta fobia interfiere gravemente en su vida diaria, afectando tanto sus relaciones personales como su desarrollo profesional. La paciente evita activamente cualquier interacción en línea, lo que le impide aprovechar oportunidades sociales y laborales. La fobia también puede estar vinculada a experiencias previas negativas en redes sociales, exacerbando su miedo y perpetuando el ciclo de evitación y ansiedad. MAYUSUCLAS",
+      "fecha": {
+        "$date": "2024-06-24T00:00:00.000Z"
+      }
+    },
+    {
+      "fecha": {
+        "$date": "2024-07-10T00:00:00.000Z"
+      },
+      "descripcion": "Esta es una nueva consulta generada por el nuevo campo",
+      "_id": {
+        "$oid": "66a8e33ff2d313dbae89f18d"
+      }
+    },
+    {
+      "fecha": {
+        "$date": "2024-07-03T00:00:00.000Z"
+      },
+      "descripcion": "nueva",
+      "_id": {
+        "$oid": "66a95ba5181eba567169c7d5"
+      }
+    },
+    {
+      "fecha": {
+        "$date": "2024-07-31T00:00:00.000Z"
+      },
+      "descripcion": "Nueva consulta",
+      "_id": {
+        "$oid": "66ac59957b0945b2b7defeb9"
+      }
+    },
+    {
+      "fecha": {
+        "$date": "2024-08-24T00:00:00.000Z"
+      },
+      "descripcion": "nueva nueva nueva ",
+      "_id": {
+        "$oid": "66ac59cd7b0945b2b7defecc"
+      }
+    },
+    {
+      "fecha": {
+        "$date": "2024-08-14T00:00:00.000Z"
+      },
+      "descripcion": "nue va nuev a",
+      "_id": {
+        "$oid": "66ac5a127b0945b2b7defee2"
+      }
+    }
+  ],
+  "Sintomatologia_Actual": "Síntomas de depresión 1000",
+  "Habitos_Toxicos": "Fuma 10 cigarros al día 1000 2000",
+  "Antecedentes_Quirurgicos": "Operación de apendicitis 1000",
+  "Antecedentes_Clinicos": "Historia de ansiedad 1000",
+  "Tratamientos_Previos": "Terapia cognitivo-conductual 1000",
+  "Medicacion_Actual": "Fluoxetina y Ibupresol 400mg 1000",
+  "Genograma": "genograma1723079456000Captura de pantalla 2023-10-22 222935.png",
+  "Antecedentes_de_Conducta_Suicida": "Intento de suicidio en el pasado 12559",
+  "Dinamica_Familiar": "Conflictos con la familia 1000",
+  "Antecedentes_Familiares": "Madre con depresión 1000",
+  "Hobbies": "Leer y escuchar música 1000",
+  "Actividades": "Practicar yoga 1000",
+  "Examen_Mental": "Presenta signos de ansiedad 1000",
+  "Expectativas_del_Tratamiento": "Mejora en la ansiedad 1000",
+  "Conducta_Terapeutica": "Terapia de aceptación y compromiso 1000",
+  "Estudios_Complementarios": "Evaluación neurológica 231 1000",
+  "Evaluacion_Neurocognitiva": "Disminución de la memoria 1000",
+  "Tipo_de_Psicoterapia": "Psicoterapia cognitivo-conductual sdd 1000",
+  "Tratamiento_Farmacologico": "Fluoxetina 10000",
+  "Otras_Indicaciones": "Terapia de aceptación y compromiso 123654 1000",
+  "Evaluaciones": "Evaluación neurológica 1000",
+  "FUM": [
+    {
+      "fecha": {
+        "$date": "2024-07-09T00:00:00.000Z"
+      },
+      "_id": {
+        "$oid": "66a949e226810b29501bb9e4"
+      }
+    },
+    {
+      "fecha": {
+        "$date": "2024-08-09T00:00:00.000Z"
+      },
+      "_id": {
+        "$oid": "66ac581c7b0945b2b7defd67"
+      }
+    }
+  ],
+  "Ciclos": "Con relación a sus ciclos, está todo controlado de manera regular 1000",
+  "Otros": "Esta es otra cosa que sale acá sdfsdf 20000",
+  "Antecedentes_Personales": "Problemas de infancia 1000 2000",
+  "Antecedentes_de_Internacion": "Internada en un hospital psiquiátrico 1000"
+},
+{
+  "_id": {
+    "$oid": "66848a5484ed18607467f3c7"
+  },
+  "Apellidos": "Martínez",
+  "Nombres": "Sofía",
+  "Edad": 25,
+  "Fecha_de_Nacimiento": {
+    "$date": "1999-10-20T00:00:00.000Z"
+  },
+  "DNI": 10002222,
+  "Domicilio": "Avenida de Mayo 123",
+  "Localidad": "Buenos Aires",
+  "Telefono": 1155555555,
+  "Ocupacion": "Estudiante",
+  "Estado_Civil": "Soltera",
+  "Licencia": "Psiquiátrica",
+  "Responsable": "María Martínez - Madre",
+  "Obra_Social": "Subsidio de Salud",
+  "Num_de_Afiliado": 21460,
+  "Diagnostico": "Ansiedad - Conducta Suicida",
+  "Consulta": [
+    {
+      "_id": {
+        "$oid": "6696c98463586b1ea4197af8"
+      },
+      "descripcion": "Se tenía que realizar las evaluaciones correspondientes a le nueva medicación que se está tomando.",
+      "fecha": {
+        "$date": "2024-06-11T00:00:00.000Z"
+      }
+    },
+    {
+      "fecha": {
+        "$date": "2022-05-30T00:00:00.000Z"
+      },
+      "descripcion": "Nueva fecha actualizada para prueba de ingreso",
+      "_id": {
+        "$oid": "669dafaa75da06b5e8b499ce"
+      }
+    },
+    {
+      "fecha": {
+        "$date": "2021-10-10T00:00:00.000Z"
+      },
+      "descripcion": "nueva consulta 236 esta estaba ultima",
+      "_id": {
+        "$oid": "669dd73c6a7109dcf8c57270"
+      }
+    },
+    {
+      "fecha": {
+        "$date": "2019-10-01T00:00:00.000Z"
+      },
+      "descripcion": "esta es con el sort",
+      "_id": {
+        "$oid": "669dd9cc2a4d2e32f549088a"
+      }
+    },
+    {
+      "fecha": {
+        "$date": "2023-06-01T00:00:00.000Z"
+      },
+      "descripcion": "otra mas",
+      "_id": {
+        "$oid": "669ddbf62a4d2e32f5490c9f"
+      }
+    },
+    {
+      "fecha": {
+        "$date": "2024-01-05T00:00:00.000Z"
+      },
+      "descripcion": "Nuevas",
+      "_id": {
+        "$oid": "669ddc242a4d2e32f5490d50"
+      }
+    },
+    {
+      "fecha": {
+        "$date": "2023-06-30T00:00:00.000Z"
+      },
+      "descripcion": "Esta es una nueva consulta",
+      "_id": {
+        "$oid": "669e697ee4f3cf5a3b091edd"
+      }
+    },
+    {
+      "fecha": {
+        "$date": "2024-07-22T00:00:00.000Z"
+      },
+      "descripcion": "NUEVA CONSULTA 001",
+      "_id": {
+        "$oid": "669e6a1ee4f3cf5a3b092004"
+      }
+    },
+    {
+      "fecha": {
+        "$date": "2024-07-18T00:00:00.000Z"
+      },
+      "descripcion": "nueva nueva nueva ",
+      "_id": {
+        "$oid": "669e6c09e4f3cf5a3b0e1269"
+      }
+    },
+    {
+      "fecha": {
+        "$date": "2017-12-01T00:00:00.000Z"
+      },
+      "descripcion": "Es una gran nueva consulta",
+      "_id": {
+        "$oid": "669eb33f00ba2758f8a05ca1"
+      }
+    }
+  ],
+  "Sintomatologia_Actual": "Síntomas de ansiedad",
+  "Antecedentes_Personales": "Problemas de infancia",
+  "Habitos_Toxicos": "Fuma 5 cigarros al día",
+  "Antecedentes_Quirurgicos": "Operación de hernia",
+  "Antecedentes_Clinicos": "Historia de ansiedad",
+  "Antecedentes_de_Internacion": "Internado en un hospital psiquiátrico",
+  "Tratamientos_Previos": "Terapia cognitivo-conductual",
+  "Medicacion_Actual": "Fluoxetina",
+  "Genograma": "Madre con problemas de adicción",
+  "Antecedentes_de_Conducta_Suicida": "Intento de suicidio en el pasado",
+  "Dinamica_Familiar": "Conflictos con la familia",
+  "Antecedentes_Familiares": "Madre con depresión",
+  "Hobbies": "Leer y escuchar música",
+  "Actividades": "Practicar yoga",
+  "Examen Mental": "Presenta signos de ansiedad",
+  "Expectativas_del_Tratamiento": "Mejora en la ansiedad",
+  "Conducta_Terapeutica": "Terapia de aceptación y compromiso",
+  "Estudios_Complementarios": "Evaluación neurológica",
+  "Evaluacion_Neurocognitiva": "Disminución de la memoria",
+  "Tipo_de_Psicoterapia": "Psicoterapia cognitivo-conductual",
+  "Tratamiento_Farmacologico": "Fluoxetina",
+  "Otras_Indicaciones": "Terapia de aceptación y compromiso",
+  "Evaluaciones": "Evaluación neurológica",
+  "Ciclos": "Nuevos datos mandandos",
+  "FUM": [
+    {
+      "fecha": {
+        "$date": "2024-07-04T00:00:00.000Z"
+      },
+      "_id": {
+        "$oid": "66a7bd660d59e540a567d8df"
+      }
+    },
+    {
+      "fecha": {
+        "$date": "2024-08-21T00:00:00.000Z"
+      },
+      "_id": {
+        "$oid": "66b15e12ff93bcc12353d00e"
+      }
+    },
+    {
+      "fecha": {
+        "$date": "2024-08-22T00:00:00.000Z"
+      },
+      "_id": {
+        "$oid": "66b15e17ff93bcc12353d022"
+      }
+    },
+    {
+      "fecha": {
+        "$date": "2024-07-23T00:00:00.000Z"
+      },
+      "_id": {
+        "$oid": "66b15e22ff93bcc12353d039"
+      }
+    }
+  ],
+  "Otros": "Acá va algo en la parte de otros"
+},
+{
+  "_id": {
+    "$oid": "66848a5484ed18607467f3c8"
+  },
+  "Apellidos": "Herrera",
+  "Nombres": "Agustín Quiroga",
+  "Edad": 45,
+  "Fecha_de_Nacimiento": {
+    "$date": "1980-03-15T00:00:00.000Z"
+  },
+  "DNI": 35111111,
+  "Domicilio": "Avenida de la República 456",
+  "Localidad": "Córdoba",
+  "Telefono": 381569632,
+  "Ocupacion": "Profesional",
+  "Estado_Civil": "Casada",
+  "Licencia": "Psiquiátrica",
+  "Responsable": "No tiene",
+  "Obra_Social": "Subsidio",
+  "Num_de_Afiliado": 21461,
+  "Diagnostico": "Depresión",
+  "Consulta": [
+    {
+      "descripcion": "Presentó síntomas de depresión mas de lo normal, en muchas de las cosas que viene haciendo, realmente preocupante 2000",
+      "fecha": {
+        "$date": "2024-06-05T00:00:00.000Z"
+      },
+      "_id": {
+        "$oid": "66a066fbe80f73ce0e61279d"
+      }
+    },
+    {
+      "descripcion": "Consulta de rutina nueva para paciente recíen ingresado\n",
+      "fecha": {
+        "$date": "2023-07-22T00:00:00.000Z"
+      },
+      "_id": {
+        "$oid": "66a06707e80f73ce0e61279e"
+      }
+    }
+  ],
+  "Sintomatologia_Actual": "Síntomas de depresión",
+  "Antecedentes_Personales": "Problemas de infancia",
+  "Habitos_Toxicos": "Fuma 10 cigarros al día",
+  "Antecedentes_Quirurgicos": "Operación de apendicitis",
+  "Antecedentes_Clinicos": "Historia de ansiedad",
+  "Antecedentes_de_Internacion": "Internado en un hospital psiquiátrico",
+  "Tratamientos_Previos": "Terapia cognitivo-conductual",
+  "Medicacion_Actual": "Fluoxetina",
+  "Genograma": "Madre con problemas de adicción",
+  "Antecedentes_de_Conducta_Suicida": "Intento de suicidio en el pasado",
+  "Dinamica_Familiar": "Conflictos con la familia",
+  "Antecedentes_Familiares": "Madre con depresión",
+  "Hobbies": "Leer y escuchar música",
+  "Actividades": "Practicar yoga",
+  "Examen_Mental": "Presenta signos de ansiedad",
+  "Expectativas_del_Tratamiento": "Mejora en la ansiedad",
+  "Conducta_Terapeutica": "Terapia de aceptación y compromiso",
+  "Estudios_Complementarios": "Evaluación neurológica",
+  "Evaluacion_Neurocognitiva": "Disminución de la memoria",
+  "Tipo_de_Psicoterapia": "Psicoterapia cognitivo-conductual",
+  "Tratamiento_Farmacologico": "Fluoxetina",
+  "Otras_Indicaciones": "Terapia de aceptación y compromiso",
+  "Evaluaciones": "Evaluación neurológica",
+  "Ciclos": "No hay datos 2000- 96 ** 989 -96856",
+  "FUM": [
+    {
+      "fecha": {
+        "$date": "2024-07-20T00:00:00.000Z"
+      },
+      "_id": {
+        "$oid": "66a0ab6ffeead91c294a1b78"
+      }
+    },
+    {
+      "fecha": {
+        "$date": "2024-07-01T00:00:00.000Z"
+      },
+      "_id": {
+        "$oid": "66a0ab7cfeead91c294a1b99"
+      }
+    },
+    {
+      "fecha": {
+        "$date": "2024-07-25T00:00:00.000Z"
+      },
+      "_id": {
+        "$oid": "66a0bd1829c0a53082c35f1f"
+      }
+    },
+    {
+      "fecha": {
+        "$date": "2024-07-17T00:00:00.000Z"
+      },
+      "_id": {
+        "$oid": "66a26845a093742fc37148bc"
+      }
+    }
+  ],
+  "Otros": "Este es el campo que va junto a Ciclos y FUM 00111100"
+},
+{
+  "_id": {
+    "$oid": "66848a5484ed18607467f3c9"
+  },
+  "Apellidos": "González",
+  "Nombres": "Lucía Marisa",
+  "Edad": 30,
+  "Fecha_de_Nacimiento": {
+    "$date": "1994-12-02T00:00:00.000Z"
+  },
+  "DNI": 36222151,
+  "Domicilio": "Marco de la Vega 789",
+  "Localidad": "San Miguel de Tucumán",
+  "Telefono": 3815669988,
+  "Ocupacion": "Empleada de Comercio",
+  "Estado_Civil": "Casada",
+  "Licencia": "Psiquiátrica",
+  "Responsable": "Martín González - Esposo",
+  "Obra_Social": "Subsidio de Salud",
+  "Num_de_Afiliado": 21462,
+  "Diagnostico": "Ansiedad - Conducta Suicida",
+  "Consulta": [
+    {
+      "Fecha": "20/06/2024",
+      "Descripcion": "Presentó síntomas de ansiedad",
+      "_id": {
+        "$oid": "66a82d41d43a8d9650f2845a"
+      },
+      "descripcion": "Agregando datos al cuerpo de la consulta",
+      "fecha": {
+        "$date": "2024-07-30T00:00:00.000Z"
+      }
+    },
+    {
+      "fecha": {
+        "$date": "2023-06-06T00:00:00.000Z"
+      },
+      "descripcion": "Nueva consulta para agregar de la viejas que mucho no se pueden decir",
+      "_id": {
+        "$oid": "66a8403237d354ea35f5a415"
+      }
+    }
+  ],
+  "Sintomatologia_Actual": "Síntomas de ansiedad",
+  "Habitos_Toxicos": "Fuma 5 cigarros al día",
+  "Antecedentes_Quirurgicos": "Operación de hernia",
+  "Antecedentes_Clinicos": "Historia de ansiedad",
+  "Antecedentes_de_Internacion": "Internada en un hospital psiquiátrico",
+  "Tratamientos_Previos": "Terapia cognitivo-conductual",
+  "Medicacion_Actual": "Fluoxetina",
+  "Genograma": "genograma1721933630007para discord.jpeg",
+  "Antecedentes_de_Conducta_Suicida": "Intento de suicidio en el pasado",
+  "Dinamica_Familiar": "Conflictos con la familia",
+  "Antecedentes_Familiares": "Madre con depresión",
+  "Hobbies": "Leer y escuchar música",
+  "Actividades": "Practicar yoga",
+  "Examen_Mental": "Presenta signos de ansiedad",
+  "Expectativas_del_Tratamiento": "Mejora en la ansiedad",
+  "Conducta_Terapeutica": "Terapia de aceptación y compromiso",
+  "Estudios_Complementarios": "Evaluación neurológica",
+  "Evaluacion_Neurocognitiva": "Disminución de la memoria",
+  "Tipo_de_Psicoterapia": "Psicoterapia cognitivo-conductual",
+  "Tratamiento_Farmacologico": "Fluoxetina",
+  "Otras_Indicaciones": "Terapia de aceptación y compromiso",
+  "Evaluaciones": "Evaluación neurológica",
+  "Ciclos": "Irregular",
+  "FUM": [
+    {
+      "fecha": {
+        "$date": "2024-04-15T00:00:00.000Z"
+      },
+      "id_Fum": 3
+    },
+    {
+      "fecha": {
+        "$date": "2024-03-02T00:00:00.000Z"
+      },
+      "id_Fum": 2
+    },
+    {
+      "fecha": {
+        "$date": "2024-01-25T00:00:00.000Z"
+      },
+      "id_Fum": 1
+    }
+  ],
+  "Otros": "Este campo va junto con FUM y Ciclos",
+  "Antecedentes_Personales": "Problemas de infancia"
+},
+{
+  "_id": {
+    "$oid": "669460a6da4454f2882b1163"
+  },
+  "Apellidos": "Gerardo Miguel",
+  "Nombres": "Martinez",
+  "Edad": 74,
+  "Fecha_de_Nacimiento": {
+    "$date": "2009-02-04T00:00:00.000Z"
+  },
+  "DNI": 32589654,
+  "Domicilio": "Calle Redonda 123",
+  "Localidad": "Las Talitas",
+  "Telefono": 381556698,
+  "Ocupacion": "Abogado",
+  "Estado_Civil": "Casado",
+  "Licencia": "Ninguna",
+  "Responsable": "No tiene",
+  "Obra_Social": "Prensa",
+  "Num_de_Afiliado": 269,
+  "Diagnostico": "Depresión Potente",
+  "Sintomatologia_Actual": "",
+  "Habitos_Toxicos": "nuevos hábitos toxicos\n",
+  "Antecedentes_Quirurgicos": "",
+  "Antecedentes_Clinicos": "",
+  "Antecedentes_de_Internacion": "",
+  "Tratamientos_Previos": "",
+  "Medicacion_Actual": "",
+  "Genograma": "default.png",
+  "Antecedentes_de_Conducta_Suicida": "",
+  "Dinamica_Familiar": "",
+  "Antecedentes_Familiares": "",
+  "Hobbies": "",
+  "Actividades": "",
+  "Examen_Mental": "",
+  "Expectativas_del_Tratamiento": "",
+  "Conducta_Terapeutica": "",
+  "Estudios_Complementarios": "",
+  "Evaluacion_Neurocognitiva": "",
+  "Tipo_de_Psicoterapia": "",
+  "Tratamiento_Farmacologico": "",
+  "Otras_Indicaciones": "",
+  "Evaluaciones": "",
+  "Ciclos": "",
+  "Otros": "",
+  "Consulta": [
+    {
+      "fecha": {
+        "$date": "2021-02-10T00:00:00.000Z"
+      },
+      "descripcion": "Este es la segunda 1000000",
+      "_id": {
+        "$oid": "66960330bb65dc6e19c5dffc"
+      }
+    },
+    {
+      "fecha": {
+        "$date": "2024-07-25T00:00:00.000Z"
+      },
+      "descripcion": "Esta es la consulta 58963",
+      "_id": {
+        "$oid": "669af63f8d4088fab032ec49"
+      }
+    },
+    {
+      "fecha": {
+        "$date": "2024-07-16T00:00:00.000Z"
+      },
+      "descripcion": "Consulta cambiada recién",
+      "_id": {
+        "$oid": "669af68d8d4088fab032ec8f"
+      }
+    },
+    {
+      "fecha": {
+        "$date": "2024-07-17T00:00:00.000Z"
+      },
+      "descripcion": "Esta es otra nueva cinsulta",
+      "_id": {
+        "$oid": "669b02328d4088fab032eda4"
+      }
+    },
+    {
+      "fecha": {
+        "$date": "2023-03-11T00:00:00.000Z"
+      },
+      "descripcion": "Esta es una consulta editada 90",
+      "_id": {
+        "$oid": "669b03c28d4088fab032efdb"
+      }
+    },
+    {
+      "fecha": {
+        "$date": "2024-07-10T00:00:00.000Z"
+      },
+      "descripcion": "Esta es una nueva conuslta por 899",
+      "_id": {
+        "$oid": "669b04a88d4088fab032f02d"
+      }
+    },
+    {
+      "fecha": {
+        "$date": "2024-07-24T00:00:00.000Z"
+      },
+      "descripcion": "Gerardp Kato gramajo",
+      "_id": {
+        "$oid": "669b051f8d4088fab032f08c"
+      }
+    },
+    {
+      "fecha": {
+        "$date": "2024-07-02T00:00:00.000Z"
+      },
+      "descripcion": "Consulta 123698",
+      "_id": {
+        "$oid": "669b3c44fa3a1dc79a352688"
+      }
+    },
+    {
+      "fecha": {
+        "$date": "2024-07-10T00:00:00.000Z"
+      },
+      "descripcion": "Nuevo 01 ",
+      "_id": {
+        "$oid": "669b5a1797d3816be551461b"
+      }
+    }
+  ],
+  "FUM": [
+    {
+      "fecha": {
+        "$date": "2024-05-26T00:00:00.000Z"
+      },
+      "_id": {
+        "$oid": "669606a680b4c445da374487"
+      }
+    },
+    {
+      "fecha": {
+        "$date": "2024-03-21T00:00:00.000Z"
+      },
+      "_id": {
+        "$oid": "669606c380b4c445da374494"
+      }
+    }
+  ],
+  "__v": 0,
+  "Antecedentes_Personales": ""
+},
+{
+  "_id": {
+    "$oid": "66a28fd00ababe6c578e1051"
+  },
+  "Apellidos": "German Miguel",
+  "Nombres": "Alfaro",
+  "Edad": 23,
+  "Fecha_de_Nacimiento": {
+    "$date": "2024-07-22T00:00:00.000Z"
+  },
+  "DNI": 3425324523,
+  "Domicilio": "Calle Maipu 236",
+  "Localidad": "San Miguel de Tucumán",
+  "Telefono": 3214587,
+  "Ocupacion": "Técnico en Refrigeración",
+  "Estado_Civil": "Soltero",
+  "Licencia": "sin licencia",
+  "Responsable": "no tiene",
+  "Obra_Social": "Osde",
+  "Num_de_Afiliado": 12369,
+  "Diagnostico": "Sin esfecificar",
+  "Sintomatologia_Actual": "",
+  "Habitos_Toxicos": "",
+  "Antecedentes_Quirurgicos": "",
+  "Antecedentes_Clinicos": "",
+  "Antecedentes_de_Internacion": "",
+  "Tratamientos_Previos": "",
+  "Medicacion_Actual": "",
+  "Genograma": "genograma1721938148906Ingreso de usuario.png",
+  "Antecedentes_de_Conducta_Suicida": "",
+  "Dinamica_Familiar": "",
+  "Antecedentes_Familiares": "",
+  "Hobbies": "",
+  "Actividades": "",
+  "Examen_Mental": "",
+  "Expectativas_del_Tratamiento": "",
+  "Conducta_Terapeutica": "",
+  "Estudios_Complementarios": "",
+  "Evaluacion_Neurocognitiva": "",
+  "Tipo_de_Psicoterapia": "",
+  "Tratamiento_Farmacologico": "",
+  "Otras_Indicaciones": "",
+  "Evaluaciones": "",
+  "Ciclos": "Esto es lo nuevo que se puede hacer",
+  "Otros": "No hay datos afads",
+  "Consulta": [
+    {
+      "fecha": {
+        "$date": "2024-07-10T00:00:00.000Z"
+      },
+      "descripcion": "sd",
+      "_id": {
+        "$oid": "66a7bfdb0d59e540a567da75"
+      }
+    }
+  ],
+  "FUM": [
+    {
+      "fecha": {
+        "$date": "2024-08-14T00:00:00.000Z"
+      },
+      "_id": {
+        "$oid": "66ab982828cbc0311dffcfeb"
+      }
+    },
+    {
+      "fecha": {
+        "$date": "2024-08-07T00:00:00.000Z"
+      },
+      "_id": {
+        "$oid": "66ab98d428cbc0311dffcff3"
+      }
+    }
+  ],
+  "__v": 0,
+  "Antecedentes_Personales": ""
+},
+{
+  "_id": {
+    "$oid": "66a2906c0ababe6c578e1053"
+  },
+  "Apellidos": "Marisa Alejandra",
+  "Nombres": "Bermudez",
+  "Edad": 78,
+  "Fecha_de_Nacimiento": {
+    "$date": "2024-07-02T00:00:00.000Z"
+  },
+  "DNI": 3425324523,
+  "Domicilio": "dirección nueva 12569",
+  "Localidad": "Las Talitas",
+  "Telefono": 3214587,
+  "Ocupacion": "tecnico en refrigerarcion",
+  "Estado_Civil": "soletero",
+  "Licencia": "sin licencia",
+  "Responsable": "no tiene",
+  "Obra_Social": "Osde",
+  "Num_de_Afiliado": 12369,
+  "Diagnostico": "Sin esfecificar",
+  "Sintomatologia_Actual": "",
+  "Habitos_Toxicos": "",
+  "Antecedentes_Quirurgicos": "",
+  "Antecedentes_Clinicos": "",
+  "Antecedentes_de_Internacion": "",
+  "Tratamientos_Previos": "",
+  "Medicacion_Actual": "",
+  "Genograma": "default.png",
+  "Antecedentes_de_Conducta_Suicida": "",
+  "Dinamica_Familiar": "",
+  "Antecedentes_Familiares": "",
+  "Hobbies": "",
+  "Actividades": "",
+  "Examen_Mental": "",
+  "Expectativas_del_Tratamiento": "",
+  "Conducta_Terapeutica": "",
+  "Estudios_Complementarios": "",
+  "Evaluacion_Neurocognitiva": "",
+  "Tipo_de_Psicoterapia": "",
+  "Tratamiento_Farmacologico": "",
+  "Otras_Indicaciones": "",
+  "Evaluaciones": "",
+  "Ciclos": "",
+  "Otros": "Nevos otros nuevos",
+  "Consulta": [
+    {
+      "fecha": {
+        "$date": "2024-08-22T00:00:00.000Z"
+      },
+      "descripcion": "Esta es una nueva consulta en este paciente elegido aquí y ahora",
+      "_id": {
+        "$oid": "66aba83d28cbc0311dffd3c9"
+      }
+    }
+  ],
+  "FUM": [
+    {
+      "fecha": {
+        "$date": "2024-08-06T00:00:00.000Z"
+      },
+      "_id": {
+        "$oid": "66ab85cc28cbc0311dffcd51"
+      }
+    },
+    {
+      "fecha": {
+        "$date": "2024-08-13T00:00:00.000Z"
+      },
+      "_id": {
+        "$oid": "66aba56728cbc0311dffd39f"
+      }
+    }
+  ],
+  "__v": 0,
+  "Antecedentes_Personales": ""
+},
+{
+  "_id": {
+    "$oid": "66a96631181eba567169c9d4"
+  },
+  "Apellidos": "Prueba",
+  "Nombres": "Prueba",
+  "Edad": 56,
+  "Fecha_de_Nacimiento": {
+    "$date": "2024-07-16T00:00:00.000Z"
+  },
+  "DNI": 123456,
+  "Domicilio": "Calle Larga0000",
+  "Localidad": "San miguel de tucumán",
+  "Telefono": 45698,
+  "Ocupacion": "nada",
+  "Estado_Civil": "soltero",
+  "Licencia": "no tiene",
+  "Responsable": "no tiene",
+  "Obra_Social": "prensa",
+  "Num_de_Afiliado": 456987,
+  "Diagnostico": "Sin evaluar",
+  "Sintomatologia_Actual": "",
+  "Antecedentes_Personales": "",
+  "Habitos_Toxicos": "",
+  "Antecedentes_Quirurgicos": "",
+  "Antecedentes_Clinicos": "",
+  "Antecedentes_de_Internacion": "",
+  "Tratamientos_Previos": "",
+  "Medicacion_Actual": "",
+  "Genograma": "default.png",
+  "Antecedentes_de_Conducta_Suicida": "",
+  "Dinamica_Familiar": "",
+  "Antecedentes_Familiares": "",
+  "Hobbies": "",
+  "Actividades": "",
+  "Examen_Mental": "",
+  "Expectativas_del_Tratamiento": "",
+  "Conducta_Terapeutica": "",
+  "Estudios_Complementarios": "",
+  "Evaluacion_Neurocognitiva": "",
+  "Tipo_de_Psicoterapia": "",
+  "Tratamiento_Farmacologico": "",
+  "Otras_Indicaciones": "",
+  "Evaluaciones": "",
+  "Ciclos": "",
+  "Otros": "",
+  "Consulta": [],
+  "FUM": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66a96708181eba567169cae4"
+  },
+  "Apellidos": "Prueba 2",
+  "Nombres": "Prueba 2",
+  "Edad": 56,
+  "Fecha_de_Nacimiento": {
+    "$date": "2024-07-16T00:00:00.000Z"
+  },
+  "DNI": 123456,
+  "Domicilio": "",
+  "Localidad": "",
+  "Telefono": 45698,
+  "Ocupacion": "nada",
+  "Estado_Civil": "soltero",
+  "Licencia": "no tiene",
+  "Responsable": "no tiene",
+  "Obra_Social": "prensa",
+  "Num_de_Afiliado": 456987,
+  "Diagnostico": "Sin evaluar",
+  "Sintomatologia_Actual": "",
+  "Antecedentes_Personales": "",
+  "Habitos_Toxicos": "",
+  "Antecedentes_Quirurgicos": "",
+  "Antecedentes_Clinicos": "",
+  "Antecedentes_de_Internacion": "",
+  "Tratamientos_Previos": "",
+  "Medicacion_Actual": "",
+  "Genograma": "default.png",
+  "Antecedentes_de_Conducta_Suicida": "",
+  "Dinamica_Familiar": "",
+  "Antecedentes_Familiares": "",
+  "Hobbies": "",
+  "Actividades": "",
+  "Examen_Mental": "",
+  "Expectativas_del_Tratamiento": "",
+  "Conducta_Terapeutica": "",
+  "Estudios_Complementarios": "",
+  "Evaluacion_Neurocognitiva": "",
+  "Tipo_de_Psicoterapia": "",
+  "Tratamiento_Farmacologico": "",
+  "Otras_Indicaciones": "",
+  "Evaluaciones": "",
+  "Ciclos": "",
+  "Otros": "",
+  "Consulta": [],
+  "FUM": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "66b176f7624402b97d88dfd3"
+  },
+  "Apellidos": "Gomsiño",
+  "Nombres": "Carlos",
+  "Edad": 23,
+  "Fecha_de_Nacimiento": {
+    "$date": "2024-08-15T00:00:00.000Z"
+  },
+  "DNI": 12589632,
+  "Domicilio": "Calle Buena 896 - 1000",
+  "Localidad": "",
+  "Telefono": 381555554,
+  "Ocupacion": "Ocupado",
+  "Estado_Civil": "Soltero",
+  "Licencia": "Enfermedad Crónica",
+  "Responsable": "Marisa Mercedes Jesús (2358965)",
+  "Obra_Social": "Subsidio",
+  "Num_de_Afiliado": 236985,
+  "Diagnostico": "Sin diagnóstico",
+  "Sintomatologia_Actual": "",
+  "Antecedentes_Personales": "",
+  "Habitos_Toxicos": "",
+  "Antecedentes_Quirurgicos": "",
+  "Antecedentes_Clinicos": "",
+  "Antecedentes_de_Internacion": "",
+  "Tratamientos_Previos": "",
+  "Medicacion_Actual": "",
+  "Genograma": "default.png",
+  "Antecedentes_de_Conducta_Suicida": "",
+  "Dinamica_Familiar": "",
+  "Antecedentes_Familiares": "",
+  "Hobbies": "",
+  "Actividades": "",
+  "Examen_Mental": "",
+  "Expectativas_del_Tratamiento": "",
+  "Conducta_Terapeutica": "",
+  "Estudios_Complementarios": "",
+  "Evaluacion_Neurocognitiva": "",
+  "Tipo_de_Psicoterapia": "",
+  "Tratamiento_Farmacologico": "",
+  "Otras_Indicaciones": "",
+  "Evaluaciones": "",
+  "Ciclos": "Su ciclo es regular y sin ninguna complicación",
+  "Otros": "No hay nada relevante para agregar",
+  "Consulta": [
+    {
+      "fecha": {
+        "$date": "2024-08-21T00:00:00.000Z"
+      },
+      "descripcion": "Consulta nueva de prueba",
+      "_id": {
+        "$oid": "66b2b8c506159d7b8e3cfa57"
+      }
+    },
+    {
+      "fecha": {
+        "$date": "2024-08-30T00:00:00.000Z"
+      },
+      "descripcion": "1258p",
+      "_id": {
+        "$oid": "66b2ee6206159d7b8e3d44d5"
+      }
+    }
+  ],
+  "FUM": [
+    {
+      "fecha": {
+        "$date": "2024-08-20T00:00:00.000Z"
+      },
+      "_id": {
+        "$oid": "66b2b42906159d7b8e3cfa30"
+      }
+    },
+    {
+      "fecha": {
+        "$date": "2024-08-16T00:00:00.000Z"
+      },
+      "_id": {
+        "$oid": "66b2b43b06159d7b8e3cfa3b"
+      }
+    }
+  ],
+  "__v": 0
+}]

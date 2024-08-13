@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react'
-import { Routes, NavLink, BrowserRouter, Route } from 'react-router-dom'
+import { Routes, NavLink, BrowserRouter, Route} from 'react-router-dom'
 import PacienteElegido from '../components/PacienteElegido'
 import Login from '../components/Login'
 import '../css/RouterPrincipal.css'
@@ -36,7 +36,7 @@ import EditarPaciente from '../components/EditarPaciente'
 const RouterPrincipal = () => {
 
   const {login, setLogin, usuario, setUsuario} = useContext(ProveedorDeContexto)
-
+  
   useEffect(() => {
     setLogin(localStorage.getItem("login"))
     setUsuario(localStorage.getItem("usuario"))
@@ -46,13 +46,14 @@ const RouterPrincipal = () => {
   window.addEventListener('beforeunload', setUsuario(localStorage.getItem("usuario")))
 
   const cerrarSesion = () =>{
-    if (login){
-      localStorage.setItem("login", false)
-      localStorage.setItem("usuario", "")
-      setLogin(false)
-    }else{
-      ""
-    }
+      if (login){
+        localStorage.setItem("login", false)
+        localStorage.setItem("usuario", "")
+        setLogin(false)
+      }else{
+        ""
+      }
+    
   }
 
   return (
@@ -74,7 +75,7 @@ const RouterPrincipal = () => {
               </li>
             </section>
             <section className='right'>
-              <li><NavLink to='/login' onClick={() => cerrarSesion()}>Cerrar Sesión</NavLink></li>
+              <li><NavLink to="/login" onClick={() => cerrarSesion()}>Cerrar Sesión</NavLink></li>
             </section>
           </ul>
         </nav>

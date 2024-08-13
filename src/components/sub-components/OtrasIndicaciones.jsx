@@ -52,6 +52,7 @@ const OtrasIndicaciones = () => {
         onChange={(e) => setSectionData(e.target.value)}
         rows="10"
         cols="50"
+        placeholder={ sectionData ? "" : "No hay datos"}
       />
       <div className="section-buttons">
         <button onClick={handleSave}>Guardar</button>
