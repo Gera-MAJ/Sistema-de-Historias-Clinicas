@@ -5,17 +5,7 @@ const OtrasIndicaciones = () => {
   const { dataPaciente, index, setDataPaciente } = useContext(ProveedorDeContexto);
   const [sectionData, setSectionData] = useState('');
 
-<<<<<<< HEAD
-  useEffect(() => {
-    if (dataPaciente && dataPaciente[index]) {
-      setSectionData(dataPaciente[index].Otras_Indicaciones || '');
-    }
-  }, [dataPaciente, index]);
-
-  const handleSave = async () => {
-=======
   const handleSave = async() => {
->>>>>>> 72d078293e0f8ea2ed73bd3d932640adda3b49bf
     const updatedData = [...dataPaciente];
     updatedData[index].Otras_Indicaciones = sectionData;
     setDataPaciente(updatedData);
