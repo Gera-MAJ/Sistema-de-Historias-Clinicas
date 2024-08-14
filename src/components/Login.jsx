@@ -9,46 +9,34 @@ const Login = () => {
     const [errorMessage, setErrorMessage] = useState('');
     const navigate = useNavigate();
 
-    // const [users, setUsers] = useState([])
-
-    // useEffect(() => {
-    //   fetchUsers()
-    // }, [])
-
-    // //terminar de hacer lo de users
-    // const fetchUsers = async() => {
-    //   try {
-    //     const response = await fetch("http://localhost:3900/login/users");
-
-    //     const data = await response.json();
-
-    //     if (data.status === "error") {
-    //       throw new Error('Error al obtener los usuarios');
-    //     }
-
-    //     if (data.status === "success"){
-    //       setUsers(data.users)
-    //       console.log(data.users)
-    //     }
-        
-    //   } catch (error) {
-    //     console.error('Error fetching pacientes:', error.message);
-    //   }
-    // };
-    
-   
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
       e.preventDefault();
+      setErrorMessage('')
 
-      
-      if (username === 'admin' && password === '1234' || username === 'gerardo' && password === '4321' || username === 'leti' && password === '2345') {
-        navigate("/pacientes")
-        alert('Ingresaste exitosamente!');
-        localStorage.setItem("login", true)
-        localStorage.setItem("usuario", username)
-      } else {
-        setErrorMessage('Usuario y/o Contraseña inválidos');
+       //verificar usaurio y contraseña
+      try {
+        const response = await fetch("http://localhost:3900/login/acceso/" + username + "/" + password);
+
+        const data = await response.json();
+
+        if (data.status === "error") {
+          setErrorMessage('El usuario y/o contraseña son incorrectos');
+          throw new Error('El usuario y/o contraseña son incorrectos');
+          
+        }
+
+        if (data.status === "success"){
+          
+          navigate("/pacientes")
+          alert('Ingresaste exitosamente!');
+          localStorage.setItem("login", true)
+          localStorage.setItem("usuario", username)
+        }
+        
+      } catch (error) {
+        console.error('Error fetching pacientes:', error.message);
       }
+      
     };
   
     return (
