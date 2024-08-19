@@ -1,6 +1,6 @@
 .nuevo-paciente-container {
-    max-width: 600px;
-    margin: -20px auto 70px auto;
+    /* max-width: 600px; */
+    margin: 0px 20px 70px 20px; 
     padding: 20px;
     background-color: #CCD5AE; 
     border-radius: 10px;
@@ -15,10 +15,14 @@
   }
   
   .nuevo-paciente-form {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 50% auto;
     gap: 15px;
   }
+
+    .nuevo-paciente-form section {
+      margin-left: 20px;
+    }
   
   .nuevo-paciente-form label {
     display: flex;
@@ -27,6 +31,7 @@
     font-size: 16px;
     font-weight: bold;
     color: #4e8a60;
+    margin-top: 20px;
   }
   
   .nuevo-paciente-form input {
