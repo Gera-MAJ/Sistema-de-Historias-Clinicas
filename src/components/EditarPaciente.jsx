@@ -87,52 +87,61 @@ const EditarPaciente = () => {
     <div className="nuevo-paciente-container">
       <h2>Editar Paciente</h2>
       <form onSubmit={handleSubmit} className="nuevo-paciente-form">
-        <label>Apellido/s:
-          <input type="text" name="Apellidos" value={formData.Apellidos} onChange={handleChange} required />
-        </label>
-        <label>Nombre/s:
-          <input type="text" name="Nombres" value={formData.Nombres} onChange={handleChange} required />
-        </label>
-        <label>Edad:
-          <input type="number" name="Edad" value={formData.Edad} onChange={handleChange} required />
-        </label>
-        <label>Fecha de Nacimiento:
-          <input type="date" name="Fecha_de_Nacimiento" value={formData.Fecha_de_Nacimiento} onChange={handleChange} required />
-        </label>
-        <label>DNI:
-          <input type="number" name="DNI" value={formData.DNI} onChange={handleChange} required />
-        </label>
-        <label>Dirección:
-          <input type="text" name="Domicilio" value={formData.Domicilio} onChange={handleChange} required />
-        </label>
-        <label>Localidad:
-          <input type="text" name="Localidad" value={formData.Localidad} onChange={handleChange} required />
-        </label>
-        <label>Teléfono:
-          <input type="number" name="Telefono" value={formData.Telefono} onChange={handleChange} required />
-        </label>
-        <label>Ocupación:
-          <input type="text" name="Ocupacion" value={formData.Ocupacion} onChange={handleChange} required />
-        </label>
-        <label>Estado Civil:
-          <input type="text" name="Estado_Civil" value={formData.Estado_Civil} onChange={handleChange} required />
-        </label>
-        <label>Licencia:
-          <input type="text" name="Licencia" value={formData.Licencia} onChange={handleChange} required />
-        </label>
-        <label>Responsable:
-          <input type="text" name="Responsable" value={formData.Responsable} onChange={handleChange} required />
-        </label>
-        <label>Obra Social:
-          <input type="text" name="Obra_Social" value={formData.Obra_Social} onChange={handleChange} required />
-        </label>
-        <label>N° de Afiliado:
-          <input type="number" name="Num_de_Afiliado" value={formData.Num_de_Afiliado} onChange={handleChange} required />
-        </label>
-        <label>Diagnóstico:
-          <input type="text" name="Diagnostico" value={formData.Diagnostico} onChange={handleChange} required />
-        </label>
-        <button type="submit" className="submit-button">Editar</button>
+        <section className="izquierda">
+          <label>Apellido/s:
+            <input type="text" name="Apellidos" value={formData.Apellidos} onChange={handleChange} required />
+          </label>
+          <label>Nombre/s:
+            <input type="text" name="Nombres" value={formData.Nombres} onChange={handleChange} required />
+          </label>
+          <label>Edad:
+            <input type="number" name="Edad" value={formData.Edad} onChange={handleChange} required />
+          </label>
+          <label>Fecha de Nacimiento:
+            <input type="date" name="Fecha_de_Nacimiento" value={formData.Fecha_de_Nacimiento} onChange={handleChange} required />
+          </label>
+          <label>DNI:
+            <input type="number" name="DNI" value={formData.DNI} onChange={handleChange} required />
+          </label>
+          <label>Dirección:
+            <input type="text" name="Domicilio" value={formData.Domicilio} onChange={handleChange} required />
+          </label>
+          <label>Localidad:
+            <input type="text" name="Localidad" value={formData.Localidad} onChange={handleChange} required />
+          </label>
+          <label>Teléfono:
+            <input type="number" name="Telefono" value={formData.Telefono} onChange={handleChange} required />
+          </label>
+        </section>
+        
+        <section className="derecha">
+          <label>Ocupación:
+            <input type="text" name="Ocupacion" value={formData.Ocupacion} onChange={handleChange} required />
+          </label>
+          <label>Estado Civil:
+            <input type="text" name="Estado_Civil" value={formData.Estado_Civil} onChange={handleChange} required />
+          </label>
+          <label>Licencia:
+            <input type="text" name="Licencia" value={formData.Licencia} onChange={handleChange} required />
+          </label>
+          <label>Responsable:
+            <input type="text" name="Responsable" value={formData.Responsable} onChange={handleChange} required />
+          </label>
+          <label>Obra Social:
+            <input type="text" name="Obra_Social" value={formData.Obra_Social} onChange={handleChange} required />
+          </label>
+          <label>N° de Afiliado:
+            <input type="number" name="Num_de_Afiliado" value={formData.Num_de_Afiliado} onChange={handleChange} required />
+          </label>
+          <label>Diagnóstico:
+            <input type="text" name="Diagnostico" value={formData.Diagnostico} onChange={handleChange} required />
+          </label>
+          <label>
+            <button type="submit" className="submit-button">Editar Paciente</button>
+          </label>
+          
+        </section>
+        
       </form>
     </div>
   );
